@@ -20,7 +20,7 @@ st.set_page_config(page_title="Pāḷi Text Juncture Splitter", page_icon="🌴"
 st.sidebar.header("Customize your conversion:")
 
 st.markdown("<h1 style='text-align: center;'>Pāḷi Text Juncture Splitter 🌴</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='text-align: center;'><em>For easy Pāḷi reading.</em></h3>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center;'><em>For easier Pāḷi reading.</em></h3>", unsafe_allow_html=True)
 st.divider()
 
 st.markdown("<h4 style='text-align: center;'>What is it and who is it for?</h6>", unsafe_allow_html=True)
@@ -2684,10 +2684,10 @@ animation_demo()
 st.divider()
 
 st.markdown("<h6 style='text-align: center;'>How does it work?</h6>", unsafe_allow_html=True)
-st.markdown("<p>It works by adding breaks or visual spacers after <em>every heavy syllable</em> (garu akkhara). The visual spacers act as temporal punctuations or juncture signs. You would then read the split text by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
+st.markdown("<p>It works by adding breaks or visual spacers after <em>every heavy syllable</em> (garu akkhara). The visual spacers act as temporal punctuations or juncture signs. The split text would then be read by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
 
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
-st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). A syllable is heavy if the vowel is long, or followed by a consonant cluster (conjunct/double consonant), or an anusvāra/niggahīta (ṃ/ṁ). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
+st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 
 st.markdown("<h6 style='text-align: center;'>Long vowels:</h6>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>• [ā, ī, ū, e, o]</p>", unsafe_allow_html=True)
