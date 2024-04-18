@@ -53,6 +53,9 @@ def animation_demo() -> None:
     # Nasal ṅ, ṃ, ṁ → ng)
     ng_check = st.sidebar.checkbox(label='ṅ, ṃ, ṁ → ng')
 
+    # v → w if preceded by a consonant in the same syllable
+    v_to_w = st.sidebar.checkbox(label='v → w if preceded by a consonant in the same syllable')
+
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
 
@@ -2280,9 +2283,36 @@ def animation_demo() -> None:
     lbreak_Y_V = lbreak_D_V.replace("\n"+"Y"+sepa+"V", "\n"+"Y"+"V")
     lbreak_S_V = lbreak_Y_V.replace("\n"+"S"+sepa+"V", "\n"+"S"+"V")
 
+    #Replace 'v' with 'w' if preceded by a consonant 
+    #Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
+    tv_to_tw = lbreak_S_V.replace("tv", "tw")
+    Tv_to_Tw = tv_to_tw.replace("Tv", "Tw")
+    tV_to_tW = Tv_to_Tw.replace("tV", "tW") 
+    TV_to_TW = tV_to_tW.replace("TV", "TW")
+
+    dv_to_dw = TV_to_DW.replace("dv", "dw")
+    Dv_to_Dw = dv_to_dw.replace("Dv", "Dw")
+    dV_to_dW = Dv_to_Dw.replace("dV", "dW") 
+    DV_to_DW = dV_to_dW.replace("DV", "DW")
+
+    yv_to_yw = DV_to_DW.replace("yv", "yw")
+    Yv_to_Yw = yv_to_yw.replace("Yv", "Yw")
+    yV_to_yW = Yv_to_Yw.replace("yV", "yW") 
+    YV_to_YW = yV_to_yW.replace("YV", "YW")
+
+    sv_to_sw = YV_to_YW.replace("sv", "sw")
+    Sv_to_Sw = sv_to_sw.replace("Sv", "Sw")
+    sV_to_sW = Sv_to_Sw.replace("sV", "sW") 
+    SV_to_SW = sV_to_sW.replace("SV", "SW")
+
+    if v_to_w:
+        v_or_w = SV_to_SW
+    else:
+        v_or_w = lbreak_S_V
+ 
     # Remove double juncture signs
-    no_double_junctures = lbreak_S_V.replace(sepa+sepa,sepa)
-    NO_DOUBLE_JUNCTURES = lbreak_S_V.replace(sepa+sepa,sepa)
+    no_double_junctures = v_or_w.replace(sepa+sepa,sepa)
+    NO_DOUBLE_JUNCTURES = v_or_w.replace(sepa+sepa,sepa)
 
     # Remove double juncture signs
     no_double_junctures2 = no_double_junctures.replace(sepa+sepa,sepa)
@@ -2716,8 +2746,7 @@ st.markdown("<p style='text-align: center;'>[a, i, u] + Consonant + Vowel</p>", 
 #Give suggestions form \n
 #Copy to clipboard button \n
 #Download text \n
-#Line by line conversion \n
-#Indonesian page \n
+#Pages in other languages \n
 
 #**References**
 
