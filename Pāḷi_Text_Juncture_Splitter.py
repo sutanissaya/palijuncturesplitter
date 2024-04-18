@@ -2723,8 +2723,8 @@ st.markdown("<p style='text-align: center;'>[a, i, u] + Consonant + Vowel</p>", 
 
 st.divider()
 
-st.markdown("<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us at sutanissaya@gmail.com.</p>", unsafe_allow_html=True)
-st.markdown("<p><em>This web tool is licensed under [CC0-1.0 Universal](https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE).  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>", unsafe_allow_html=True)
+st.markdown("<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us at [sutanissaya@gmail.com](mailto:sutanissaya@gmail.com).</p>", unsafe_allow_html=True)
+st.markdown("<p><em>This web tool is licensed under <a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE">CC0-1.0 Universal</a>.  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>", unsafe_allow_html=True)
 
 st.divider()
 
