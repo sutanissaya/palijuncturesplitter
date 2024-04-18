@@ -2290,7 +2290,7 @@ def animation_demo() -> None:
     tV_to_tW = Tv_to_Tw.replace("tV", "tW") 
     TV_to_TW = tV_to_tW.replace("TV", "TW")
 
-    dv_to_dw = TV_to_DW.replace("dv", "dw")
+    dv_to_dw = TV_to_TW.replace("dv", "dw")
     Dv_to_Dw = dv_to_dw.replace("Dv", "Dw")
     dV_to_dW = Dv_to_Dw.replace("dV", "dW") 
     DV_to_DW = dV_to_dW.replace("DV", "DW")
