@@ -54,7 +54,9 @@ def animation_demo() -> None:
     ng_check = st.sidebar.checkbox(label='ṅ, ṃ, ṁ → ng')
 
     # v → w if preceded by a consonant in the same syllable
-    v_to_w = st.sidebar.checkbox(label='v → w if preceded by a consonant in the same syllable')
+    # Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
+    v_to_w = st.sidebar.checkbox(label='v → w')
+    st.sidebar.caption('↳ if preceded by a consonant in the same syllable')
 
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
@@ -2283,8 +2285,8 @@ def animation_demo() -> None:
     lbreak_Y_V = lbreak_D_V.replace("\n"+"Y"+sepa+"V", "\n"+"Y"+"V")
     lbreak_S_V = lbreak_Y_V.replace("\n"+"S"+sepa+"V", "\n"+"S"+"V")
 
-    #Replace 'v' with 'w' if preceded by a consonant 
-    #Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
+    # Replace 'v' with 'w' if preceded by a consonant in the same syllable
+    # Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
     tv_to_tw = lbreak_S_V.replace("tv", "tw")
     Tv_to_Tw = tv_to_tw.replace("Tv", "Tw")
     tV_to_tW = Tv_to_Tw.replace("tV", "tW") 
