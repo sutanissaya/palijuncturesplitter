@@ -7,7 +7,7 @@ import pandas as pd
 
 LOGGER = get_logger(__name__)
 
-st.set_page_config(page_title="Pāḷi Text Juncture Splitterrrrr", page_icon="🌴")
+st.set_page_config(page_title="Pāḷi Text Juncture Splitter", page_icon="🌴")
 
 # Sidebar
 
@@ -2739,6 +2739,5 @@ show_app_code = st.sidebar.checkbox (label='Show app code')
 if show_app_code:
     show_code(animation_demo)
 
-st.sidebar.markdown("tessttett")
-
-st.sidebar.markdown('View [GitHub repository](https://github.com/PaliJunctureSeparator/Pali-Juncture-Splitter.git)')
+st.sidebar.markdown('View [GitHub repository](https://github.com/sutanissaya/palijuncturesplitter.git)')
+st.sidebar.markdown('Read [CC0-1.0 License](https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE)')
