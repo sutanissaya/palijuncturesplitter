@@ -27,7 +27,7 @@ st.markdown("<h4 style='text-align: center;'>What is it and who is it for?</h6>"
 
 """
 The _Pāḷi Text Juncture Splitter_ is a fragmentizing tool that break up Pāḷi texts based on the class of each syllable (heavy or light) so that you may read them _effortlessly_ with just the right tempo.\n
-It is perfect for beginners and intermediates in Pāḷi reading, Pāḷi instructors who are looking for a teaching aid, as well as those who would like to proficiently chant Parittā verses.\n
+It is great for beginners and intermediates in Pāḷi reading, Pāḷi instructors who are looking for a teaching aid, as well as those who would like to proficiently chant Parittā verses.\n
 """
 
 st.markdown("<h6 style='text-align: center;'>For an example, here is a split stanza from <em>Ratana Sutta</em>:</h6>", unsafe_allow_html=True)
