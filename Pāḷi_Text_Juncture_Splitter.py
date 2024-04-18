@@ -2721,14 +2721,6 @@ st.markdown("<p>It works by adding breaks or visual spacers after <em>every heav
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
 st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 
-st.markdown("<h6 style='text-align: center;'>Long vowels:</h6>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>• [ā, ī, ū, e, o]</p>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>• [a, i, u] + ṃ</p>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>• [a, i, u] + Consonant + Consonant</p>", unsafe_allow_html=True)
-
-st.markdown("<h6 style='text-align: center;'>Short vowels:</h6>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>[a, i, u] + Consonant + Vowel</p>", unsafe_allow_html=True)
-
 #"""
 #**Pāḷi Phonology**
 
