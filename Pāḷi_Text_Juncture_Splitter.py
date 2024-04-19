@@ -2801,9 +2801,9 @@ st.divider()
 
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
 
-st.markdown('<p>• <a href="https://tipitaka.app/">Chaṭṭha Saṅgāyanā Tipiṭaka</a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://tipitaka.app/">Tipiṭaka—the Three Baskets of the Buddhist canon</a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Chaṭṭha Saṅgāyanā Tipiṭaka</strong></a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Tipiṭaka—the Three Baskets of the Buddhist canon</strong></a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html"><strong>Bhikkhu Manual: Essential Chants</strong></a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
 
 
 
