@@ -97,12 +97,12 @@ def animation_demo() -> None:
     fixed_text= insert_text.replace('\n','  \n')
 
     # Remove circumflex in Â, â, Î, î, Û, û, Ê, ê, Ô, ô
-    A_cf = fixed_text.replace('Â','A')
-    a_cf = A_cf.replace('â','a')
-    I_cf = a_cf.replace('Î','I')
-    i_cf = I_cf.replace('î','i')
-    U_cf = i_cf.replace('Û','U')
-    u_cf = U_cf.replace('û','u')
+    A_cf = fixed_text.replace('Â','Ā')
+    a_cf = A_cf.replace('â','ā')
+    I_cf = a_cf.replace('Î','Ī')
+    i_cf = I_cf.replace('î','ī')
+    U_cf = i_cf.replace('Û','Ū')
+    u_cf = U_cf.replace('û','ū')
     E_cf = u_cf.replace('Ê','E')
     e_cf = E_cf.replace('ê','e')
     O_cf = e_cf.replace('Ô','O')
