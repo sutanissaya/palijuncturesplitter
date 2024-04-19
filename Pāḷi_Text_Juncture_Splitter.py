@@ -2733,7 +2733,7 @@ st.divider()
 
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
 
-st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants, Reference Edition (ebook)</a>, published by Amaravati Publications, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants, Reference Edition (ebook)</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
 
 
 
