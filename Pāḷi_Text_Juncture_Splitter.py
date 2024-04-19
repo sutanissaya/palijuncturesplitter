@@ -88,8 +88,7 @@ def animation_demo() -> None:
         sepa=(" "+custom_sepa+" ")
 
     # Show Unsplit Text of Each Split Line
-    show_unsplit = st.sidebar.checkbox(label='Show unsplit text')
-    st.sidebar.caption('↳ Unsplit text followed by split text line by line')
+    show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
 
     #Fix line breaks to double whitespaces and line breaks
     fixed_text= insert_text.replace('\n','  \n')
