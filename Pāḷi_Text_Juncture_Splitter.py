@@ -83,9 +83,8 @@ def animation_demo() -> None:
     # Default & Custom Juncture Sign
     def_sepa= " — "
     juncture_placeholder = "Optional"
-
     custom_sepa_input = st.sidebar.text_input(label='Customize your own juncture sign:', placeholder=juncture_placeholder)
-    custom_sepa = st.custom_sepa_input.code
+    custom_sepa = st.code(custom_sepa_input, language="markdown")
     st.sidebar.caption('↳ try • , _ , - , ^ , / , \ , = , ~ , | , )( , }{ , or ][ ')
     if custom_sepa == '':
         sepa=def_sepa
