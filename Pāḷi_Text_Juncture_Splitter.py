@@ -2305,13 +2305,13 @@ def animation_demo() -> None:
         convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
         # UPPERCASE
         convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
-    if anusvara_select == "Change to ṁ - ISO 15919: Pāḷi":
-        # lowercase
-        convert_to_ṁ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", "ṁ")
-        # UPPERCASE
-        convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
-    else:
-        convert_to_Ṁ_or_Ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES
+        if anusvara_select == "Change to ṁ - ISO 15919: Pāḷi":
+            # lowercase
+            convert_to_ṁ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", "ṁ")
+            # UPPERCASE
+            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
+        else:
+            convert_to_Ṁ_or_Ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES
 
     # Fix the position of preposition pauses and junctions signs
 
@@ -2763,7 +2763,6 @@ st.markdown('<p>We are looking for ways to improve this web tool. If you have an
 st.markdown('<p><em>This web tool is licensed under <a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE">CC0-1.0 Universal</a>.  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>', unsafe_allow_html=True)
 
 st.markdown('<p><a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/google1f77be58e496370d.html">google1f77be58e496370d.html</a></p>', unsafe_allow_html=True)
-
 
 st.divider()
 
