@@ -2699,20 +2699,22 @@ def animation_demo() -> None:
         sV_to_sW = Sv_to_Sw.replace("sV", "sW") 
         SV_to_SW = sV_to_sW.replace("SV", "SW")
         v_or_w = SV_to_SW
-
-    # Replace 'v' with 'w'
-    if v_w_select == "all 'v' → 'w'":
-        all_v_to_w = first_letters.replace("v", "w")
-        all_V_to_W = all_v_to_w.replace("V", "W")
-        v_or_w = all_V_to_W
-
-    # Replace 'w' with 'v'
-    if v_w_select == "all 'w' → 'v'":    
-        all_w_to_v = first_letters.replace("w", "v")
-        all_W_to_V = all_w_to_v.replace("W", "V")    
-        v_or_w = all_W_to_V
     else:
-        v_or_w = first_letters
+     
+        # Replace 'v' with 'w'
+        if v_w_select == "all 'v' → 'w'":
+            all_v_to_w = first_letters.replace("v", "w")
+            all_V_to_W = all_v_to_w.replace("V", "W")
+            v_or_w = all_V_to_W
+        else:
+    
+            # Replace 'w' with 'v'
+            if v_w_select == "all 'w' → 'v'":    
+                all_w_to_v = first_letters.replace("w", "v")
+                all_W_to_V = all_w_to_v.replace("W", "V")    
+                v_or_w = all_W_to_V
+            else:
+                v_or_w = first_letters
 
     # Show Unsplit Line by Line
     if show_unsplit:
