@@ -53,11 +53,6 @@ def animation_demo() -> None:
     # Nasal ṅ, ṃ, ṁ → ng)
     ng_check = st.sidebar.checkbox(label='ṅ, ṃ, ṁ → ng')
 
-    # v → w if preceded by a consonant in the same syllable
-    # Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
-    v_to_w = st.sidebar.checkbox(label='v → w')
-    st.sidebar.caption('↳ if preceded by a consonant in the same syllable')
-
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
 
@@ -69,6 +64,14 @@ def animation_demo() -> None:
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
 
+    # v ⇄ w
+    v_w_select = st.sidebar.selectbox(
+    "v ⇄ w",
+    ("None", "if preceded by a consonant in the same syllable, 'v' → 'w'", "all 'v' → 'w'", "all 'w' → 'v'"),
+    index=None,
+    placeholder="None",
+    )
+ 
     # Anusvāra/niggahīta standard conversion (ṃ ⇄ ṁ)
     anusvara_select = st.sidebar.selectbox(
     "Anusvāra/niggahīta standard conversion  \n(ṃ ⇄ ṁ)",
@@ -2306,11 +2309,23 @@ def animation_demo() -> None:
     sV_to_sW = Sv_to_Sw.replace("sV", "sW") 
     SV_to_SW = sV_to_sW.replace("SV", "SW")
 
-    if v_to_w:
+    # Replace 'v' with 'w'
+    all_v_to_w = SV_to_SW.replace("v", "w")
+    all_V_to_W = all_v_to_w.replace("V", "W")
+
+    # Replace 'w' with 'v'
+    all_w_to_v = all_V_to_W.replace("w", "v")
+    all_W_to_V = all_w_to_v.replace("W", "V")
+
+    if v_w_select == "if preceded by a consonant in the same syllable, 'v' → 'w'":
         v_or_w = SV_to_SW
+    if v_w_select == "all 'v' → 'w'":
+        v_or_w = all_V_to_W
+    if v_w_select == "all 'w' → 'v'":
+        v_or_w = all_W_to_V
     else:
         v_or_w = lbreak_S_V
- 
+  
     # Remove double juncture signs
     no_double_junctures = v_or_w.replace(sepa+sepa,sepa)
     NO_DOUBLE_JUNCTURES = v_or_w.replace(sepa+sepa,sepa)
