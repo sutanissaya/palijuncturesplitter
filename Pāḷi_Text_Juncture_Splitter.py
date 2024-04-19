@@ -67,7 +67,7 @@ def animation_demo() -> None:
     # v ⇄ w
     v_w_select = st.sidebar.selectbox(
     "v ⇄ w",
-    ("None", "a", "b", "c"),
+    ("None", "if preceded by a consonant in the same syllable, 'v' → 'w'", "all 'v' → 'w'", "all 'w' → 'v'"),
     index=None,
     placeholder="None",
     )
@@ -127,11 +127,11 @@ def animation_demo() -> None:
     all_w_to_v = all_V_to_W.replace("w", "v")
     all_W_to_V = all_w_to_v.replace("W", "V")
 
-    if v_w_select == "a":
+    if v_w_select == "if preceded by a consonant in the same syllable, 'v' → 'w'":
         v_or_w = SV_to_SW
-    if v_w_select == "b":
+    if v_w_select == "all 'v' → 'w'":
         v_or_w = all_V_to_W
-    if v_w_select == "c":
+    if v_w_select == "all 'w' → 'v'":
         v_or_w = all_W_to_V
     else:
         v_or_w = fixed_text
