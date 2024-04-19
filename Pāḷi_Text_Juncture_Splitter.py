@@ -93,12 +93,24 @@ def animation_demo() -> None:
     # Show Unsplit Text of Each Split Line
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
 
-    #Fix line breaks to double whitespaces and line breaks
+    # Fix line breaks to double whitespaces and line breaks
     fixed_text= insert_text.replace('\n','  \n')
-    
+
+    # Remove circumflex in Â, â, Î, î, Û, û, Ê, ê, Ô, ô
+    A_cf = fixed_text.replace('Â','A')
+    a_cf = A_cf.replace('â','a')
+    I_cf = a_cf.replace('Î','I')
+    i_cf = I_cf.replace('î','i')
+    U_cf = i_cf.replace('Û','U')
+    u_cf = U_cf.replace('û','u')
+    E_cf = u_cf.replace('Ê','E')
+    e_cf = E_cf.replace('ê','e')
+    O_cf = e_cf.replace('Ô','O')
+    o_cf = O_cf.replace('ô','o')
+ 
     # Insert juncture sign after long vowels (ā, ī, ū, e, o)
     # lowercase
-    added_V_ā_sepa = fixed_text.replace('ā','ā'+sepa)
+    added_V_ā_sepa = o_cf.replace('ā','ā'+sepa)
     added_V_ī_sepa = added_V_ā_sepa.replace('ī','ī'+sepa)
     added_V_ū_sepa = added_V_ī_sepa.replace('ū','ū'+sepa)
     added_V_e_sepa = added_V_ū_sepa.replace('e','e'+sepa)
@@ -2733,7 +2745,8 @@ st.divider()
 
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
 
-st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants, Reference Edition (ebook)</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
 
 
 
