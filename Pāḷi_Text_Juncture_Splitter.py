@@ -107,10 +107,14 @@ def animation_demo() -> None:
     e_cf = E_cf.replace('ê','e')
     O_cf = e_cf.replace('Ô','O')
     o_cf = O_cf.replace('ô','o')
+
+    # Convert ('m'+' ') to ('ṃ'+' ')
+    m_ṃ = o_cf.replace('m'+' ','ṃ'+' ')
+    M_Ṃ = m_ṃ.replace('M'+' ','Ṃ'+' ')
  
     # Insert juncture sign after long vowels (ā, ī, ū, e, o)
     # lowercase
-    added_V_ā_sepa = o_cf.replace('ā','ā'+sepa)
+    added_V_ā_sepa = M_Ṃ.replace('ā','ā'+sepa)
     added_V_ī_sepa = added_V_ā_sepa.replace('ī','ī'+sepa)
     added_V_ū_sepa = added_V_ī_sepa.replace('ū','ū'+sepa)
     added_V_e_sepa = added_V_ū_sepa.replace('e','e'+sepa)
@@ -2745,8 +2749,10 @@ st.divider()
 
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
 
-st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p><a href="https://tipitaka.app/">Chaṭṭha Saṃgāyanā Tipiṭaka</a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p><a href="https://tipitaka.app/">• Chaṭṭha Saṅgāyanā Tipiṭaka</a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p><a href="https://tipitaka.app/">• Tipiṭaka—the Three Baskets of the Buddhist canon</a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">• Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+
 
 
 
