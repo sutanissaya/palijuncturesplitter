@@ -2305,6 +2305,7 @@ def animation_demo() -> None:
         convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
         # UPPERCASE
         convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
+    else:
         if anusvara_select == "Change to ṁ - ISO 15919: Pāḷi":
             # lowercase
             convert_to_ṁ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", "ṁ")
