@@ -88,7 +88,7 @@ def animation_demo() -> None:
     if custom_sepa == '':
         sepa=def_sepa
     else:
-        sepa=(" "+{custom_sepa}+" ")
+        sepa=(" "+(custom_sepa)+" ")
 
     # Show Unsplit Text of Each Split Line
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
