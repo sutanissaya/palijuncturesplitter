@@ -108,13 +108,23 @@ def animation_demo() -> None:
     O_cf = e_cf.replace('Ô','O')
     o_cf = O_cf.replace('ô','o')
 
-    # Convert ('m'+' ') to ('ṃ'+' ')
-    m_ṃ = o_cf.replace('m'+' ','ṃ'+' ')
-    M_Ṃ = m_ṃ.replace('M'+' ','Ṃ'+' ')
+    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", semi-colon";", colon ":", or a line break / enter (char(10) or \n)
+    m_ṃ_space = o_cf.replace('m'+' ','ṃ'+' ')
+    M_Ṃ_space = m_ṃ_space.replace('M'+' ','Ṃ'+' ')
+    m_ṃ_comma = M_Ṃ_space.replace('m'+',','ṃ'+',')
+    M_Ṃ_comma = m_ṃ_comma.replace('M'+',','Ṃ'+',')
+    m_ṃ_period = M_Ṃ_comma.replace('m'+'.','ṃ'+'.')
+    M_Ṃ_period = m_ṃ_period.replace('M'+'.','Ṃ'+'.')
+    m_ṃ_semicolon = M_Ṃ_period.replace('m'+';','ṃ'+';')
+    M_Ṃ_semicolon = m_ṃ_semicolon.replace('M'+';','Ṃ'+';')
+    m_ṃ_colon = M_Ṃ_semicolon.replace('m'+':','ṃ'+':')
+    M_Ṃ_colon = m_ṃ_colon.replace('M'+':','Ṃ'+':')
+    m_ṃ_lbreak = M_Ṃ_colon.replace('m'+'\n','ṃ'+'\n')
+    M_Ṃ_lbreak = m_ṃ_lbreak.replace('M'+'\n','Ṃ'+'\n')
  
     # Insert juncture sign after long vowels (ā, ī, ū, e, o)
     # lowercase
-    added_V_ā_sepa = M_Ṃ.replace('ā','ā'+sepa)
+    added_V_ā_sepa = M_Ṃ_lbreak.replace('ā','ā'+sepa)
     added_V_ī_sepa = added_V_ā_sepa.replace('ī','ī'+sepa)
     added_V_ū_sepa = added_V_ī_sepa.replace('ū','ū'+sepa)
     added_V_e_sepa = added_V_ū_sepa.replace('e','e'+sepa)
@@ -2147,7 +2157,7 @@ def animation_demo() -> None:
     ES_sepa_V = ŪS_sepa_V.replace("E"+sepa+"S"+sepa+"V", "E"+"S"+sepa+"V")
     OS_sepa_V = ES_sepa_V.replace("O"+sepa+"S"+sepa+"V", "O"+"S"+sepa+"V")
 
-    # Remove juncture sign; "_" in certain double consonants if the syllables begin with a capitalized letter, preceeded by a space " ", or a line break / enter (char(10)
+    # Remove juncture sign; "_" in certain double consonants if the syllables begin with a capitalized letter, preceeded by a space " ", or a line break / enter (char(10))
     #lowercase
     if uppercase_check:
         os_sepa_v_or_OS_sepa_V = OS_sepa_V
@@ -2749,9 +2759,9 @@ st.divider()
 
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
 
-st.markdown('<p><a href="https://tipitaka.app/">• Chaṭṭha Saṅgāyanā Tipiṭaka</a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p><a href="https://tipitaka.app/">• Tipiṭaka—the Three Baskets of the Buddhist canon</a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p><a href="https://bhikkhu-manual.github.io/essential-chants.html">• Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/">Chaṭṭha Saṅgāyanā Tipiṭaka</a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/">Tipiṭaka—the Three Baskets of the Buddhist canon</a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html">Bhikkhu Manual: Essential Chants</a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
 
 
 
