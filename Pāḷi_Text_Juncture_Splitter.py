@@ -96,9 +96,49 @@ def animation_demo() -> None:
     #Fix line breaks to double whitespaces and line breaks
     fixed_text= insert_text.replace('\n','  \n')
 
+ 
+    # Replace 'v' with 'w' if preceded by a consonant in the same syllable
+    # Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
+    tv_to_tw = fixed_text.replace("tv", "tw")
+    Tv_to_Tw = tv_to_tw.replace("Tv", "Tw")
+    tV_to_tW = Tv_to_Tw.replace("tV", "tW") 
+    TV_to_TW = tV_to_tW.replace("TV", "TW")
+
+    dv_to_dw = TV_to_TW.replace("dv", "dw")
+    Dv_to_Dw = dv_to_dw.replace("Dv", "Dw")
+    dV_to_dW = Dv_to_Dw.replace("dV", "dW") 
+    DV_to_DW = dV_to_dW.replace("DV", "DW")
+
+    yv_to_yw = DV_to_DW.replace("yv", "yw")
+    Yv_to_Yw = yv_to_yw.replace("Yv", "Yw")
+    yV_to_yW = Yv_to_Yw.replace("yV", "yW") 
+    YV_to_YW = yV_to_yW.replace("YV", "YW")
+
+    sv_to_sw = YV_to_YW.replace("sv", "sw")
+    Sv_to_Sw = sv_to_sw.replace("Sv", "Sw")
+    sV_to_sW = Sv_to_Sw.replace("sV", "sW") 
+    SV_to_SW = sV_to_sW.replace("SV", "SW")
+
+    # Replace 'v' with 'w'
+    all_v_to_w = SV_to_SW.replace("v", "w")
+    all_V_to_W = all_v_to_w.replace("V", "W")
+
+    # Replace 'w' with 'v'
+    all_w_to_v = all_V_to_W.replace("w", "v")
+    all_W_to_V = all_w_to_v.replace("W", "V")
+
+    if v_w_select == "a":
+        v_or_w = SV_to_SW
+    if v_w_select == "b":
+        v_or_w = all_V_to_W
+    if v_w_select == "c":
+        v_or_w = all_W_to_V
+    else:
+        v_or_w = fixed_text
+
     # Insert juncture sign after long vowels (ā, ī, ū, e, o)
     # lowercase
-    added_V_ā_sepa = fixed_text.replace('ā','ā'+sepa)
+    added_V_ā_sepa = v_or_w.replace('ā','ā'+sepa)
     added_V_ī_sepa = added_V_ā_sepa.replace('ī','ī'+sepa)
     added_V_ū_sepa = added_V_ī_sepa.replace('ū','ū'+sepa)
     added_V_e_sepa = added_V_ū_sepa.replace('e','e'+sepa)
@@ -2287,48 +2327,9 @@ def animation_demo() -> None:
     lbreak_Y_V = lbreak_D_V.replace("\n"+"Y"+sepa+"V", "\n"+"Y"+"V")
     lbreak_S_V = lbreak_Y_V.replace("\n"+"S"+sepa+"V", "\n"+"S"+"V")
 
-    # Replace 'v' with 'w' if preceded by a consonant in the same syllable
-    # Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview 
-    tv_to_tw = lbreak_S_V.replace("tv", "tw")
-    Tv_to_Tw = tv_to_tw.replace("Tv", "Tw")
-    tV_to_tW = Tv_to_Tw.replace("tV", "tW") 
-    TV_to_TW = tV_to_tW.replace("TV", "TW")
-
-    dv_to_dw = TV_to_TW.replace("dv", "dw")
-    Dv_to_Dw = dv_to_dw.replace("Dv", "Dw")
-    dV_to_dW = Dv_to_Dw.replace("dV", "dW") 
-    DV_to_DW = dV_to_dW.replace("DV", "DW")
-
-    yv_to_yw = DV_to_DW.replace("yv", "yw")
-    Yv_to_Yw = yv_to_yw.replace("Yv", "Yw")
-    yV_to_yW = Yv_to_Yw.replace("yV", "yW") 
-    YV_to_YW = yV_to_yW.replace("YV", "YW")
-
-    sv_to_sw = YV_to_YW.replace("sv", "sw")
-    Sv_to_Sw = sv_to_sw.replace("Sv", "Sw")
-    sV_to_sW = Sv_to_Sw.replace("sV", "sW") 
-    SV_to_SW = sV_to_sW.replace("SV", "SW")
-
-    # Replace 'v' with 'w'
-    all_v_to_w = SV_to_SW.replace("v", "w")
-    all_V_to_W = all_v_to_w.replace("V", "W")
-
-    # Replace 'w' with 'v'
-    all_w_to_v = all_V_to_W.replace("w", "v")
-    all_W_to_V = all_w_to_v.replace("W", "V")
-
-    if v_w_select == "a":
-        v_or_w = SV_to_SW
-    if v_w_select == "b":
-        v_or_w = all_V_to_W
-    if v_w_select == "c":
-        v_or_w = all_W_to_V
-    else:
-        v_or_w = lbreak_S_V
-  
     # Remove double juncture signs
-    no_double_junctures = v_or_w.replace(sepa+sepa,sepa)
-    NO_DOUBLE_JUNCTURES = v_or_w.replace(sepa+sepa,sepa)
+    no_double_junctures = lbreak_S_V.replace(sepa+sepa,sepa)
+    NO_DOUBLE_JUNCTURES = lbreak_S_V.replace(sepa+sepa,sepa)
 
     # Remove double juncture signs
     no_double_junctures2 = no_double_junctures.replace(sepa+sepa,sepa)
