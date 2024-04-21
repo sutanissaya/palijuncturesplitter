@@ -2741,7 +2741,7 @@ def animation_demo() -> None:
         sepa_colon_OR_sepa_sepa_colon = sepa_colon
         # Fix the position of preposition pauses and junctions signs
         sepa_sepa_comma = sepa_colon_OR_sepa_sepa_colon.replace(sepa+",",","+sepa)
-        sepa_sepa_period = sepa_sepa_comma.replace(sepa+".","."+sepa+)
+        sepa_sepa_period = sepa_sepa_comma.replace(sepa+".","."+sepa)
         sepa_sepa_scolon = sepa_sepa_period.replace(sepa+";",";"+sepa)
         sepa_sepa_colon = sepa_sepa_scolon.replace(sepa+":",":"+sepa)
 
