@@ -2668,18 +2668,10 @@ def animation_demo() -> None:
                 v_or_w = all_W_to_V
             else:
                 v_or_w = first_letters
-
-    # Double juncture signs before commas, periods, semi-colons, colons, double spaces, and line-breaks
-    dsepa_comma = v_or_w.replace(",",sepa+sepa+",")
-    dsepa_period = dsepa_comma.replace(".",sepa+sepa+".")
-    dsepa_scolon = dsepa_period.replace(";",sepa+sepa+";")
-    dsepa_colon = dsepa_scolon.replace(":",sepa+sepa+":")
-    dsepa_dspace = dsepa_colon.replace("  ",sepa+sepa+"  ")
-    dsepa_lbreak = dsepa_dspace.replace("  \n",sepa+sepa+"  \n")
  
     # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
     # lowercase
-    undo_a_sepa_lbreak = dsepa_lbreak.replace("a"+sepa+sepa+"  \n", "a"+"  \n")
+    undo_a_sepa_lbreak = v_or_w.replace("a"+sepa+sepa+"  \n", "a"+"  \n")
     undo_i_sepa_lbreak = undo_a_sepa_lbreak.replace("i"+sepa+sepa+"  \n", "i"+"  \n")
     undo_u_sepa_lbreak = undo_i_sepa_lbreak.replace("u"+sepa+sepa+"  \n", "u"+"  \n")
 
