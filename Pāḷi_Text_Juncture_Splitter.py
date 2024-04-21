@@ -2670,61 +2670,61 @@ def animation_demo() -> None:
                 v_or_w = first_letters
  
     # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
-    sepa_lbreak = v_or_w.replace("  \n", sepa+sepa+"  \n")
-    sepa_dspace = sepa_lbreak.replace("  ", sepa+sepa+"  ")
-    sepa_comma = sepa_dspace.replace(",", sepa+sepa+",")
-    sepa_period = sepa_comma.replace(".", sepa+sepa+".")
-    sepa_scolon = sepa_period.replace(";", sepa+sepa+";")
-    sepa_colon = sepa_scolon.replace(":", sepa+sepa+":")
+    sepa_lbreak = v_or_w.replace("  \n", sepa+"  \n")
+    sepa_dspace = sepa_lbreak.replace("  ", sepa+"  ")
+    sepa_comma = sepa_dspace.replace(",", sepa+",")
+    sepa_period = sepa_comma.replace(".", sepa+".")
+    sepa_scolon = sepa_period.replace(";", sepa+";")
+    sepa_colon = sepa_scolon.replace(":", sepa+":")
  
     # lowercase
-    undo_a_sepa_lbreak = sepa_colon.replace("a"+sepa+sepa+"  \n", "a"+"  \n")
-    undo_i_sepa_lbreak = undo_a_sepa_lbreak.replace("i"+sepa+sepa+"  \n", "i"+"  \n")
-    undo_u_sepa_lbreak = undo_i_sepa_lbreak.replace("u"+sepa+sepa+"  \n", "u"+"  \n")
+    undo_a_sepa_lbreak = sepa_colon.replace("a"+sepa+"  \n", "a"+"  \n")
+    undo_i_sepa_lbreak = undo_a_sepa_lbreak.replace("i"+sepa+"  \n", "i"+"  \n")
+    undo_u_sepa_lbreak = undo_i_sepa_lbreak.replace("u"+sepa+"  \n", "u"+"  \n")
 
-    undo_a_sepa_dspace = undo_u_sepa_lbreak.replace("a"+sepa+sepa+"  ", "a"+"  ")
-    undo_i_sepa_dspace = undo_a_sepa_dspace.replace("i"+sepa+sepa+"  ", "i"+"  ")
-    undo_u_sepa_dspace = undo_i_sepa_dspace.replace("u"+sepa+sepa+"  ", "u"+"  ")
+    undo_a_sepa_dspace = undo_u_sepa_lbreak.replace("a"+sepa+"  ", "a"+"  ")
+    undo_i_sepa_dspace = undo_a_sepa_dspace.replace("i"+sepa+"  ", "i"+"  ")
+    undo_u_sepa_dspace = undo_i_sepa_dspace.replace("u"+sepa+"  ", "u"+"  ")
 
-    undo_a_sepa_comma = undo_u_sepa_dspace.replace("a"+sepa+sepa+",", "a"+",")
-    undo_i_sepa_comma = undo_a_sepa_comma.replace("i"+sepa+sepa+",", "i"+",")
-    undo_u_sepa_comma = undo_i_sepa_comma.replace("u"+sepa+sepa+",", "u"+",")
+    undo_a_sepa_comma = undo_u_sepa_dspace.replace("a"+sepa+",", "a"+",")
+    undo_i_sepa_comma = undo_a_sepa_comma.replace("i"+sepa+",", "i"+",")
+    undo_u_sepa_comma = undo_i_sepa_comma.replace("u"+sepa+",", "u"+",")
 
-    undo_a_sepa_period = undo_u_sepa_comma.replace("a"+sepa+sepa+".", "a"+".")
-    undo_i_sepa_period = undo_a_sepa_period.replace("i"+sepa+sepa+".", "i"+".")
-    undo_u_sepa_period = undo_i_sepa_period.replace("u"+sepa+sepa+".", "u"+".")
+    undo_a_sepa_period = undo_u_sepa_comma.replace("a"+sepa+".", "a"+".")
+    undo_i_sepa_period = undo_a_sepa_period.replace("i"+sepa+".", "i"+".")
+    undo_u_sepa_period = undo_i_sepa_period.replace("u"+sepa+".", "u"+".")
 
-    undo_a_sepa_scolon = undo_u_sepa_period.replace("a"+sepa+sepa+";", "a"+";")
-    undo_i_sepa_scolon = undo_a_sepa_scolon.replace("i"+sepa+sepa+";", "i"+";")
-    undo_u_sepa_scolon = undo_i_sepa_scolon.replace("u"+sepa+sepa+";", "u"+";")
+    undo_a_sepa_scolon = undo_u_sepa_period.replace("a"+sepa+";", "a"+";")
+    undo_i_sepa_scolon = undo_a_sepa_scolon.replace("i"+sepa+";", "i"+";")
+    undo_u_sepa_scolon = undo_i_sepa_scolon.replace("u"+sepa+";", "u"+";")
 
-    undo_a_sepa_colon = undo_u_sepa_scolon.replace("a"+sepa+sepa+":", "a"+":")
-    undo_i_sepa_colon = undo_a_sepa_colon.replace("i"+sepa+sepa+":", "i"+":")
-    undo_u_sepa_colon = undo_i_sepa_colon.replace("u"+sepa+sepa+":", "u"+":")
+    undo_a_sepa_colon = undo_u_sepa_scolon.replace("a"+sepa+":", "a"+":")
+    undo_i_sepa_colon = undo_a_sepa_colon.replace("i"+sepa+":", "i"+":")
+    undo_u_sepa_colon = undo_i_sepa_colon.replace("u"+sepa+":", "u"+":")
     # UPPERCASE
-    undo_A_sepa_lbreak = undo_u_sepa_colon.replace("A"+sepa+sepa+"  \n", "A"+"  \n")
-    undo_I_sepa_lbreak = undo_A_sepa_lbreak.replace("I"+sepa+sepa+"  \n", "I"+"  \n")
-    undo_U_sepa_lbreak = undo_I_sepa_lbreak.replace("U"+sepa+sepa+"  \n", "U"+"  \n")
+    undo_A_sepa_lbreak = undo_u_sepa_colon.replace("A"+sepa+"  \n", "A"+"  \n")
+    undo_I_sepa_lbreak = undo_A_sepa_lbreak.replace("I"+sepa+"  \n", "I"+"  \n")
+    undo_U_sepa_lbreak = undo_I_sepa_lbreak.replace("U"+sepa+"  \n", "U"+"  \n")
 
-    undo_A_sepa_dspace = undo_U_sepa_lbreak.replace("A"+sepa+sepa+"  ", "A"+"  ")
-    undo_I_sepa_dspace = undo_A_sepa_dspace.replace("I"+sepa+sepa+"  ", "I"+"  ")
-    undo_U_sepa_dspace = undo_I_sepa_dspace.replace("U"+sepa+sepa+"  ", "U"+"  ")
+    undo_A_sepa_dspace = undo_U_sepa_lbreak.replace("A"+sepa+"  ", "A"+"  ")
+    undo_I_sepa_dspace = undo_A_sepa_dspace.replace("I"+sepa+"  ", "I"+"  ")
+    undo_U_sepa_dspace = undo_I_sepa_dspace.replace("U"+sepa+"  ", "U"+"  ")
 
-    undo_A_sepa_comma = undo_U_sepa_dspace.replace("A"+sepa+sepa+",", "A"+",")
-    undo_I_sepa_comma = undo_A_sepa_comma.replace("I"+sepa+sepa+",", "I"+",")
-    undo_U_sepa_comma = undo_I_sepa_comma.replace("U"+sepa+sepa+",", "U"+",")
+    undo_A_sepa_comma = undo_U_sepa_dspace.replace("A"+sepa+",", "A"+",")
+    undo_I_sepa_comma = undo_A_sepa_comma.replace("I"+sepa+",", "I"+",")
+    undo_U_sepa_comma = undo_I_sepa_comma.replace("U"+sepa+",", "U"+",")
 
-    undo_A_sepa_period = undo_U_sepa_comma.replace("A"+sepa+sepa+".", "A"+".")
-    undo_I_sepa_period = undo_A_sepa_period.replace("I"+sepa+sepa+".", "I"+".")
-    undo_U_sepa_period = undo_I_sepa_period.replace("U"+sepa+sepa+".", "U"+".")
+    undo_A_sepa_period = undo_U_sepa_comma.replace("A"+sepa+".", "A"+".")
+    undo_I_sepa_period = undo_A_sepa_period.replace("I"+sepa+".", "I"+".")
+    undo_U_sepa_period = undo_I_sepa_period.replace("U"+sepa+".", "U"+".")
 
-    undo_A_sepa_scolon = undo_U_sepa_period.replace("A"+sepa+sepa+";", "A"+";")
-    undo_I_sepa_scolon = undo_A_sepa_scolon.replace("I"+sepa+sepa+";", "I"+";")
-    undo_U_sepa_scolon = undo_I_sepa_scolon.replace("U"+sepa+sepa+";", "U"+";")
+    undo_A_sepa_scolon = undo_U_sepa_period.replace("A"+sepa+";", "A"+";")
+    undo_I_sepa_scolon = undo_A_sepa_scolon.replace("I"+sepa+";", "I"+";")
+    undo_U_sepa_scolon = undo_I_sepa_scolon.replace("U"+sepa+";", "U"+";")
 
-    undo_A_sepa_colon = undo_U_sepa_scolon.replace("A"+sepa+sepa+":", "A"+":")
-    undo_I_sepa_colon = undo_A_sepa_colon.replace("I"+sepa+sepa+":", "I"+":")
-    undo_U_sepa_colon = undo_I_sepa_colon.replace("U"+sepa+sepa+":", "U"+":")
+    undo_A_sepa_colon = undo_U_sepa_scolon.replace("A"+sepa+":", "A"+":")
+    undo_I_sepa_colon = undo_A_sepa_colon.replace("I"+sepa+":", "I"+":")
+    undo_U_sepa_colon = undo_I_sepa_colon.replace("U"+sepa+":", "U"+":")
  
     # Convert double juncture signs to single
     no_double_junctures = undo_U_sepa_colon.replace(sepa+sepa,sepa)
@@ -2740,10 +2740,10 @@ def animation_demo() -> None:
     else:
         sepa_colon_OR_sepa_sepa_colon = sepa_colon
         # Fix the position of preposition pauses and junctions signs
-        sepa_sepa_comma = sepa_colon_OR_sepa_sepa_colon.replace(sepa+sepa+",",","+sepa+sepa)
-        sepa_sepa_period = sepa_sepa_comma.replace(sepa+sepa+".","."+sepa+sepa)
-        sepa_sepa_scolon = sepa_sepa_period.replace(sepa+sepa+";",";"+sepa+sepa)
-        sepa_sepa_colon = sepa_sepa_scolon.replace(sepa+sepa+":",":"+sepa+sepa)
+        sepa_sepa_comma = sepa_colon_OR_sepa_sepa_colon.replace(sepa+",",","+sepa)
+        sepa_sepa_period = sepa_sepa_comma.replace(sepa+".","."+sepa+)
+        sepa_sepa_scolon = sepa_sepa_period.replace(sepa+";",";"+sepa)
+        sepa_sepa_colon = sepa_sepa_scolon.replace(sepa+":",":"+sepa)
 
     # Show Unsplit Line by Line
     if show_unsplit:
