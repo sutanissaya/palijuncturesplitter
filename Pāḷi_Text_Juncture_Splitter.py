@@ -2737,19 +2737,24 @@ def animation_demo() -> None:
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
 
     if samyoga_pauses_check:
-        sepa_colon_OR_v_or_w = sepa_colon
+        sepa_colon_OR_sepa_sepa_colon = sepa_colon
     else:
-        sepa_colon_OR_v_or_w = dsepa_lbreak
+        sepa_colon_OR_sepa_sepa_colon = dsepa_lbreak
+        # Fix the position of preposition pauses and junctions signs
+        sepa_sepa_comma = sepa_colon_OR_sepa_sepa_colon.replace(sepa+sepa+",",","+sepa+sepa)
+        sepa_sepa_period = sepa_sepa_comma.replace(sepa+sepa+".","."+sepa+sepa)
+        sepa_sepa_scolon = sepa_sepa_period.replace(sepa+sepa+";",";"+sepa+sepa)
+        sepa_sepa_colon = sepa_sepa_scolon.replace(sepa+sepa+":",":"+sepa+sepa)
 
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = sepa_colon_OR_v_or_w.split('\n')
+        output_lines = sepa_colon_OR_sepa_sepa_colon.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = sepa_colon_OR_v_or_w
+        unsplit_OR_split = sepa_colon_OR_sepa_sepa_colon
         st.write(unsplit_OR_split)
       
 animation_demo()
