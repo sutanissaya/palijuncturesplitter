@@ -2372,7 +2372,7 @@ def animation_demo() -> None:
     period_dsepa = comma_dsepa.replace("."+sepa,"."+sepa+sepa)
     scolon_dsepa = period_dsepa.replace(";"+sepa,";"+sepa+sepa)
     colon_dsepa = scolon_dsepa.replace(":"+sepa,":"+sepa+sepa)
-    dsepa_lbreak = scolon_dsepa.replace(sepa+"  \n",sepa+sepa+"  \n")
+    dsepa_lbreak = colon_dsepa.replace(sepa+"  \n",sepa+sepa+"  \n")
 
     # (Optional) Anusvāra / niggahīta standard conversion
 
