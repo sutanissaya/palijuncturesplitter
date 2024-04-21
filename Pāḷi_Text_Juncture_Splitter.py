@@ -2767,9 +2767,6 @@ def animation_demo() -> None:
     undo_A_sepa_colon = undo_U_sepa_scolon.replace("A"+sepa+":", "A"+":")
     undo_I_sepa_colon = undo_A_sepa_colon.replace("I"+sepa+":", "I"+":")
     undo_U_sepa_colon = undo_I_sepa_colon.replace("U"+sepa+":", "U"+":")
- 
-    # Convert double juncture signs to single
-    no_double_junctures = undo_U_sepa_colon.replace(sepa+sepa,sepa)
 
     if samyoga_pauses_check:
         samyoga_or_not = no_double_junctures
