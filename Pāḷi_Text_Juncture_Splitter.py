@@ -2363,14 +2363,22 @@ def animation_demo() -> None:
     no_double_junctures2 = no_double_junctures.replace(sepa+sepa,sepa)
     NO_DOUBLE_JUNCTURES2 = NO_DOUBLE_JUNCTURES.replace(sepa+sepa,sepa)
 
-    # (Optional) Anusvāra / niggahīta standard conversion
+    # Double juncture signs after commas, periods, semi-colons, colons, and line-breaks
     if uppercase_check:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = NO_DOUBLE_JUNCTURES2
     else:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = no_double_junctures2
+    comma_dsepa = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(","+sepa,","+sepa+sepa)
+    period_dsepa = comma_dsepa.replace("."+sepa,"."+sepa+sepa)
+    scolon_dsepa = period_dsepa.replace(";"+sepa,";"+sepa+sepa)
+    colon_dsepa = scolon_dsepa.replace(":"+sepa,":"+sepa+sepa)
+    dsepa_lbreak = scolon_dsepa.replace(sepa+"  \n",sepa+sepa+"  \n")
+
+    # (Optional) Anusvāra / niggahīta standard conversion
+
     if anusvara_select == "Change to ṃ - IAST (International Alphabet of Sanskrit Transliteration)":
         # lowercase
-        convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
+        convert_to_ṃ = dsepa_lbreak.replace("ṁ", "ṃ")
         # UPPERCASE
         convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
     else:
@@ -2384,10 +2392,10 @@ def animation_demo() -> None:
 
     # Fix the position of preposition pauses and junctions signs
 
-    sepa_comma = convert_to_Ṁ_or_Ṃ.replace(sepa+",",","+sepa+sepa)
-    sepa_period = sepa_comma.replace(sepa+".","."+sepa+sepa)
-    sepa_scolon = sepa_period.replace(sepa+";",";"+sepa+sepa)
-    sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa+sepa)
+    sepa_comma = convert_to_Ṁ_or_Ṃ.replace(sepa+",",","+sepa)
+    sepa_period = sepa_comma.replace(sepa+".","."+sepa)
+    sepa_scolon = sepa_period.replace(sepa+";",";"+sepa)
+    sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
 
     # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
     # lowercase
