@@ -2723,19 +2723,19 @@ def animation_demo() -> None:
     no_double_junctures = undo_U_sepa_colon.replace(sepa+sepa,sepa)
 
     if samyoga_pauses_check:
-        sepa_colon_OR_sepa_sepa_colon = no_double_junctures
+        samyoga_or_not = no_double_junctures
     else:
-        sepa_colon_OR_sepa_sepa_colon = v_or_w
+        samyoga_or_not = v_or_w
 
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = sepa_colon_OR_sepa_sepa_colon.split('\n')
+        output_lines = samyoga_or_not.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = sepa_colon_OR_sepa_sepa_colon
+        unsplit_OR_split = samyoga_or_not
         st.write(unsplit_OR_split)
       
 animation_demo()
