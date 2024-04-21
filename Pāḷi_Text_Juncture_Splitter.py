@@ -2099,7 +2099,7 @@ def animation_demo() -> None:
     Tv = Ss.replace("T"+sepa+"v", "T"+"v")
     Dv = Tv.replace("D"+sepa+"v", "D"+"v")
     Yv = Dv.replace("Y"+sepa+"v", "Y"+"v")
-    Sv = Yv.replace("S"+sepa+"v", "S"+"v")
+    Sv = Yv.replace("S"+sepa+"v", "S"+sepa+"v")
     space_h_m = Sv.replace(" "+"h"+sepa+"m", " "+"h"+"m")
     space_s_m = space_h_m.replace(" "+"s"+sepa+"m", " "+"s"+"m")
     space_ñ_h = space_s_m.replace(" "+"ñ"+sepa+"h", " "+"ñ"+"h")
