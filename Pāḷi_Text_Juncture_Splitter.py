@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit.logger import get_logger
-from streamlit.hello.utils 
-import show_code
+from streamlit.hello.utils import show_code
 import altair as alt
 import numpy as np
 import pandas as pd
