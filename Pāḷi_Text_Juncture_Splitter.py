@@ -2404,12 +2404,12 @@ def animation_demo() -> None:
         st.markdown('''
         :gray[The split text will be shown here.]''')
     if nasal_check:
-        u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G = Ṁ_to_Ṅ_sepa_G
+        nasal_or_not = Ṁ_to_Ṅ_sepa_G
     else:
-        u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon
+        nasal_or_not = convert_to_Ṁ_or_Ṃ
 
     # Nasal ññ → nñ
-    ññ_to_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
+    ññ_to_nñ = nasal_or_not.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
     ÑÑ_to_NÑ = ññ_to_nñ.replace("Ñ"+sepa+"Ñ", "N"+sepa+"Ñ")
     Ññ_to_Nñ = ÑÑ_to_NÑ.replace("Ñ"+sepa+"ñ", "N"+sepa+"ñ")
     ñÑ_to_nÑ = Ññ_to_Nñ.replace("ñ"+sepa+"Ñ", "n"+sepa+"Ñ")
@@ -2417,7 +2417,7 @@ def animation_demo() -> None:
     if nñ_check:
         nasal_nñ = ñÑ_to_nÑ
     else:
-        nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G
+        nasal_nñ = nasal_or_not
 
     # Nasal ṅ, ṃ, ṁ → ng
         #lowercase
