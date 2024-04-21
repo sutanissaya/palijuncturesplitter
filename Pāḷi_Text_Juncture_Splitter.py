@@ -2731,7 +2731,7 @@ def animation_demo() -> None:
     if samyoga_pauses_check:
         sepa_colon_OR_sepa_sepa_colon = sepa_colon
     else:
-        sepa_colon_OR_sepa_sepa_colon = dsepa_lbreak
+        sepa_colon_OR_sepa_sepa_colon = v_or_w
         # Fix the position of preposition pauses and junctions signs
         sepa_sepa_comma = sepa_colon_OR_sepa_sepa_colon.replace(sepa+sepa+",",","+sepa+sepa)
         sepa_sepa_period = sepa_sepa_comma.replace(sepa+sepa+".","."+sepa+sepa)
