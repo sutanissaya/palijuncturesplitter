@@ -2729,12 +2729,6 @@ def animation_demo() -> None:
     # Convert double juncture signs to single
     no_double_junctures = undo_U_sepa_colon.replace(sepa+sepa,sepa)
 
-     # Fix the position of preposition pauses and junctions signs
-    sepa_comma = no_double_junctures.replace(sepa+",",","+sepa)
-    sepa_period = sepa_comma.replace(sepa+".","."+sepa)
-    sepa_scolon = sepa_period.replace(sepa+";",";"+sepa)
-    sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
-
     if samyoga_pauses_check:
         sepa_colon_OR_sepa_sepa_colon = sepa_colon
     else:
