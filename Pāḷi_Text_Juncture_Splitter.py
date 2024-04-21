@@ -2668,17 +2668,10 @@ def animation_demo() -> None:
                 v_or_w = all_W_to_V
             else:
                 v_or_w = first_letters
- 
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
-    sepa_lbreak = v_or_w.replace("  \n", sepa+"  \n")
-    sepa_dspace = sepa_lbreak.replace("  ", sepa+"  ")
-    sepa_comma = sepa_dspace.replace(",", sepa+",")
-    sepa_period = sepa_comma.replace(".", sepa+".")
-    sepa_scolon = sepa_period.replace(";", sepa+";")
-    sepa_colon = sepa_scolon.replace(":", sepa+":")
+
  
     # lowercase
-    undo_a_sepa_lbreak = sepa_colon.replace("a"+sepa+"  \n", "a"+"  \n")
+    undo_a_sepa_lbreak = v_or_w.replace("a"+sepa+"  \n", "a"+"  \n")
     undo_i_sepa_lbreak = undo_a_sepa_lbreak.replace("i"+sepa+"  \n", "i"+"  \n")
     undo_u_sepa_lbreak = undo_i_sepa_lbreak.replace("u"+sepa+"  \n", "u"+"  \n")
 
@@ -2730,14 +2723,9 @@ def animation_demo() -> None:
     no_double_junctures = undo_U_sepa_colon.replace(sepa+sepa,sepa)
 
     if samyoga_pauses_check:
-        sepa_colon_OR_sepa_sepa_colon = sepa_colon
+        sepa_colon_OR_sepa_sepa_colon = no_double_junctures
     else:
-        sepa_colon_OR_sepa_sepa_colon = sepa_colon
-        # Fix the position of preposition pauses and junctions signs
-        sepa_sepa_comma = sepa_colon_OR_sepa_sepa_colon.replace(sepa+",",","+sepa)
-        sepa_sepa_period = sepa_sepa_comma.replace(sepa+".","."+sepa)
-        sepa_sepa_scolon = sepa_sepa_period.replace(sepa+";",";"+sepa)
-        sepa_sepa_colon = sepa_sepa_scolon.replace(sepa+":",":"+sepa)
+        sepa_colon_OR_sepa_sepa_colon = v_or_w
 
     # Show Unsplit Line by Line
     if show_unsplit:
