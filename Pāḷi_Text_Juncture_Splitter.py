@@ -2671,11 +2671,11 @@ def animation_demo() -> None:
 
     # Double juncture signs before commas, periods, semi-colons, colons, double spaces, and line-breaks
     sepa_comma = v_or_w.replace(",",sepa+",")
-    sepa_period = dsepa_comma.replace(".",sepa+".")
-    sepa_scolon = dsepa_period.replace(";",sepa+";")
-    sepa_colon = dsepa_scolon.replace(":",sepa+":")
-    sepa_dspace = dsepa_colon.replace("  ",sepa+"  ")
-    sepa_lbreak = dsepa_dspace.replace("  \n",sepa+"  \n")
+    sepa_period = sepa_comma.replace(".",sepa+".")
+    sepa_scolon = sepa_period.replace(";",sepa+";")
+    sepa_colon = sepa_scolon.replace(":",sepa+":")
+    sepa_dspace = sepa_colon.replace("  ",sepa+"  ")
+    sepa_lbreak = sepa_dspace.replace("  \n",sepa+"  \n")
  
     # lowercase
     undo_a_sepa_lbreak = sepa_lbreak.replace("a"+sepa+"  \n", "a"+"  \n")
