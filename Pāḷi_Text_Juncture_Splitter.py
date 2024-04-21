@@ -1,4 +1,24 @@
-import streamlit as stfrom streamlit.logger import get_loggerfrom streamlit.hello.utils import show_codeimport altair as altimport numpy as npimport pandas as pdLOGGER = get_logger(__name__)st.set_page_config(page_title="Pāḷi Text Juncture Separator", page_icon="")# Sidebarst.sidebar.header("Language")st.sidebar.write("""<div style="width:100%;"><img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" width="22px"> English</img></div>                 <div style="width:100%;"><a href="https://translate.google.co.id/?hl=id&sl=en&tl=id&op=translate"><img src="https://i.pinimg.com/736x/91/3d/f8/913df8098c7237aae279c4628302f49c.jpg" width="22px"> Bahasa Indonesia</img></a></div>""", unsafe_allow_html=True) st.sidebar.divider()st.sidebar.header("Customize your conversion:")
+import streamlit as st
+from streamlit.logger 
+import get_logger
+from streamlit.hello.utils 
+import show_code
+import altair as alt
+import numpy as np
+import pandas as pd
+
+LOGGER = get_logger(__name__)
+
+st.set_page_config(page_title="Pāḷi Text Juncture Separator", page_icon="🌴")
+# Sidebar
+
+#st.sidebar.header("Language")
+#st.sidebar.write("""<div style="width:100%;"><img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" width="22px"> English</img></div>
+#<div style="width:100%;"><a href="https://translate.google.co.id/?hl=id&sl=en&tl=id&op=translate"><img src="https://i.pinimg.com/736x/91/3d/f8/913df8098c7237aae279c4628302f49c.jpg" width="22px"> Bahasa Indonesia</img></a></div>""", unsafe_allow_html=True) 
+
+# st.sidebar.divider()
+
+st.sidebar.header("Customize your conversion:")
 
 st.markdown("<h1 style='text-align: center;'>Pāḷi Text Juncture Splitter 🌴</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='text-align: center;'><em>For easier Pāḷi reading.</em></h3>", unsafe_allow_html=True)
