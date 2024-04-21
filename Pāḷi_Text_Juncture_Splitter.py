@@ -2363,32 +2363,26 @@ def animation_demo() -> None:
     no_double_junctures2 = no_double_junctures.replace(sepa+sepa,sepa)
     NO_DOUBLE_JUNCTURES2 = NO_DOUBLE_JUNCTURES.replace(sepa+sepa,sepa)
 
-    # Double juncture signs after commas, periods, semi-colons, colons, and line-breaks
+    # (Optional) Anusvāra / niggahīta standard conversion
+ 
     if uppercase_check:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = NO_DOUBLE_JUNCTURES2
     else:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = no_double_junctures2
-    comma_dsepa = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(","+sepa,","+sepa+sepa)
-    period_dsepa = comma_dsepa.replace("."+sepa,"."+sepa+sepa)
-    scolon_dsepa = period_dsepa.replace(";"+sepa,";"+sepa+sepa)
-    colon_dsepa = scolon_dsepa.replace(":"+sepa,":"+sepa+sepa)
-    dsepa_lbreak = colon_dsepa.replace(sepa+"  \n",sepa+sepa+"  \n")
-
-    # (Optional) Anusvāra / niggahīta standard conversion
-
+     
     if anusvara_select == "Change to ṃ - IAST (International Alphabet of Sanskrit Transliteration)":
         # lowercase
-        convert_to_ṃ = dsepa_lbreak.replace("ṁ", "ṃ")
+        convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
         # UPPERCASE
         convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
     else:
         if anusvara_select == "Change to ṁ - ISO 15919: Pāḷi":
             # lowercase
-            convert_to_ṁ = dsepa_lbreak.replace("ṃ", "ṁ")
+            convert_to_ṁ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", "ṁ")
             # UPPERCASE
             convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
         else:
-            convert_to_Ṁ_or_Ṃ = dsepa_lbreak
+            convert_to_Ṁ_or_Ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES
 
     # Fix the position of preposition pauses and junctions signs
 
@@ -2792,15 +2786,22 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
+    # Double juncture signs after commas, periods, semi-colons, colons, and line-breaks
+    comma_dsepa = v_or_w.replace(","+sepa,","+sepa+sepa)
+    period_dsepa = comma_dsepa.replace("."+sepa,"."+sepa+sepa)
+    scolon_dsepa = period_dsepa.replace(";"+sepa,";"+sepa+sepa)
+    colon_dsepa = scolon_dsepa.replace(":"+sepa,":"+sepa+sepa)
+    dsepa_lbreak = colon_dsepa.replace(sepa+"  \n",sepa+sepa+"  \n")
+ 
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = v_or_w.split('\n')
+        output_lines = dsepa_lbreak.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = v_or_w
+        unsplit_OR_split = dsepa_lbreak
         st.write(unsplit_OR_split)
       
 animation_demo()
