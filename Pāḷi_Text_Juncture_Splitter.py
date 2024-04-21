@@ -2739,7 +2739,7 @@ def animation_demo() -> None:
     if samyoga_pauses_check:
         sepa_colon_OR_v_or_w = sepa_colon
     else:
-        sepa_colon_OR_v_or_w = v_or_w
+        sepa_colon_OR_v_or_w = dsepa_lbreak
 
     # Show Unsplit Line by Line
     if show_unsplit:
