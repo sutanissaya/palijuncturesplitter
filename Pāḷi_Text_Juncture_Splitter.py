@@ -2727,7 +2727,7 @@ def animation_demo() -> None:
     undo_I_sepa_colon = undo_A_sepa_colon.replace("I"+sepa+sepa+":", "I"+":")
     undo_U_sepa_colon = undo_I_sepa_colon.replace("U"+sepa+sepa+":", "U"+":")
  
-    # Remove double juncture signs
+    # Convert double juncture signs to single
     no_double_junctures = undo_U_sepa_colon.replace(sepa+sepa,sepa)
 
      # Fix the position of preposition pauses and junctions signs
