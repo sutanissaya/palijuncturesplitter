@@ -2620,17 +2620,25 @@ def animation_demo() -> None:
     colon_sepa = fix_scolon_sepa.replace(":", ":"+sepa)
     fix_colon_sepa = colon_sepa.replace(":"+sepa+sepa+sepa, ":"+sepa+sepa)
     a_sepa = fix_colon_sepa.replace("a"+sepa+"  ", "a"+sepa+sepa+"  ")
+    i_sepa = a_sepa.replace("i"+sepa+"  ", "i"+sepa+sepa+"  ")
+    u_sepa = i_sepa.replace("u"+sepa+"  ", "u"+sepa+sepa+"  ")
+    e_sepa = u_sepa.replace("e"+sepa+"  ", "e"+sepa+sepa+"  ")
+    o_sepa = e_sepa.replace("o"+sepa+"  ", "o"+sepa+sepa+"  ")
+    ā_sepa = o_sepa.replace("ā"+sepa+"  ", "ā"+sepa+sepa+"  ")
+    ī_sepa = ā_sepa.replace("ī"+sepa+"  ", "ī"+sepa+sepa+"  ")
+    ū_sepa = ī_sepa.replace("ū"+sepa+"  ", "ū"+sepa+sepa+"  ")
+    ṃ_sepa = ū_sepa.replace("ṃ"+sepa+"  ", "ṃ"+sepa+sepa+"  ")
 
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = a_sepa.split('\n')
+        output_lines = ṃ_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = a_sepa
+        unsplit_OR_split = ṃ_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
