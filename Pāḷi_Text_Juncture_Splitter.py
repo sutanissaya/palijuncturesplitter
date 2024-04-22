@@ -2615,18 +2615,21 @@ def animation_demo() -> None:
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     period_sepa = fix_comma_sepa.replace(".", "."+sepa)
     fix_period_sepa = period_sepa.replace("."+sepa+sepa+sepa, "."+sepa+sepa)
-
+    scolon_sepa = fix_period_sepa.replace(";", ";"+sepa)
+    fix_scolon_sepa = scolon_sepa.replace(";"+sepa+sepa+sepa, ";"+sepa+sepa)
+    colon_sepa = fix_scolon_sepa.replace(":", ";"+sepa)
+    fix_colon_sepa = colon_sepa.replace(":"+sepa+sepa+sepa, ":"+sepa+sepa)
 
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = fix_period_sepa.split('\n')
+        output_lines = fix_colon_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = fix_period_sepa
+        unsplit_OR_split = fix_colon_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
