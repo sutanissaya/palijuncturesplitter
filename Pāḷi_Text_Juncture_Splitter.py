@@ -2527,7 +2527,7 @@ def animation_demo() -> None:
         samyoga_gH = samyoga_dH.replace("gH", "kH")
         samyoga_jH = samyoga_gH.replace("jH", "cH")
     else:
-        samyoga_jH = NASAL_NG    
+        samyoga_jH = ṄNASAL_NG    
     if insert_text[:2] == "ñh":
         first_letters = samyoga_jH.replace("ñ"+sepa+"h", "ñ"+"h", 1)
     elif insert_text[:2] == "ñH":
