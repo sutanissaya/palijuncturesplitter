@@ -2618,20 +2618,17 @@ def animation_demo() -> None:
     sepa_colon = sepa_scolon.replace(":", ":"+sepa)
     sepa_lbreak = sepa_colon.replace("  \n", sepa+"  \n")
     # Fix excess juncture signs
-    fix_6sepa = sepa_lbreak.replace(sepa+sepa+sepa+sepa+sepa+sepa,sepa+sepa+sepa+sepa+sepa)
-    fix_5sepa = fix_6sepa.replace(sepa+sepa+sepa+sepa+sepa,sepa+sepa+sepa+sepa)
-    fix_4sepa = fix_5sepa.replace(sepa+sepa+sepa+sepa,sepa+sepa+sepa)
-    fix_3sepa = fix_4sepa.replace(sepa+sepa+sepa,sepa+sepa)
+    fix_sepas = sepa_lbreak.replace(sepa+sepa+sepa,sepa+sepa)
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = fix_3sepa.split('\n')
+        output_lines = fix_sepas.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = fix_3sepa
+        unsplit_OR_split = fix_sepas
         st.write(unsplit_OR_split)
       
 animation_demo()
