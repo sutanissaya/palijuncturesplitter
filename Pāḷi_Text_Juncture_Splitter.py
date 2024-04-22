@@ -2610,7 +2610,7 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
-    # Extra juncture sign after a double space "  ", a comma ",", a period ".", semi-colon";", colon ":", or a line break / enter (char(10) or \n)
+    # Extra juncture sign after a comma ",", a period ".", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     period_sepa = fix_comma_sepa.replace(".", "."+sepa)
@@ -2645,16 +2645,22 @@ def animation_demo() -> None:
         ṁ_sepa_or_Ṁ_sepa = Ṁ_sepa
     else:
         ṁ_sepa_or_Ṁ_sepa = ṁ_sepa
+
+    # Saṃyoga chanting style - Pauses
+    if samyoga_pauses_check:
+        saṃyoga_or_not = v_or_w
+    else:
+        saṃyoga_or_not = ṁ_sepa_or_Ṁ_sepa
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = ṁ_sepa_or_Ṁ_sepa.split('\n')
+        output_lines = saṃyoga_or_not.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = ṁ_sepa_or_Ṁ_sepa
+        unsplit_OR_split = saṃyoga_or_not
         st.write(unsplit_OR_split)
       
 animation_demo()
