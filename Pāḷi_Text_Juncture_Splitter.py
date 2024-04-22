@@ -2616,7 +2616,7 @@ def animation_demo() -> None:
     fix_sepa_comma = sepa_comma.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     dspace_sepa = fix_sepa_comma.replace("  ", sepa+"  ")
     fix_dspace_sepa = dspace_sepa.replace(sepa+sepa+sepa+"  ", sepa+sepa+"  ")
-    fix_xsepa = fix_dspace_sepa.replace(sepa+sepa+"  \n"+sepa+sepa, sepa+sepa)
+    fix_xsepa = fix_dspace_sepa.replace(sepa+sepa+sepa+sepa+"  \n", sepa+sepa+"  \n")
 
  
     # Show Unsplit Line by Line
