@@ -2616,17 +2616,18 @@ def animation_demo() -> None:
     fix_sepa_comma = sepa_comma.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     dspace_sepa = fix_sepa_comma.replace("  ", sepa+"  ")
     fix_dspace_sepa = dspace_sepa.replace(sepa+sepa+sepa+"  ", sepa+sepa+"  ")
+    fix_xsepa = fix_dspace_sepa.replace(sepa+sepa+sepa+sepa, sepa+sepa)
 
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = fix_dspace_sepa.split('\n')
+        output_lines = fix_xsepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = fix_dspace_sepa
+        unsplit_OR_split = fix_xsepa
         st.write(unsplit_OR_split)
       
 animation_demo()
