@@ -64,8 +64,8 @@ def animation_demo() -> None:
  
     # Transliteration Standard Conversion
     translit_select = st.sidebar.selectbox(
-    "Transliteration Standard Conversion",
-    ("_Do not convert_", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
+    "Convert transliteration standard to:",
+    ("<em>Do not convert</em>", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
     index=None,
     placeholder="None",
     )
