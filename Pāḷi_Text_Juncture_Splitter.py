@@ -2785,8 +2785,7 @@ def animation_demo() -> None:
                 convert_to_perl = convert_to_pers.replace("ḷ", ".l")
                 # UPPERCASE
                 convert_to_perM = convert_to_perl.replace("Ṃ", ".M")
-                convert_to_perM2 = convert_to_perM.replace("Ṁ", ".M")
-                convert_to_AA = convert_to_perM2.replace("Ā", "AA")
+                convert_to_AA = convert_to_perM.replace("Ā", "AA")
                 convert_to_II = convert_to_AA.replace("Ī", "II")
                 convert_to_UU = convert_to_II.replace("Ū", "UU")
                 convert_FROM_Ṅ = convert_to_UU.replace("Ṅ", "“N")
