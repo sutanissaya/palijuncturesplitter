@@ -1608,28 +1608,119 @@ def animation_demo() -> None:
     S_sepa_S = M_sepa_S.replace("SS","S"+sepa+"S")
         
     # Insert juncture sign after the letters t, d, y and s if they preceed the letter v:
+    # [changed to] Insert juncture sign between tv, dv, yv, sv if followed by atv, itv, utv, etv, ātv, ūtv, odv, adv, idv, ayv, asv, isv, īsv
     # lowercase
     if uppercase_check:
         s_sepa_s_or_S_sepa_S = S_sepa_S
     else:
         s_sepa_s_or_S_sepa_S = s_sepa_s
-    t_sepa_v = s_sepa_s_or_S_sepa_S.replace("tv","t"+sepa+"v")
-    d_sepa_v = t_sepa_v.replace("dv","d"+sepa+"v")
-    y_sepa_v = d_sepa_v.replace("vv","y"+sepa+"v")
-    s_sepa_v = y_sepa_v.replace("sv","s"+sepa+"v")
-    # UPPERCASE
-    T_sepa_V = s_sepa_v.replace("TV","T"+sepa+"V")
-    D_sepa_V = T_sepa_V.replace("DV","D"+sepa+"V")
-    Y_sepa_V = D_sepa_V.replace("VV","Y"+sepa+"V")
-    S_sepa_V = Y_sepa_V.replace("SV","S"+sepa+"V")
-        
+    #lowercase
+    at_sepa_v = s_sepa_s_or_S_sepa_S.replace("atv","at"+sepa+"v")
+    it_sepa_v = at_sepa_v.replace("itv","it"+sepa+"v")
+    ut_sepa_v = it_sepa_v.replace("utv","ut"+sepa+"v")
+    et_sepa_v = ut_sepa_v.replace("etv","et"+sepa+"v")
+    āt_sepa_v = et_sepa_v.replace("ātv","āt"+sepa+"v")
+    ūt_sepa_v = āt_sepa_v.replace("ūtv","ūt"+sepa+"v")
+    od_sepa_v = ut_sepa_v.replace("odv","od"+sepa+"v")
+    ad_sepa_v = od_sepa_v.replace("adv","ad"+sepa+"v")
+    id_sepa_v = ad_sepa_v.replace("idv","id"+sepa+"v")
+    ay_sepa_v = id_sepa_v.replace("ayv","ay"+sepa+"v")
+    as_sepa_v = ay_sepa_v.replace("asv","as"+sepa+"v")
+    is_sepa_v = as_sepa_v.replace("isv","is"+sepa+"v")
+    īs_sepa_v = is_sepa_v.replace("īsv","īs"+sepa+"v")
+
+    AT_sepa_v = īs_sepa_v.replace("ATv","AT"+sepa+"v")
+    IT_sepa_v = AT_sepa_v.replace("ITv","IT"+sepa+"v")
+    UT_sepa_v = IT_sepa_v.replace("UTv","UT"+sepa+"v")
+    ET_sepa_v = UT_sepa_v.replace("ETv","ET"+sepa+"v")
+    ĀT_sepa_v = ET_sepa_v.replace("ĀTv","ĀT"+sepa+"v")
+    ŪT_sepa_v = ĀT_sepa_v.replace("ŪTv","ŪT"+sepa+"v")
+    OD_sepa_v = UT_sepa_v.replace("ODv","OD"+sepa+"v")
+    AD_sepa_v = OD_sepa_v.replace("ADv","AD"+sepa+"v")
+    ID_sepa_v = AD_sepa_v.replace("IDv","ID"+sepa+"v")
+    AY_sepa_v = ID_sepa_v.replace("AYv","AY"+sepa+"v")
+    AS_sepa_v = AY_sepa_v.replace("ASv","AS"+sepa+"v")
+    IS_sepa_v = AS_sepa_v.replace("ISv","IS"+sepa+"v")
+    ĪS_sepa_v = IS_sepa_v.replace("ĪSv","ĪS"+sepa+"v")
+
+    At_sepa_v = ĪS_sepa_v.replace("Atv","At"+sepa+"v")
+    It_sepa_v = At_sepa_v.replace("Itv","It"+sepa+"v")
+    Ut_sepa_v = It_sepa_v.replace("Utv","Ut"+sepa+"v")
+    Et_sepa_v = Ut_sepa_v.replace("Etv","Et"+sepa+"v")
+    Āt_sepa_v = Et_sepa_v.replace("Ātv","Āt"+sepa+"v")
+    Ūt_sepa_v = Āt_sepa_v.replace("Ūtv","Ūt"+sepa+"v")
+    Od_sepa_v = Ut_sepa_v.replace("Odv","Od"+sepa+"v")
+    Ad_sepa_v = Od_sepa_v.replace("Adv","Ad"+sepa+"v")
+    Id_sepa_v = Ad_sepa_v.replace("Idv","Id"+sepa+"v")
+    Ay_sepa_v = Id_sepa_v.replace("Ayv","Ay"+sepa+"v")
+    As_sepa_v = Ay_sepa_v.replace("Asv","As"+sepa+"v")
+    Is_sepa_v = As_sepa_v.replace("Isv","Is"+sepa+"v")
+    Īs_sepa_v = Is_sepa_v.replace("Īsv","Īs"+sepa+"v")
+
+    At_sepa_V = Īs_sepa_v.replace("AtV","At"+sepa+"V")
+    It_sepa_V = At_sepa_V.replace("ItV","It"+sepa+"V")
+    Ut_sepa_V = It_sepa_V.replace("UtV","Ut"+sepa+"V")
+    Et_sepa_V = Ut_sepa_V.replace("EtV","Et"+sepa+"V")
+    Āt_sepa_V = Et_sepa_V.replace("ĀtV","Āt"+sepa+"V")
+    Ūt_sepa_V = Āt_sepa_V.replace("ŪtV","Ūt"+sepa+"V")
+    Od_sepa_V = Ut_sepa_V.replace("OdV","Od"+sepa+"V")
+    Ad_sepa_V = Od_sepa_V.replace("AdV","Ad"+sepa+"V")
+    Id_sepa_V = Ad_sepa_V.replace("IdV","Id"+sepa+"V")
+    Ay_sepa_V = Id_sepa_V.replace("AyV","Ay"+sepa+"V")
+    As_sepa_V = Ay_sepa_V.replace("AsV","As"+sepa+"V")
+    Is_sepa_V = As_sepa_V.replace("IsV","Is"+sepa+"V")
+    Īs_sepa_V = Is_sepa_V.replace("ĪsV","Īs"+sepa+"V")
+
+    at_sepa_V = Īs_sepa_V.replace("atV","at"+sepa+"V")
+    it_sepa_V = at_sepa_V.replace("itV","it"+sepa+"V")
+    ut_sepa_V = it_sepa_V.replace("utV","ut"+sepa+"V")
+    et_sepa_V = ut_sepa_V.replace("etV","et"+sepa+"V")
+    āt_sepa_V = et_sepa_V.replace("ātV","āt"+sepa+"V")
+    ūt_sepa_V = āt_sepa_V.replace("ūtV","ūt"+sepa+"V")
+    od_sepa_V = ut_sepa_V.replace("odV","od"+sepa+"V")
+    ad_sepa_V = od_sepa_V.replace("adV","ad"+sepa+"V")
+    id_sepa_V = ad_sepa_V.replace("idV","id"+sepa+"V")
+    ay_sepa_V = id_sepa_V.replace("ayV","ay"+sepa+"V")
+    as_sepa_V = ay_sepa_V.replace("asV","as"+sepa+"V")
+    is_sepa_V = as_sepa_V.replace("isV","is"+sepa+"V")
+    īs_sepa_V = is_sepa_V.replace("īsV","īs"+sepa+"V")
+
+    aT_sepa_V = īs_sepa_V.replace("aTV","aT"+sepa+"V")
+    iT_sepa_V = aT_sepa_V.replace("iTV","iT"+sepa+"V")
+    uT_sepa_V = iT_sepa_V.replace("uTV","uT"+sepa+"V")
+    eT_sepa_V = uT_sepa_V.replace("eTV","eT"+sepa+"V")
+    āT_sepa_V = eT_sepa_V.replace("āTV","āT"+sepa+"V")
+    ūT_sepa_V = āT_sepa_V.replace("ūTV","ūT"+sepa+"V")
+    oD_sepa_V = uT_sepa_V.replace("oDV","oD"+sepa+"V")
+    aD_sepa_V = oD_sepa_V.replace("aDV","aD"+sepa+"V")
+    iD_sepa_V = aD_sepa_V.replace("iDV","iD"+sepa+"V")
+    aY_sepa_V = iD_sepa_V.replace("aYV","aY"+sepa+"V")
+    aS_sepa_V = aY_sepa_V.replace("aSV","aS"+sepa+"V")
+    iS_sepa_V = aS_sepa_V.replace("iSV","iS"+sepa+"V")
+    īS_sepa_V = iS_sepa_V.replace("īSV","īS"+sepa+"V")
+ 
+    #UPPERCASE
+    AT_sepa_V = īS_sepa_V.replace("ATV","AT"+sepa+"V")
+    IT_sepa_V = AT_sepa_V.replace("ITV","IT"+sepa+"V")
+    UT_sepa_V = IT_sepa_V.replace("UTV","UT"+sepa+"V")
+    ET_sepa_V = UT_sepa_V.replace("ETV","ET"+sepa+"V")
+    ĀT_sepa_V = ET_sepa_V.replace("ĀTV","ĀT"+sepa+"V")
+    ŪT_sepa_V = ĀT_sepa_V.replace("ŪTV","ŪT"+sepa+"V")
+    OD_sepa_V = UT_sepa_V.replace("ODV","OD"+sepa+"V")
+    AD_sepa_V = OD_sepa_V.replace("ADV","AD"+sepa+"V")
+    ID_sepa_V = AD_sepa_V.replace("IDV","ID"+sepa+"V")
+    AY_sepa_V = ID_sepa_V.replace("AYV","AY"+sepa+"V")
+    AS_sepa_V = AY_sepa_V.replace("ASV","AS"+sepa+"V")
+    IS_sepa_V = AS_sepa_V.replace("ISV","IS"+sepa+"V")
+    ĪS_sepa_V = IS_sepa_V.replace("ĪSV","ĪS"+sepa+"V")
+ 
     # Remove juncture sign; long vowels (ā, ī, ū, e, o) followed by 1st, 3rd and 5th vaggas (unaspirated and nasals, aspirated combinations are unnecessary) double consonants    
     # lowercase
     if uppercase_check:
-        s_sepa_v_or_S_sepa_V = S_sepa_V
+        īS_sepa_V_or_ĪS_sepa_V = ĪS_sepa_V
     else:
-        s_sepa_v_or_S_sepa_V = s_sepa_v
-    āk_sepa = s_sepa_v_or_S_sepa_V.replace("ā"+sepa+"k"+sepa, "ā"+"k"+sepa)
+        īS_sepa_V_or_ĪS_sepa_V = īS_sepa_V
+    āk_sepa = īS_sepa_V_or_ĪS_sepa_V.replace("ā"+sepa+"k"+sepa, "ā"+"k"+sepa)
     āg_sepa = āk_sepa.replace("ā"+sepa+"g"+sepa, "ā"+"g"+sepa)
     āṅ_sepa = āg_sepa.replace("ā"+sepa+"ṅ"+sepa, "ā"+"ṅ"+sepa)
     āc_sepa = āṅ_sepa.replace("ā"+sepa+"c"+sepa, "ā"+"c"+sepa)
@@ -2023,60 +2114,15 @@ def animation_demo() -> None:
     ŪS_sepa_S = ĪS_sepa_S.replace("Ū"+sepa+"S"+sepa+"S", "Ū"+"S"+sepa+"S")
     ES_sepa_S = ŪS_sepa_S.replace("E"+sepa+"S"+sepa+"S", "E"+"S"+sepa+"S")
     OS_sepa_S = ES_sepa_S.replace("O"+sepa+"S"+sepa+"S", "O"+"S"+sepa+"S")
-    # Remove juncture sign after long vowels (ā, ī, ū, e, o) followed by t_v, d_v, y_v, s_v
-    # lowercsae
+ 
     if uppercase_check:
         os_sepa_s_or_OS_sepa_S = OS_sepa_S
     else:
         os_sepa_s_or_OS_sepa_S = os_sepa_s
-    āt_sepa_v = os_sepa_s_or_OS_sepa_S.replace("ā"+sepa+"t"+sepa+"v", "ā"+"t"+sepa+"v")
-    īt_sepa_v = āt_sepa_v.replace("ī"+sepa+"t"+sepa+"v", "ī"+"t"+sepa+"v")
-    ūt_sepa_v = īt_sepa_v.replace("ū"+sepa+"t"+sepa+"v", "ū"+"t"+sepa+"v")
-    et_sepa_v = ūt_sepa_v.replace("e"+sepa+"t"+sepa+"v", "e"+"t"+sepa+"v")
-    ot_sepa_v = et_sepa_v.replace("o"+sepa+"t"+sepa+"v", "o"+"t"+sepa+"v")
-    ād_sepa_v = ot_sepa_v.replace("ā"+sepa+"d"+sepa+"v", "ā"+"d"+sepa+"v")
-    īd_sepa_v = ād_sepa_v.replace("ī"+sepa+"d"+sepa+"v", "ī"+"d"+sepa+"v")
-    ūd_sepa_v = īd_sepa_v.replace("ū"+sepa+"d"+sepa+"v", "ū"+"d"+sepa+"v")
-    ed_sepa_v = ūd_sepa_v.replace("e"+sepa+"d"+sepa+"v", "e"+"d"+sepa+"v")
-    od_sepa_v = ed_sepa_v.replace("o"+sepa+"d"+sepa+"v", "o"+"d"+sepa+"v")
-    āy_sepa_v = od_sepa_v.replace("ā"+sepa+"y"+sepa+"v", "ā"+"y"+sepa+"v")
-    īy_sepa_v = āy_sepa_v.replace("ī"+sepa+"y"+sepa+"v", "ī"+"y"+sepa+"v")
-    ūy_sepa_v = īy_sepa_v.replace("ū"+sepa+"y"+sepa+"v", "ū"+"y"+sepa+"v")
-    ey_sepa_v = ūy_sepa_v.replace("e"+sepa+"y"+sepa+"v", "e"+"y"+sepa+"v")
-    oy_sepa_v = ey_sepa_v.replace("o"+sepa+"y"+sepa+"v", "o"+"y"+sepa+"v")
-    ās_sepa_v = oy_sepa_v.replace("ā"+sepa+"s"+sepa+"v", "ā"+"s"+sepa+"v")
-    īs_sepa_v = ās_sepa_v.replace("ī"+sepa+"s"+sepa+"v", "ī"+"s"+sepa+"v")
-    ūs_sepa_v = īs_sepa_v.replace("ū"+sepa+"s"+sepa+"v", "ū"+"s"+sepa+"v")
-    es_sepa_v = ūs_sepa_v.replace("e"+sepa+"s"+sepa+"v", "e"+"s"+sepa+"v")
-    os_sepa_v = es_sepa_v.replace("o"+sepa+"s"+sepa+"v", "o"+"s"+sepa+"v")
-    # UPPERCASE
-    ĀT_sepa_V = os_sepa_v.replace("Ā"+sepa+"T"+sepa+"V", "Ā"+"T"+sepa+"V")
-    ĪT_sepa_V = ĀT_sepa_V.replace("Ī"+sepa+"T"+sepa+"V", "Ī"+"T"+sepa+"V")
-    ŪT_sepa_V = ĪT_sepa_V.replace("Ū"+sepa+"T"+sepa+"V", "Ū"+"T"+sepa+"V")
-    ET_sepa_V = ŪT_sepa_V.replace("E"+sepa+"T"+sepa+"V", "E"+"T"+sepa+"V")
-    OT_sepa_V = ET_sepa_V.replace("O"+sepa+"T"+sepa+"V", "O"+"T"+sepa+"V")
-    ĀD_sepa_V = OT_sepa_V.replace("Ā"+sepa+"D"+sepa+"V", "Ā"+"D"+sepa+"V")
-    ĪD_sepa_V = ĀD_sepa_V.replace("Ī"+sepa+"D"+sepa+"V", "Ī"+"D"+sepa+"V")
-    ŪD_sepa_V = ĪD_sepa_V.replace("Ū"+sepa+"D"+sepa+"V", "Ū"+"D"+sepa+"V")
-    ED_sepa_V = ŪD_sepa_V.replace("E"+sepa+"D"+sepa+"V", "E"+"D"+sepa+"V")
-    OD_sepa_V = ED_sepa_V.replace("O"+sepa+"D"+sepa+"V", "O"+"D"+sepa+"V")
-    ĀY_sepa_V = OD_sepa_V.replace("Ā"+sepa+"Y"+sepa+"V", "Ā"+"Y"+sepa+"V")
-    ĪY_sepa_V = ĀY_sepa_V.replace("Ī"+sepa+"Y"+sepa+"V", "Ī"+"Y"+sepa+"V")
-    ŪY_sepa_V = ĪY_sepa_V.replace("Ū"+sepa+"Y"+sepa+"V", "Ū"+"Y"+sepa+"V")
-    EY_sepa_V = ŪY_sepa_V.replace("E"+sepa+"Y"+sepa+"V", "E"+"Y"+sepa+"V")
-    OY_sepa_V = EY_sepa_V.replace("O"+sepa+"Y"+sepa+"V", "O"+"Y"+sepa+"V")
-    ĀS_sepa_V = OY_sepa_V.replace("Ā"+sepa+"S"+sepa+"V", "Ā"+"S"+sepa+"V")
-    ĪS_sepa_V = ĀS_sepa_V.replace("Ī"+sepa+"S"+sepa+"V", "Ī"+"S"+sepa+"V")
-    ŪS_sepa_V = ĪS_sepa_V.replace("Ū"+sepa+"S"+sepa+"V", "Ū"+"S"+sepa+"V")
-    ES_sepa_V = ŪS_sepa_V.replace("E"+sepa+"S"+sepa+"V", "E"+"S"+sepa+"V")
-    OS_sepa_V = ES_sepa_V.replace("O"+sepa+"S"+sepa+"V", "O"+"S"+sepa+"V")
+     
     # Remove juncture sign; "_" in certain double consonants if the syllables begin with a capitalized letter, preceeded by a space " ", or a line break / enter (char(10))
     #lowercase
-    if uppercase_check:
-        os_sepa_v_or_OS_sepa_V = OS_sepa_V
-    else:
-        os_sepa_v_or_OS_sepa_V = os_sepa_v
-    Hm = os_sepa_v_or_OS_sepa_V.replace("H"+sepa+"m", "H"+"m")
+    Hm = os_sepa_s_or_OS_sepa_S.replace("H"+sepa+"m", "H"+"m")
     Sm = Hm.replace("S"+sepa+"m", "S"+"m")
     Ñh = Sm.replace("Ñ"+sepa+"h", "Ñ"+"h")
     Ṇh = Ñh.replace("Ṇ"+sepa+"h", "Ṇ"+"h")
@@ -2096,11 +2142,7 @@ def animation_demo() -> None:
     Ll = Dy.replace("L"+sepa+"l", "L"+"l")
     Ms = Ll.replace("M"+sepa+"s", "M"+"s")
     Ss = Ms.replace("S"+sepa+"s", "S"+"s")
-    Tv = Ss.replace("T"+sepa+"v", "T"+"v")
-    Dv = Tv.replace("D"+sepa+"v", "D"+"v")
-    Yv = Dv.replace("Y"+sepa+"v", "Y"+"v")
-    Sv = Yv.replace("S"+sepa+"v", "S"+"v")
-    space_h_m = Sv.replace(" "+"h"+sepa+"m", " "+"h"+"m")
+    space_h_m = Ss.replace(" "+"h"+sepa+"m", " "+"h"+"m")
     space_s_m = space_h_m.replace(" "+"s"+sepa+"m", " "+"s"+"m")
     space_ñ_h = space_s_m.replace(" "+"ñ"+sepa+"h", " "+"ñ"+"h")
     space_ṇ_h = space_ñ_h.replace(" "+"ṇ"+sepa+"h", " "+"ṇ"+"h")
@@ -2121,11 +2163,7 @@ def animation_demo() -> None:
     space_l_l = space_d_y.replace(" "+"l"+sepa+"l", " "+"l"+"l")
     space_m_s = space_l_l.replace(" "+"m"+sepa+"s", " "+"m"+"s")
     space_s_s = space_m_s.replace(" "+"s"+sepa+"s", " "+"s"+"s")
-    space_t_v = space_s_s.replace(" "+"t"+sepa+"v", " "+"t"+"v")
-    space_d_v = space_t_v.replace(" "+"d"+sepa+"v", " "+"d"+"v")
-    space_y_v = space_d_v.replace(" "+"y"+sepa+"v", " "+"y"+"v")
-    space_s_v = space_y_v.replace(" "+"s"+sepa+"v", " "+"s"+"v")
-    lbreak_h_m = space_s_v.replace("\n"+"h"+sepa+"m", "\n"+"h"+"m")
+    lbreak_h_m = space_s_s.replace("\n"+"h"+sepa+"m", "\n"+"h"+"m")
     lbreak_s_m = lbreak_h_m.replace("\n"+"s"+sepa+"m", "\n"+"s"+"m")
     
     lbreak_ñ_h = lbreak_s_m.replace("\n"+"ñ"+sepa+"h", "\n"+"ñ"+"h")
@@ -2146,12 +2184,8 @@ def animation_demo() -> None:
     lbreak_l_l = lbreak_d_y.replace("\n"+"l"+sepa+"l", "\n"+"l"+"l")
     lbreak_m_s = lbreak_l_l.replace("\n"+"m"+sepa+"s", "\n"+"m"+"s")
     lbreak_s_s = lbreak_m_s.replace("\n"+"s"+sepa+"s", "\n"+"s"+"s")
-    lbreak_t_v = lbreak_s_s.replace("\n"+"t"+sepa+"v", "\n"+"t"+"v")
-    lbreak_d_v = lbreak_t_v.replace("\n"+"d"+sepa+"v", "\n"+"d"+"v")
-    lbreak_y_v = lbreak_d_v.replace("\n"+"y"+sepa+"v", "\n"+"y"+"v")
-    lbreak_s_v = lbreak_y_v.replace("\n"+"s"+sepa+"v", "\n"+"s"+"v")
     # UPPERCASE
-    space_H_M = lbreak_s_v.replace(" "+"H"+sepa+"M", " "+"H"+"M")
+    space_H_M = lbreak_s_s.replace(" "+"H"+sepa+"M", " "+"H"+"M")
     space_S_M = space_H_M.replace(" "+"S"+sepa+"M", " "+"S"+"M")
     space_Ñ_H = space_S_M.replace(" "+"Ñ"+sepa+"H", " "+"Ñ"+"H")
     space_Ṇ_H = space_Ñ_H.replace(" "+"Ṇ"+sepa+"H", " "+"Ṇ"+"H")
@@ -2172,11 +2206,7 @@ def animation_demo() -> None:
     space_L_L = space_D_Y.replace(" "+"L"+sepa+"L", " "+"L"+"L")
     space_M_S = space_L_L.replace(" "+"M"+sepa+"S", " "+"M"+"S")
     space_S_S = space_M_S.replace(" "+"S"+sepa+"S", " "+"S"+"S")
-    space_T_V = space_S_S.replace(" "+"T"+sepa+"V", " "+"T"+"V")
-    space_D_V = space_T_V.replace(" "+"D"+sepa+"V", " "+"D"+"V")
-    space_Y_V = space_D_V.replace(" "+"Y"+sepa+"V", " "+"Y"+"V")
-    space_S_V = space_Y_V.replace(" "+"S"+sepa+"V", " "+"S"+"V")
-    lbreak_H_M = space_S_V.replace("\n"+"H"+sepa+"M", "\n"+"H"+"M")
+    lbreak_H_M = space_S_S.replace("\n"+"H"+sepa+"M", "\n"+"H"+"M")
     lbreak_S_M = lbreak_H_M.replace("\n"+"S"+sepa+"M", "\n"+"S"+"M")
     
     lbreak_Ñ_H = lbreak_S_M.replace("\n"+"Ñ"+sepa+"H", "\n"+"Ñ"+"H")
@@ -2197,13 +2227,10 @@ def animation_demo() -> None:
     lbreak_L_L = lbreak_D_Y.replace("\n"+"L"+sepa+"L", "\n"+"L"+"L")
     lbreak_M_S = lbreak_L_L.replace("\n"+"M"+sepa+"S", "\n"+"M"+"S")
     lbreak_S_S = lbreak_M_S.replace("\n"+"S"+sepa+"S", "\n"+"S"+"S")
-    lbreak_T_V = lbreak_S_S.replace("\n"+"T"+sepa+"V", "\n"+"T"+"V")
-    lbreak_D_V = lbreak_T_V.replace("\n"+"D"+sepa+"V", "\n"+"D"+"V")
-    lbreak_Y_V = lbreak_D_V.replace("\n"+"Y"+sepa+"V", "\n"+"Y"+"V")
-    lbreak_S_V = lbreak_Y_V.replace("\n"+"S"+sepa+"V", "\n"+"S"+"V")
+ 
     # Remove double juncture signs
-    no_double_junctures = lbreak_S_V.replace(sepa+sepa,sepa)
-    NO_DOUBLE_JUNCTURES = lbreak_S_V.replace(sepa+sepa,sepa)
+    no_double_junctures = lbreak_S_S.replace(sepa+sepa,sepa)
+    NO_DOUBLE_JUNCTURES = lbreak_S_S.replace(sepa+sepa,sepa)
     # Remove double juncture signs
     no_double_junctures2 = no_double_junctures.replace(sepa+sepa,sepa)
     NO_DOUBLE_JUNCTURES2 = NO_DOUBLE_JUNCTURES.replace(sepa+sepa,sepa)
@@ -2448,30 +2475,6 @@ def animation_demo() -> None:
         first_letters = samyoga_jH.replace("v"+sepa+"H", "v"+"H", 1)
     elif insert_text[:2] == "VH":
         first_letters = samyoga_jH.replace("V"+sepa+"H", "V"+"H", 1)
-    elif insert_text[:2] == "tv":
-        first_letters = samyoga_jH.replace("t"+sepa+"v", "t"+"v", 1)
-    elif insert_text[:2] == "tV":
-        first_letters = samyoga_jH.replace("t"+sepa+"V", "t"+"V", 1)
-    elif insert_text[:2] == "TV":
-        first_letters = samyoga_jH.replace("T"+sepa+"V", "T"+"V", 1)
-    elif insert_text[:2] == "dv":
-        first_letters = samyoga_jH.replace("d"+sepa+"v", "d"+"v", 1)
-    elif insert_text[:2] == "dV":
-        first_letters = samyoga_jH.replace("d"+sepa+"V", "d"+"V", 1)
-    elif insert_text[:2] == "DV":
-        first_letters = samyoga_jH.replace("D"+sepa+"V", "D"+"V", 1)
-    elif insert_text[:2] == "yv":
-        first_letters = samyoga_jH.replace("y"+sepa+"v", "y"+"v", 1)
-    elif insert_text[:2] == "yV":
-        first_letters = samyoga_jH.replace("y"+sepa+"V", "y"+"V", 1)
-    elif insert_text[:2] == "YV":
-        first_letters = samyoga_jH.replace("Y"+sepa+"V", "Y"+"V", 1)
-    elif insert_text[:2] == "sv":
-        first_letters = samyoga_jH.replace("s"+sepa+"v", "s"+"v", 1)
-    elif insert_text[:2] == "sV":
-        first_letters = samyoga_jH.replace("s"+sepa+"V", "s"+"V", 1)
-    elif insert_text[:2] == "SV":
-        first_letters = samyoga_jH.replace("S"+sepa+"V", "S"+"V", 1)
     elif insert_text[:2] == "ky":
         first_letters = samyoga_jH.replace("k"+sepa+"y", "k"+"y", 1)
     elif insert_text[:2] == "kY":
