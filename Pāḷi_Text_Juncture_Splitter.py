@@ -2500,14 +2500,14 @@ def animation_demo() -> None:
         Ṅ_TO_NG = ṅ_to_ng
 
     # Nasal ṃ, ṁ → ng or m
-    if ṃṁ_select == "ṃ, ṁ → ng"
+    if ṃṁ_select == "ṃ, ṁ → ng":
         ṃ_to_ng = Ṅ_TO_NG.replace("ṃ", "ng")
         ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
         if uppercase_check:
             Ṃ_TO_NG = ṁ_to_ng.replace("Ṃ", "NG")
             Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "NG") 
         else:
-            if ṃṁ_select == "ṃ, ṁ → m"
+            if ṃṁ_select == "ṃ, ṁ → m":
             ṃ_to_ng = Ṅ_TO_NG.replace("ṃ", "m")
             ṁ_to_ng = ṃ_to_ng.replace("ṁ", "m")
                 if uppercase_check:
