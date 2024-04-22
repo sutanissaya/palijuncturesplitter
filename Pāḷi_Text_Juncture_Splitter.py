@@ -2261,35 +2261,14 @@ def animation_demo() -> None:
     # Remove double juncture signs
     no_double_junctures2 = no_double_junctures.replace(sepa+sepa,sepa)
     NO_DOUBLE_JUNCTURES2 = NO_DOUBLE_JUNCTURES.replace(sepa+sepa,sepa)
-    # (Optional) Anusvāra / niggahīta standard conversion
+
     if uppercase_check:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = NO_DOUBLE_JUNCTURES2
     else:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = no_double_junctures2
 
-    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
-        # lowercase
-        convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
-        # UPPERCASE
-        convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
-    else:
-        if translit_select == "ISO 15919: Pāḷi (2001)":
-            # lowercase
-            convert_to_ṁ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", "ṁ")
-            # UPPERCASE
-            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
-        else:
-            if translit_select == "Velthuis (1983)":
-                # lowercase
-                convert_to_perm = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", ".m")
-                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
-                # UPPERCASE
-                convert_to_perM = convert_to_perm2.replace("Ṃ", ".M")
-                convert_to_Ṁ_or_Ṃ = convert_to_perM.replace("Ṁ", ".M")
-            else:
-                convert_to_Ṁ_or_Ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES
     # Fix the position of preposition pauses and junctions signs
-    sepa_comma = convert_to_Ṁ_or_Ṃ.replace(sepa+",",","+sepa)
+    sepa_comma = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(sepa+",",","+sepa)
     sepa_period = sepa_comma.replace(sepa+".","."+sepa)
     sepa_scolon = sepa_period.replace(sepa+";",";"+sepa)
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
@@ -2486,15 +2465,40 @@ def animation_demo() -> None:
         nasal_nñ = ñÑ_to_nÑ
     else:
         nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
+
+
+    # Transliteration standard conversion
+    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
+        # lowercase
+        convert_to_ṃ = nasal_nñ.replace("ṁ", "ṃ")
+        # UPPERCASE
+        convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
+    else:
+        if translit_select == "ISO 15919: Pāḷi (2001)":
+            # lowercase
+            convert_to_ṁ = nasal_nñ.replace("ṃ", "ṁ")
+            # UPPERCASE
+            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
+        else:
+            if translit_select == "Velthuis (1983)":
+                # lowercase
+                convert_to_perm = nasal_nñ.replace("ṃ", ".m")
+                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
+                # UPPERCASE
+                convert_to_perM = convert_to_perm2.replace("Ṃ", ".M")
+                convert_to_Ṁ_or_Ṃ = convert_to_perM.replace("Ṁ", ".M")
+            else:
+                convert_to_Ṁ_or_Ṃ = nasal_nñ
+
     # Nasal ṅ → ng
         #lowercase
-    ṅ_to_ng = nasal_nñ.replace("ṅ", "ng")
+    ṅ_to_ng = convert_to_Ṁ_or_Ṃ.replace("ṅ", "ng")
     #UPPERCASE
     Ṅ_TO_NG = ṅ_to_ng.replace("Ṅ", "NG")
     if ng_check:
         nasal_ng = ṅ_to_ng
     else:
-        nasal_ng = nasal_nñ
+        nasal_ng = convert_to_Ṁ_or_Ṃ
     if uppercase_check:
         NASAL_NG = Ṅ_TO_NG
     else:
