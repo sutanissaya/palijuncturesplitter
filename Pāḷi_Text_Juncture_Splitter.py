@@ -2785,7 +2785,7 @@ st.divider()
 st.markdown("<h6 style='text-align: center;'>How does it work?</h6>", unsafe_allow_html=True)
 st.markdown("<p>It works by adding breaks or visual spacers after <em>every heavy syllable</em> (garu akkhara). The visual spacers act as temporal punctuations or juncture signs. The split text would then be read by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
-st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
+st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). Heavy syllables are also known as <em>full-length</em> syllables, <em>stressed</em> syllables, and <em>long</em> syllables. <em>Half-length</em>, <em>unstressed</em>, and <em>short</em> syllables are the terms of their respective counterpart. A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 #"""
 #**Pāḷi Phonology**
 #**Regional Variances**
@@ -2813,8 +2813,9 @@ st.divider()
 
 """
 **Keywords:** \n
-Pāḷi text heavy syllable separator, syllabification, syllabication, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting
+Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting
 """
+
 st.sidebar.divider()
 show_app_code = st.sidebar.checkbox (label='Show app code')
 if show_app_code:
