@@ -2477,21 +2477,17 @@ def animation_demo() -> None:
         nasal_nñ = ñÑ_to_nÑ
     else:
         nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
-    # Nasal ṅ, ṃ, ṁ → ng
+    # Nasal ṅ → ng
         #lowercase
     ṅ_to_ng = nasal_nñ.replace("ṅ", "ng")
-    ṃ_to_ng = ṅ_to_ng.replace("ṃ", "ng")
-    ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
     #UPPERCASE
-    Ṅ_TO_NG = ṁ_to_ng.replace("Ṅ", "NG")
-    Ṃ_TO_NG = Ṅ_TO_NG.replace("Ṃ", "NG")
-    Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "NG")
+    Ṅ_TO_NG = ṅ_to_ng.replace("Ṅ", "NG")
     if ng_check:
-        nasal_ng = ṁ_to_ng
+        nasal_ng = ṅ_to_ng
     else:
         nasal_ng = nasal_nñ
     if uppercase_check:
-        NASAL_NG = Ṁ_TO_NG
+        NASAL_NG = Ṅ_TO_NG
     else:
         NASAL_NG = nasal_ng
     
