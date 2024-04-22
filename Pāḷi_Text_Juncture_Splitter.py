@@ -35,10 +35,17 @@ def animation_demo() -> None:
     insert_text = st.text_area('', height=200, placeholder="e.g. 'Namo tassa bhagavato arahato sammāsambuddhassa.'")
     # Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)
     nasal_check = st.sidebar.checkbox(label='Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)')
-    # Nasal ññ → nñ)
+    # Nasal ññ → nñ
     nñ_check = st.sidebar.checkbox(label='ññ → nñ')
-    # Nasal ṅ, ṃ, ṁ → ng)
-    ng_check = st.sidebar.checkbox(label='ṅ, ṃ, ṁ → ng')
+    # Nasal ṅ → ng
+    ng_check = st.sidebar.checkbox(label='ṅ → ng')
+    # Nasal ṅ, ṃ, ṁ → ng or m
+    ṃṁ_select = st.sidebar.selectbox(
+    "ṃ, ṁ → ng _or_ m",
+    ("None", "ṃ, ṁ → ng", "ṃ, ṁ → m"),
+    index=None,
+    placeholder="None",
+    )
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
