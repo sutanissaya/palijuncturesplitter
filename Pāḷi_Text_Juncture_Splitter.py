@@ -2615,7 +2615,8 @@ def animation_demo() -> None:
     comma_sepa = sepa_lbreak.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     period_sepa = fix_comma_sepa.replace(".", sepa+".")
-    fix_period_sepa = period_sepa.replace(sepa+sepa+sepa+".", sepa+sepa+".")
+    pos_period_sepa = period_sepa.replace("."+sepa+sepa, sepa+sepa+".")
+    fix_period_sepa = pos_period_sepa.replace(sepa+sepa+sepa+".", sepa+sepa+".")
 
  
     # Show Unsplit Line by Line
