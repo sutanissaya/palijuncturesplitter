@@ -2785,7 +2785,19 @@ def animation_demo() -> None:
                 convert_to_perl = convert_to_pers.replace("ḷ", ".l")
                 # UPPERCASE
                 convert_to_perM = convert_to_perl.replace("Ṃ", ".M")
-                convert_to_Ṁ_or_Ṃ = convert_to_perM.replace("Ṁ", ".M")
+                convert_to_perM2 = convert_to_perM.replace("Ṁ", ".M")
+                convert_to_AA = convert_to_perM2.replace("Ā", "AA")
+                convert_to_II = convert_to_AA.replace("Ī", "II")
+                convert_to_UU = convert_to_II.replace("Ū", "UU")
+                convert_FROM_Ṅ = convert_to_UU.replace("Ṅ", "“N")
+                convert_FROM_Ñ = convert_FROM_Ṅ.replace("Ñ", "~N")
+                convert_to_perT = convert_FROM_Ñ.replace("Ṭ", ".T")
+                convert_to_perD = convert_to_perT.replace("Ḍ", ".D")
+                convert_to_perN = convert_to_perD.replace("Ṇ", ".N")
+                convert_to_QQS = convert_to_perN.replace("Ś", "“S")
+                convert_to_perS = convert_to_QQS.replace("Ṣ", ".S")
+                convert_to_perL = convert_to_perS.replace("Ḷ", ".L")
+                convert_to_Ṁ_or_Ṃ = convert_to_perL.replace("Ṁ", ".M")
             else:
                 convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
  
