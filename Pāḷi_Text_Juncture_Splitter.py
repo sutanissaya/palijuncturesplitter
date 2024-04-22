@@ -38,11 +38,23 @@ def animation_demo() -> None:
     # Nasal ññ → nñ)
     nñ_check = st.sidebar.checkbox(label='ññ → nñ')
     # Nasal ṅ → ng)
-    ṅ_ng_check = st.sidebar.checkbox(label='ṅ → ng')
+    ṅ_check = st.sidebar.checkbox(label='ṅ → ng')
     # Nasal ṃ, ṁ → ng)
-    ṃṁ_ng_check = st.sidebar.checkbox(label='ṃ, ṁ → ng')
-    # Nasal ṃ, ṁ → m)
-    ṃṁ_ng_check = st.sidebar.checkbox(label='ṃ, ṁ → m')
+    ṃṁ_select = st.sidebar.selectbox(
+    "ṃ, ṁ → ng _or_ m",
+    ("None", "ṃ, ṁ → ng", "ṃ, ṁ →m"),
+    index=None,
+    placeholder="None",
+    )
+ # v ⇄ w
+    v_w_select = st.sidebar.selectbox(
+    "ṃ, ṁ → ng _or_ m",
+    ("None", "ṃ, ṁ → ng", "ṃ, ṁ →m"),
+    index=None,
+    placeholder="None",
+    )
+
+ 
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
@@ -2474,27 +2486,39 @@ def animation_demo() -> None:
         nasal_nñ = ñÑ_to_nÑ
     else:
         nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
-    # Nasal ṅ, ṃ, ṁ → ng
+
+    # Nasal ṅ → ng
+    if ṅ_check:
         #lowercase
-    ṅ_to_ng = nasal_nñ.replace("ṅ", "ng")
-    ṃ_to_ng = ṅ_to_ng.replace("ṃ", "ng")
-    ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
-    #UPPERCASE
-    Ṅ_TO_NG = ṁ_to_ng.replace("Ṅ", "NG")
-    Ṃ_TO_NG = Ṅ_TO_NG.replace("Ṃ", "NG")
-    Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "NG")
-    if ṅ_ng_check:
-        ṅnasal_ng = ṁ_to_ng
+        ṅ_to_ng = nasal_nñ.replace("ṅ", "ng")
     else:
-        ṅnasal_ng = nasal_nñ
+        ṅ_to_ng = nasal_nñ
     if uppercase_check:
-        ṄNASAL_NG = Ṁ_TO_NG
+    #UPPERCASE
+        Ṅ_TO_NG = ṅ_to_ng.replace("Ṅ", "NG")
     else:
-        ṄNASAL_NG = ṅnasal_ng
+        Ṅ_TO_NG = ṅ_to_ng
+
+    # Nasal ṃ, ṁ → ng or m
+    if ṃṁ_select == "ṃ, ṁ → ng"
+        ṃ_to_ng = Ṅ_TO_NG.replace("ṃ", "ng")
+        ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
+        if uppercase_check:
+            Ṃ_TO_NG = ṁ_to_ng.replace("Ṃ", "NG")
+            Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "NG") 
+        else:
+            if ṃṁ_select == "ṃ, ṁ → m"
+            ṃ_to_ng = Ṅ_TO_NG.replace("ṃ", "m")
+            ṁ_to_ng = ṃ_to_ng.replace("ṁ", "m")
+                if uppercase_check:
+                    Ṃ_TO_NG = ṁ_to_ng.replace("Ṃ", "M")
+                    Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "M") 
+                else:
+                    Ṁ_TO_NG = Ṅ_TO_NG
     
     # Saṃyoga Consonants
     if samyoga_consonants_check:
-        samyoga_ṭ = ṄNASAL_NG.replace("ṭ", "t")
+        samyoga_ṭ = Ṁ_TO_NG.replace("ṭ", "t")
         samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
         samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
         samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
