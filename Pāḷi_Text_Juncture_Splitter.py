@@ -37,8 +37,12 @@ def animation_demo() -> None:
     nasal_check = st.sidebar.checkbox(label='Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)')
     # Nasal ññ → nñ)
     nñ_check = st.sidebar.checkbox(label='ññ → nñ')
-    # Nasal ṅ, ṃ, ṁ → ng)
-    ng_check = st.sidebar.checkbox(label='ṅ, ṃ, ṁ → ng')
+    # Nasal ṅ → ng)
+    ṅ_ng_check = st.sidebar.checkbox(label='ṅ → ng')
+    # Nasal ṃ, ṁ → ng)
+    ṃṁ_ng_check = st.sidebar.checkbox(label='ṃ, ṁ → ng')
+    # Nasal ṃ, ṁ → m)
+    ṃṁ_ng_check = st.sidebar.checkbox(label='ṃ, ṁ → m')
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
@@ -2479,18 +2483,18 @@ def animation_demo() -> None:
     Ṅ_TO_NG = ṁ_to_ng.replace("Ṅ", "NG")
     Ṃ_TO_NG = Ṅ_TO_NG.replace("Ṃ", "NG")
     Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "NG")
-    if ng_check:
-        nasal_ng = ṁ_to_ng
+    if ṅ_ng_check:
+        ṅnasal_ng = ṁ_to_ng
     else:
-        nasal_ng = nasal_nñ
+        ṅnasal_ng = nasal_nñ
     if uppercase_check:
-        NASAL_NG = Ṁ_TO_NG
+        ṄNASAL_NG = Ṁ_TO_NG
     else:
-        NASAL_NG = nasal_ng
+        ṄNASAL_NG = ṅnasal_ng
     
     # Saṃyoga Consonants
     if samyoga_consonants_check:
-        samyoga_ṭ = NASAL_NG.replace("ṭ", "t")
+        samyoga_ṭ = ṄNASAL_NG.replace("ṭ", "t")
         samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
         samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
         samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
