@@ -2490,10 +2490,37 @@ def animation_demo() -> None:
         NASAL_NG = Ṅ_TO_NG
     else:
         NASAL_NG = nasal_ng
-    
+
+
+    # ṃ, ṁ → ng
+        #lowercase
+    ṃ_to_ng = NASAL_NG.replace("ṃ", "ng")
+    ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
+    #UPPERCASE
+    Ṃ_to_NG = ṁ_to_ng.replace("Ṃ", "NG")
+    Ṁ_to_NG = Ṃ_to_NG.replace("Ṁ", "NG")
+ 
+    # ṃ, ṁ → m
+        #lowercase
+    ṃ_to_m = NASAL_NG.replace("ṃ", "m")
+    ṁ_to_m = ṃ_to_m.replace("ṁ", "m")
+    #UPPERCASE
+    Ṃ_to_M = ṁ_to_m.replace("Ṃ", "M")
+    Ṁ_to_M = Ṃ_to_M.replace("Ṁ", "M")
+ 
+     # (Optional) Anusvāra / niggahīta standard conversion  ("None", "ṃ, ṁ → ng", "ṃ, ṁ → m"),
+    if ṃṁ_select == "ṃ, ṁ → ng":
+        ṂṀ_to_NG_or_M = Ṁ_to_NG
+    else:
+        if ṃṁ_select == "ṃ, ṁ → m":
+            # lowercase
+            ṂṀ_to_NG_or_M = Ṁ_to_M
+        else:
+            ṂṀ_to_NG_or_M = NASAL_NG
+         
     # Saṃyoga Consonants
     if samyoga_consonants_check:
-        samyoga_ṭ = NASAL_NG.replace("ṭ", "t")
+        samyoga_ṭ = ṂṀ_to_NG_or_M.replace("ṭ", "t")
         samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
         samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
         samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
@@ -2526,7 +2553,7 @@ def animation_demo() -> None:
         samyoga_gH = samyoga_dH.replace("gH", "kH")
         samyoga_jH = samyoga_gH.replace("jH", "cH")
     else:
-        samyoga_jH = NASAL_NG    
+        samyoga_jH = ṂṀ_to_NG_or_M    
     if insert_text[:2] == "ñh":
         first_letters = samyoga_jH.replace("ñ"+sepa+"h", "ñ"+"h", 1)
     elif insert_text[:2] == "ñH":
