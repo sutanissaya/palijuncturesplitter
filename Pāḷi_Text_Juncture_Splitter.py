@@ -2628,17 +2628,33 @@ def animation_demo() -> None:
     ī_sepa = ā_sepa.replace("ī"+sepa+"  ", "ī"+sepa+sepa+"  ")
     ū_sepa = ī_sepa.replace("ū"+sepa+"  ", "ū"+sepa+sepa+"  ")
     ṃ_sepa = ū_sepa.replace("ṃ"+sepa+"  ", "ṃ"+sepa+sepa+"  ")
+    ṁ_sepa = ṃ_sepa.replace("ṁ"+sepa+"  ", "ṁ"+sepa+sepa+"  ")
+    #UPPERCASE
+    A_sepa = ṁ_sepa.replace("A"+sepa+"  ", "A"+sepa+sepa+"  ")
+    I_sepa = A_sepa.replace("I"+sepa+"  ", "I"+sepa+sepa+"  ")
+    U_sepa = I_sepa.replace("U"+sepa+"  ", "U"+sepa+sepa+"  ")
+    E_sepa = U_sepa.replace("E"+sepa+"  ", "E"+sepa+sepa+"  ")
+    O_sepa = E_sepa.replace("O"+sepa+"  ", "O"+sepa+sepa+"  ")
+    Ā_sepa = O_sepa.replace("Ā"+sepa+"  ", "Ā"+sepa+sepa+"  ")
+    Ī_sepa = Ā_sepa.replace("Ī"+sepa+"  ", "Ī"+sepa+sepa+"  ")
+    Ū_sepa = Ī_sepa.replace("Ū"+sepa+"  ", "Ū"+sepa+sepa+"  ")
+    Ṃ_sepa = Ū_sepa.replace("Ṃ"+sepa+"  ", "Ṃ"+sepa+sepa+"  ")
+    Ṁ_sepa = Ṃ_sepa.replace("Ṁ"+sepa+"  ", "Ṁ"+sepa+sepa+"  ")
 
+    if uppercase_check:
+        ṁ_sepa_or_Ṁ_sepa = Ṁ_sepa
+    else:
+        ṁ_sepa_or_Ṁ_sepa = ṁ_sepa
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = ṃ_sepa.split('\n')
+        output_lines = ṁ_sepa_or_Ṁ_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = ṃ_sepa
+        unsplit_OR_split = ṁ_sepa_or_Ṁ_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
