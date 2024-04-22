@@ -2373,6 +2373,83 @@ def animation_demo() -> None:
     ṁ_to_ṅ_sepa_g = ṃ_to_ṅ_sepa_g.replace("ṁ"+sepa+"g", "ṅ"+sepa+"g")
     Ṃ_to_Ṅ_sepa_G = ṁ_to_ṅ_sepa_g.replace("Ṃ"+sepa+"G", "Ṅ"+sepa+"G")
     Ṁ_to_Ṅ_sepa_G = Ṃ_to_Ṅ_sepa_G.replace("Ṁ"+sepa+"G", "Ṅ"+sepa+"G") 
+    ṃ_to_ṅ_k = Ṁ_to_Ṅ_sepa_G.replace("ṃ"+"k", "ṅ"+"k")
+    ṁ_to_ṅ_k = ṃ_to_ṅ_k.replace("ṁ"+"k", "ṅ"+"k")
+    Ṃ_to_Ṅ_K = ṁ_to_ṅ_k.replace("Ṃ"+"K", "Ṅ"+"K")
+    Ṁ_to_Ṅ_K = Ṃ_to_Ṅ_K.replace("Ṁ"+"K", "Ṅ"+"K")
+    ṃ_to_ṅ_sepa_k = Ṁ_to_Ṅ_K.replace("ṃ"+sepa+"k", "ṅ"+sepa+"k")
+    ṁ_to_ṅ_sepa_k = ṃ_to_ṅ_sepa_k.replace("ṁ"+sepa+"k", "ṅ"+sepa+"k")
+    Ṃ_to_Ṅ_sepa_K = ṁ_to_ṅ_sepa_k.replace("Ṃ"+sepa+"K", "Ṅ"+sepa+"K")
+    Ṁ_to_Ṅ_sepa_K = Ṃ_to_Ṅ_sepa_K.replace("Ṁ"+sepa+"K", "Ṅ"+sepa+"K")
+ 
+    ṃ_to_ñ_j = Ṁ_to_Ṅ_sepa_K.replace("ṃ"+"j", "ñ"+"j")
+    ṁ_to_ñ_j = ṃ_to_ñ_j.replace("ṁ"+"j", "ñ"+"j")
+    Ṃ_to_Ñ_J = ṁ_to_ñ_j.replace("Ṃ"+"J", "Ñ"+"J")
+    Ṁ_to_Ñ_J = Ṃ_to_Ñ_J.replace("Ṁ"+"J", "Ñ"+"J")
+    ṃ_to_ñ_sepa_j = Ṁ_to_Ñ_J.replace("ṃ"+sepa+"j", "ñ"+sepa+"j")
+    ṁ_to_ñ_sepa_j = ṃ_to_ñ_sepa_j.replace("ṁ"+sepa+"j", "ñ"+sepa+"j")
+    Ṃ_to_Ñ_sepa_J = ṁ_to_ñ_sepa_j.replace("Ṃ"+sepa+"J", "Ñ"+sepa+"J")
+    Ṁ_to_Ñ_sepa_J = Ṃ_to_Ñ_sepa_J.replace("Ṁ"+sepa+"J", "Ñ"+sepa+"J")
+    ṃ_to_ñ_c = Ṁ_to_Ñ_sepa_J.replace("ṃ"+"c", "ñ"+"c")
+    ṁ_to_ñ_c = ṃ_to_ñ_c.replace("ṁ"+"c", "ñ"+"c")
+    Ṃ_to_Ñ_C = ṁ_to_ñ_c.replace("Ṃ"+"C", "Ñ"+"C")
+    Ṁ_to_Ñ_C = Ṃ_to_Ñ_C.replace("Ṁ"+"C", "Ñ"+"C")
+    ṃ_to_ñ_sepa_c = Ṁ_to_Ñ_C.replace("ṃ"+sepa+"c", "ñ"+sepa+"c")
+    ṁ_to_ñ_sepa_c = ṃ_to_ñ_sepa_c.replace("ṁ"+sepa+"c", "ñ"+sepa+"c")
+    Ṃ_to_Ñ_sepa_C = ṁ_to_ñ_sepa_c.replace("Ṃ"+sepa+"C", "Ñ"+sepa+"C")
+    Ṁ_to_Ñ_sepa_C = Ṃ_to_Ñ_sepa_C.replace("Ṁ"+sepa+"C", "Ñ"+sepa+"C")
+
+    ṃ_to_ṇ_ṭ = Ṁ_to_Ñ_sepa_C.replace("ṃ"+"ṭ", "ṇ"+"ṭ")
+    ṁ_to_ṇ_ṭ = ṃ_to_ṇ_ṭ.replace("ṁ"+"ṭ", "ṇ"+"ṭ")
+    Ṃ_to_Ṇ_Ṭ = ṁ_to_ṇ_ṭ.replace("Ṃ"+"Ṭ", "Ṇ"+"Ṭ")
+    Ṁ_to_Ṇ_Ṭ = Ṃ_to_Ṇ_Ṭ.replace("Ṁ"+"Ṭ", "Ṇ"+"Ṭ")
+    ṃ_to_ṇ_sepa_ṭ = Ṁ_to_Ṇ_Ṭ.replace("ṃ"+sepa+"ṭ", "ṇ"+sepa+"ṭ")
+    ṁ_to_ṇ_sepa_ṭ = ṃ_to_ṇ_sepa_ṭ.replace("ṁ"+sepa+"ṭ", "ṇ"+sepa+"ṭ")
+    Ṃ_to_Ṇ_sepa_Ṭ = ṁ_to_ṇ_sepa_ṭ.replace("Ṃ"+sepa+"Ṭ", "Ṇ"+sepa+"Ṭ")
+    Ṁ_to_Ṇ_sepa_Ṭ = Ṃ_to_Ṇ_sepa_Ṭ.replace("Ṁ"+sepa+"Ṭ", "Ṇ"+sepa+"Ṭ")
+    ṃ_to_ṇ_ḍ = Ṁ_to_Ṇ_sepa_Ṭ.replace("ṃ"+"ḍ", "ṇ"+"ḍ")
+    ṁ_to_ṇ_ḍ = ṃ_to_ṇ_ḍ.replace("ṁ"+"ḍ", "ṇ"+"ḍ")
+    Ṃ_to_Ṇ_Ḍ = ṁ_to_ṇ_ḍ.replace("Ṃ"+"Ḍ", "Ṇ"+"Ḍ")
+    Ṁ_to_Ṇ_Ḍ = Ṃ_to_Ṇ_Ḍ.replace("Ṁ"+"Ḍ", "Ṇ"+"Ḍ")
+    ṃ_to_ṇ_sepa_ḍ = Ṁ_to_Ṇ_Ḍ.replace("ṃ"+sepa+"ḍ", "ṇ"+sepa+"ḍ")
+    ṁ_to_ṇ_sepa_ḍ = ṃ_to_ṇ_sepa_ḍ.replace("ṁ"+sepa+"ḍ", "ṇ"+sepa+"ḍ")
+    Ṃ_to_Ṇ_sepa_Ḍ = ṁ_to_ṇ_sepa_ḍ.replace("Ṃ"+sepa+"Ḍ", "Ṇ"+sepa+"Ḍ")
+    Ṁ_to_Ṇ_sepa_Ḍ = Ṃ_to_Ṇ_sepa_Ḍ.replace("Ṁ"+sepa+"Ḍ", "Ṇ"+sepa+"Ḍ")
+
+    ṃ_to_n_t = Ṁ_to_Ṇ_sepa_Ḍ.replace("ṃ"+"t", "n"+"t")
+    ṁ_to_n_t = ṃ_to_n_t.replace("ṁ"+"t", "n"+"t")
+    Ṃ_to_N_T = ṁ_to_n_t.replace("Ṃ"+"T", "N"+"T")
+    Ṁ_to_N_T = Ṃ_to_N_T.replace("Ṁ"+"T", "N"+"T")
+    ṃ_to_n_sepa_t = Ṁ_to_N_T.replace("ṃ"+sepa+"t", "n"+sepa+"t")
+    ṁ_to_n_sepa_t = ṃ_to_n_sepa_t.replace("ṁ"+sepa+"t", "n"+sepa+"t")
+    Ṃ_to_N_sepa_T = ṁ_to_n_sepa_t.replace("Ṃ"+sepa+"T", "N"+sepa+"T")
+    Ṁ_to_N_sepa_T = Ṃ_to_N_sepa_T.replace("Ṁ"+sepa+"T", "N"+sepa+"T")
+    ṃ_to_n_d = Ṁ_to_N_sepa_T.replace("ṃ"+"d", "n"+"d")
+    ṁ_to_n_d = ṃ_to_n_d.replace("ṁ"+"d", "n"+"d")
+    Ṃ_to_N_D = ṁ_to_n_d.replace("Ṃ"+"D", "N"+"D")
+    Ṁ_to_N_D = Ṃ_to_N_D.replace("Ṁ"+"D", "N"+"D")
+    ṃ_to_n_sepa_d = Ṁ_to_N_D.replace("ṃ"+sepa+"d", "n"+sepa+"d")
+    ṁ_to_n_sepa_d = ṃ_to_n_sepa_d.replace("ṁ"+sepa+"d", "n"+sepa+"d")
+    Ṃ_to_N_sepa_D = ṁ_to_n_sepa_d.replace("Ṃ"+sepa+"D", "N"+sepa+"D")
+    Ṁ_to_N_sepa_D = Ṃ_to_N_sepa_D.replace("Ṁ"+sepa+"D", "N"+sepa+"D")
+
+    ṃ_to_m_p = Ṁ_to_N_sepa_D.replace("ṃ"+"p", "m"+"p")
+    ṁ_to_m_p = ṃ_to_m_p.replace("ṁ"+"p", "m"+"p")
+    Ṃ_to_M_P = ṁ_to_m_p.replace("Ṃ"+"P", "M"+"P")
+    Ṁ_to_M_P = Ṃ_to_M_P.replace("Ṁ"+"P", "M"+"P")
+    ṃ_to_m_sepa_p = Ṁ_to_M_P.replace("ṃ"+sepa+"p", "m"+sepa+"p")
+    ṁ_to_m_sepa_p = ṃ_to_m_sepa_p.replace("ṁ"+sepa+"p", "m"+sepa+"p")
+    Ṃ_to_M_sepa_P = ṁ_to_m_sepa_p.replace("Ṃ"+sepa+"P", "M"+sepa+"P")
+    Ṁ_to_M_sepa_P = Ṃ_to_M_sepa_P.replace("Ṁ"+sepa+"P", "M"+sepa+"P")
+    ṃ_to_m_b = Ṁ_to_M_sepa_P.replace("ṃ"+"b", "m"+"b")
+    ṁ_to_m_b = ṃ_to_m_b.replace("ṁ"+"b", "m"+"b")
+    Ṃ_to_M_B = ṁ_to_m_b.replace("Ṃ"+"B", "M"+"B")
+    Ṁ_to_M_B = Ṃ_to_M_B.replace("Ṁ"+"B", "M"+"B")
+    ṃ_to_m_sepa_b = Ṁ_to_M_B.replace("ṃ"+sepa+"b", "m"+sepa+"b")
+    ṁ_to_m_sepa_b = ṃ_to_m_sepa_b.replace("ṁ"+sepa+"b", "m"+sepa+"b")
+    Ṃ_to_M_sepa_B = ṁ_to_m_sepa_b.replace("Ṃ"+sepa+"B", "M"+sepa+"B")
+    Ṁ_to_M_sepa_B = Ṃ_to_M_sepa_B.replace("Ṁ"+sepa+"B", "M"+sepa+"B")
+ 
     st.divider()
     """
     **Split text:**
@@ -2381,18 +2458,18 @@ def animation_demo() -> None:
         st.markdown('''
         :gray[The split text will be shown here.]''')
     if nasal_check:
-        u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G = Ṁ_to_Ṅ_sepa_G
+        u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B = Ṁ_to_M_sepa_B
     else:
-        u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon
+        u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon
     # Nasal ññ → nñ
-    ññ_to_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
+    ññ_to_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
     ÑÑ_to_NÑ = ññ_to_nñ.replace("Ñ"+sepa+"Ñ", "N"+sepa+"Ñ")
     Ññ_to_Nñ = ÑÑ_to_NÑ.replace("Ñ"+sepa+"ñ", "N"+sepa+"ñ")
     ñÑ_to_nÑ = Ññ_to_Nñ.replace("ñ"+sepa+"Ñ", "n"+sepa+"Ñ")
     if nñ_check:
         nasal_nñ = ñÑ_to_nÑ
     else:
-        nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_Ṅ_sepa_G
+        nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
     # Nasal ṅ, ṃ, ṁ → ng
         #lowercase
     ṅ_to_ng = nasal_nñ.replace("ṅ", "ng")
