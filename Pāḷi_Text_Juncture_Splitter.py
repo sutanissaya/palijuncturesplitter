@@ -2510,11 +2510,11 @@ def animation_demo() -> None:
             if ṃṁ_select == "ṃ, ṁ → m":
                 ṃ_to_ng = Ṅ_TO_NG.replace("ṃ", "m")
                 ṁ_to_ng = ṃ_to_ng.replace("ṁ", "m")
-                    if uppercase_check:
-                        Ṃ_TO_NG = ṁ_to_ng.replace("Ṃ", "M")
-                        Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "M") 
-                    else:
-                        Ṁ_TO_NG = Ṅ_TO_NG
+                if uppercase_check:
+                    Ṃ_TO_NG = ṁ_to_ng.replace("Ṃ", "M")
+                    Ṁ_TO_NG = Ṃ_TO_NG.replace("Ṁ", "M") 
+                else:
+                    Ṁ_TO_NG = Ṅ_TO_NG
     
     # Saṃyoga Consonants
     if samyoga_consonants_check:
