@@ -2467,38 +2467,15 @@ def animation_demo() -> None:
         nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
 
 
-    # Transliteration standard conversion
-    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
-        # lowercase
-        convert_to_ṃ = nasal_nñ.replace("ṁ", "ṃ")
-        # UPPERCASE
-        convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
-    else:
-        if translit_select == "ISO 15919: Pāḷi (2001)":
-            # lowercase
-            convert_to_ṁ = nasal_nñ.replace("ṃ", "ṁ")
-            # UPPERCASE
-            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
-        else:
-            if translit_select == "Velthuis (1983)":
-                # lowercase
-                convert_to_perm = nasal_nñ.replace("ṃ", ".m")
-                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
-                # UPPERCASE
-                convert_to_perM = convert_to_perm2.replace("Ṃ", ".M")
-                convert_to_Ṁ_or_Ṃ = convert_to_perM.replace("Ṁ", ".M")
-            else:
-                convert_to_Ṁ_or_Ṃ = nasal_nñ
-
     # Nasal ṅ → ng
         #lowercase
-    ṅ_to_ng = convert_to_Ṁ_or_Ṃ.replace("ṅ", "ng")
+    ṅ_to_ng = nasal_nñ.replace("ṅ", "ng")
     #UPPERCASE
     Ṅ_TO_NG = ṅ_to_ng.replace("Ṅ", "NG")
     if ng_check:
         nasal_ng = ṅ_to_ng
     else:
-        nasal_ng = convert_to_Ṁ_or_Ṃ
+        nasal_ng = nasal_nñ
     if uppercase_check:
         NASAL_NG = Ṅ_TO_NG
     else:
@@ -2770,22 +2747,46 @@ def animation_demo() -> None:
         ṁ_sepa_or_Ṁ_sepa = Ṁ_sepa
     else:
         ṁ_sepa_or_Ṁ_sepa = ṁ_sepa
-
+     
     # Saṃyoga chanting style - Pauses
     if samyoga_pauses_check:
         saṃyoga_or_not = v_or_w
     else:
         saṃyoga_or_not = ṁ_sepa_or_Ṁ_sepa
+
+
+    # Transliteration standard conversion
+    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
+        # lowercase
+        convert_to_ṃ = saṃyoga_or_not.replace("ṁ", "ṃ")
+        # UPPERCASE
+        convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
+    else:
+        if translit_select == "ISO 15919: Pāḷi (2001)":
+            # lowercase
+            convert_to_ṁ = saṃyoga_or_not.replace("ṃ", "ṁ")
+            # UPPERCASE
+            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
+        else:
+            if translit_select == "Velthuis (1983)":
+                # lowercase
+                convert_to_perm = saṃyoga_or_not.replace("ṃ", ".m")
+                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
+                # UPPERCASE
+                convert_to_perM = convert_to_perm2.replace("Ṃ", ".M")
+                convert_to_Ṁ_or_Ṃ = convert_to_perM.replace("Ṁ", ".M")
+            else:
+                convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = saṃyoga_or_not.split('\n')
+        output_lines = convert_to_Ṁ_or_Ṃ.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = saṃyoga_or_not
+        unsplit_OR_split = convert_to_Ṁ_or_Ṃ
         st.write(unsplit_OR_split)
       
 animation_demo()
