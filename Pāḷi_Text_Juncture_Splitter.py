@@ -2491,22 +2491,27 @@ def animation_demo() -> None:
     else:
         NASAL_NG = nasal_ng
 
-
     # ṃ, ṁ → ng
         #lowercase
     ṃ_to_ng = NASAL_NG.replace("ṃ", "ng")
     ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
     #UPPERCASE
-    Ṃ_to_NG = ṁ_to_ng.replace("Ṃ", "NG")
-    Ṁ_to_NG = Ṃ_to_NG.replace("Ṁ", "NG")
+    if uppercase_check:
+        Ṃ_to_NG = ṁ_to_ng.replace("Ṃ", "NG")
+        Ṁ_to_NG = Ṃ_to_NG.replace("Ṁ", "NG")
+    else:
+        Ṁ_to_NG = ṁ_to_ng
  
     # ṃ, ṁ → m
         #lowercase
     ṃ_to_m = NASAL_NG.replace("ṃ", "m")
     ṁ_to_m = ṃ_to_m.replace("ṁ", "m")
     #UPPERCASE
-    Ṃ_to_M = ṁ_to_m.replace("Ṃ", "M")
-    Ṁ_to_M = Ṃ_to_M.replace("Ṁ", "M")
+    if uppercase_check:
+        Ṃ_to_M = ṁ_to_m.replace("Ṃ", "M")
+        Ṁ_to_M = Ṃ_to_M.replace("Ṁ", "M")
+    else:
+        Ṁ_to_M = ṁ_to_m
  
      # (Optional) Anusvāra / niggahīta standard conversion  ("None", "ṃ, ṁ → ng", "ṃ, ṁ → m"),
     if ṃṁ_select == "ṃ, ṁ → ng":
