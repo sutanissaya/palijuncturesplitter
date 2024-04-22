@@ -2789,7 +2789,7 @@ def animation_demo() -> None:
                 convert_to_II = convert_to_AA.replace("Ī", "II")
                 convert_to_UU = convert_to_II.replace("Ū", "UU")
                 convert_FROM_Ṅ = convert_to_UU.replace("Ṅ", "“N")
-                convert_FROM_Ñ = convert_FROM_Ṅ.replace("Ñ", "$~$N")
+                convert_FROM_Ñ = convert_FROM_Ṅ.replace("Ñ", "$~N")
                 convert_to_perT = convert_FROM_Ñ.replace("Ṭ", ".T")
                 convert_to_perD = convert_to_perT.replace("Ḍ", ".D")
                 convert_to_perN = convert_to_perD.replace("Ṇ", ".N")
