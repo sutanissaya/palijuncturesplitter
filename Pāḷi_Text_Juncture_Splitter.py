@@ -40,13 +40,8 @@ def animation_demo() -> None:
     # Nasal ṅ → ng)
     ṅ_check = st.sidebar.checkbox(label='ṅ → ng')
     # Nasal ṃ, ṁ → ng)
-    ṃṁ_select = st.sidebar.selectbox(
-    "ṃ, ṁ → ng _or_ m",
-    ("None", "ṃ, ṁ → ng", "ṃ, ṁ →m"),
-    index=None,
-    placeholder="None",
-    )
- # v ⇄ w
+    ṃṁ_select = st.sidebar.selectbox("ṃ, ṁ → ng _or_ m", ("None", "ṃ, ṁ → ng", "ṃ, ṁ →m"), index=None, placeholder="None",)
+    # v ⇄ w
     v_w_select = st.sidebar.selectbox(
     "ṃ, ṁ → ng _or_ m",
     ("None", "ṃ, ṁ → ng", "ṃ, ṁ →m"),
