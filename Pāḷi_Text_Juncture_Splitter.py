@@ -2613,17 +2613,18 @@ def animation_demo() -> None:
     # Extra juncture sign after a double space "  ", a comma ",", a period ".", semi-colon";", colon ":", or a line break / enter (char(10) or \n)
     sepa_lbreak = v_or_w.replace("  \n", sepa+"  \n")
     sepa_comma = sepa_lbreak.replace(",", ","+sepa)
+    fix_sepa_comma = sepa_comma.replace(","+sepa+sepa, ","+sepa+sepa)
 
  
     # Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = sepa_comma.split('\n')
+        output_lines = fix_sepa_comma.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = sepa_comma
+        unsplit_OR_split = fix_sepa_comma
         st.write(unsplit_OR_split)
       
 animation_demo()
