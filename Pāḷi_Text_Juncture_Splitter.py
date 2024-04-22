@@ -62,10 +62,10 @@ def animation_demo() -> None:
     placeholder="None",
     )
  
-    # Anusvāra/niggahīta standard conversion (ṃ ⇄ ṁ)
-    anusvara_select = st.sidebar.selectbox(
-    "Anusvāra/niggahīta standard conversion  \n(ṃ ⇄ ṁ)",
-    ("None", "Change to ṃ - IAST (International Alphabet of Sanskrit Transliteration)", "Change to ṁ - ISO 15919: Pāḷi"),
+    # Transliteration Standard Conversion
+    translit_select = st.sidebar.selectbox(
+    "Transliteration Standard Conversion",
+    ("_Do not convert_", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
     index=None,
     placeholder="None",
     )
@@ -2266,13 +2266,14 @@ def animation_demo() -> None:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = NO_DOUBLE_JUNCTURES2
     else:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = no_double_junctures2
-    if anusvara_select == "Change to ṃ - IAST (International Alphabet of Sanskrit Transliteration)":
+    # ("_Do not convert_", "", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)")
+    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
         # lowercase
         convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
         # UPPERCASE
         convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
     else:
-        if anusvara_select == "Change to ṁ - ISO 15919: Pāḷi":
+        if translit_select == "ISO 15919: Pāḷi (2001)":
             # lowercase
             convert_to_ṁ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", "ṁ")
             # UPPERCASE
