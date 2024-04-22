@@ -65,7 +65,7 @@ def animation_demo() -> None:
     # Transliteration Standard Conversion
     translit_select = st.sidebar.selectbox(
     "Convert transliteration standard to:",
-    ("<p><em>Do not convert</em></p>", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
+    ("Do not convert", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
     index=None,
     placeholder="None",
     )
@@ -2266,7 +2266,7 @@ def animation_demo() -> None:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = NO_DOUBLE_JUNCTURES2
     else:
         no_double_junctures_or_NO_DOUBLE_JUNCTURES = no_double_junctures2
-    # ("_Do not convert_", "", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)")
+
     if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
         # lowercase
         convert_to_ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṁ", "ṃ")
@@ -2279,7 +2279,15 @@ def animation_demo() -> None:
             # UPPERCASE
             convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
         else:
-            convert_to_Ṁ_or_Ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES
+            if translit_select == "Velthuis (1983)":
+                # lowercase
+                convert_to_perm = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace("ṃ", ".m")
+                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
+                # UPPERCASE
+                convert_to_perM = convert_to_perm2.replace("Ṃ", ".M")
+                convert_to_Ṁ_or_Ṃ = convert_to_perM.replace("Ṁ", ".M")
+            else:
+                convert_to_Ṁ_or_Ṃ = no_double_junctures_or_NO_DOUBLE_JUNCTURES
     # Fix the position of preposition pauses and junctions signs
     sepa_comma = convert_to_Ṁ_or_Ṃ.replace(sepa+",",","+sepa)
     sepa_period = sepa_comma.replace(sepa+".","."+sepa)
