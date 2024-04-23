@@ -26,7 +26,19 @@ st.markdown("<p style='text-align: center;'>Yā — nī — dha bhū — tā —
 st.markdown("<p style='text-align: center;'>bhum — mā — ni vā — yā — ni va an — talik — khe — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>sab — be — va bhū — tā — sumanā — bhavan — tu. — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Atho — pi sak — kac — ca suṇan — tu bhā — sitaṃ. — —</p>", unsafe_allow_html=True)
+
 st.divider()
+
+
+st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_html=True)
+"""
+Simply type or paste some Pāḷi text (there is a couple of resources below) you would like to juncture-split into the box then click anywhere outside the box (or press _Ctrl_+_Enter_) to have the app render the result.\n
+You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is em dash "—") or converting the text into a different transliteration standard, by navigating the left-side panel.\n
+The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These can be changed by going to the customization panel on the left.
+"""
+
+st.divider()
+
 """
 **Start splitting by inserting Pāḷi text here:**
 """
@@ -48,9 +60,14 @@ def animation_demo() -> None:
     )
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
+
+    # Show hidden punctuation marks
+    punc_check = st.sidebar.checkbox(label='Show hidden punctuation marks')
+    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
+
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, colons, semi-colons, and the end of lines')
+    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
     # Saṃyoga - Consonants
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
