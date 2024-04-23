@@ -2799,16 +2799,19 @@ def animation_demo() -> None:
                 convert_to_Ṁ_or_Ṃ = convert_to_perL.replace("Ṁ", ".M")
             else:
                 convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
+
+    # Convert numbers to static
+    static_no = convert_to_Ṁ_or_Ṃ.replace("1.", "\1.")
  
-    # Show Unsplit Line by Line
+    #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = convert_to_Ṁ_or_Ṃ.split('\n')
+        output_lines = static_no.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = convert_to_Ṁ_or_Ṃ
+        unsplit_OR_split = static_no
         st.write(unsplit_OR_split)
       
 animation_demo()
