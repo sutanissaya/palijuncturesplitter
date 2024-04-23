@@ -2881,7 +2881,7 @@ def animation_demo() -> None:
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
 
     # Double juncture signs at the end of the text
-    dsepa_last_text = st.write(static_no0+sepa+sepa)
+    dsepa_last_text = static_no0+sepa+sepa
  
     #Show Unsplit Line by Line
     if show_unsplit:
