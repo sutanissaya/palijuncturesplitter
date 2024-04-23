@@ -2948,34 +2948,15 @@ def animation_demo() -> None:
     static_no9 = static_no8.replace("9."+sepa, "9"+"\9.")
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
 
- # Hide punctuation marks
-    if punc_check:
-        hide_squote = static_no0
-    else:
-        hide_comma = static_no0.replace(",","\,")
-        hide_period = hide_comma.replace(".","\.")
-        hide_qmark = hide_period.replace("?","\?")
-        hide_emark = hide_qmark.replace("!","")
-        hide_emdash = hide_emark.replace("—","")
-        hide_endash = hide_emdash.replace("–","")
-        hide_scolon = hide_endash.replace(";","")
-        hide_colon = hide_scolon.replace(":","")
-        hide_cdquote = hide_colon.replace("“","")
-        hide_cquote = hide_cdquote.replace("‘","")
-        hide_cdequote = hide_cquote.replace("”","")
-        hide_cequote = hide_cdequote.replace("’","")
-        hide_sdquote = hide_cequote.replace("\"","")
-        hide_squote = hide_sdquote.replace("'","")
-
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = hide_squote.split('\n')
+        output_lines = static_no0.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = hide_squote
+        unsplit_OR_split = static_no0
         st.write(unsplit_OR_split)
       
 animation_demo()
