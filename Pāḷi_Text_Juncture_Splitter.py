@@ -27,14 +27,18 @@ st.markdown("<p style='text-align: center;'>bhum — mā — ni vā — yā — 
 st.markdown("<p style='text-align: center;'>sab — be — va bhū — tā — sumanā — bhavan — tu. — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Atho — pi sak — kac — ca suṇan — tu bhā — sitaṃ. — —</p>", unsafe_allow_html=True)
 
+st.divider()
+
+
 st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_html=True)
 """
-Simply type or paste in some Pāḷi text you would like to juncture-split into the box down below then click anywhere outside the box (or press Ctrl+Enter) to have the app instantaneously render the result.\n
-You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is em dash "—", for higher readibility) and converting the text to a different transliteration standard, by navigating the left-side panel.\n
-The default chanting style adopted to the text is _Magadha_ (Makhot) which is the one of the two main styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, question & exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks are hidden also by default for higher readability. These can be changed by going to the customization panel on the left.
+Simply type or paste in some Pāḷi text (there is a couple of resources below) you would like to juncture-split into the box right down below then click anywhere outside the box (or press Ctrl+Enter) to have the app instantaneously render the result.\n
+You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is em dash "—") or converting the text to a different transliteration standard, by navigating the left-side panel.\n
+The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two main styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden also by default for higher readability. These can be changed by going to the customization panel on the left.
 """
 
 st.divider()
+
 """
 **Start splitting by inserting Pāḷi text here:**
 """
