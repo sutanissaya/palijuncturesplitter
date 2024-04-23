@@ -48,14 +48,9 @@ def animation_demo() -> None:
     )
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
-
-    # Hide punctuation marks
-    punc_check = st.sidebar.checkbox(label='Hide punctuation marks')
-    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, and en dash')
-
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
+    st.sidebar.caption('↳ no pauses at commas, periods, colons, semi-colons, em dash and the end of lines')
     # Saṃyoga - Consonants
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
@@ -98,20 +93,14 @@ def animation_demo() -> None:
     e_cf = E_cf.replace('ê','e')
     O_cf = e_cf.replace('Ô','O')
     o_cf = O_cf.replace('ô','o')
-    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", a question mark "?", an exclamation mark "!", a semi-colon";", a colon ":", an em dash "—", an en dash "–", or a line break / enter (char(10) or \n)
+    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", a semi-colon";", a colon ":", an em dash "—", or a line break / enter (char(10) or \n)
     m_ṃ_space = o_cf.replace('m'+' ','ṃ'+' ')
     M_Ṃ_space = m_ṃ_space.replace('M'+' ','Ṃ'+' ')
     m_ṃ_comma = M_Ṃ_space.replace('m'+',','ṃ'+',')
     M_Ṃ_comma = m_ṃ_comma.replace('M'+',','Ṃ'+',')
-    m_ṃ_scomma = M_Ṃ_comma.replace('m'+' ,','ṃ'+' ,')
-    M_Ṃ_scomma = m_ṃ_scomma.replace('M'+' ,','Ṃ'+' ,')
-    m_ṃ_period = M_Ṃ_scomma.replace('m'+'.','ṃ'+'.')
+    m_ṃ_period = M_Ṃ_comma.replace('m'+'.','ṃ'+'.')
     M_Ṃ_period = m_ṃ_period.replace('M'+'.','Ṃ'+'.')
-    m_ṃ_qmark = M_Ṃ_period.replace('m'+'?','ṃ'+'?')
-    M_Ṃ_qmark = m_ṃ_qmark.replace('M'+'?','Ṃ'+'?')
-    m_ṃ_emark = M_Ṃ_qmark.replace('m'+'!','ṃ'+'!')
-    M_Ṃ_emark = m_ṃ_emark.replace('M'+'!','Ṃ'+'!')
-    m_ṃ_semicolon = M_Ṃ_emark.replace('m'+';','ṃ'+';')
+    m_ṃ_semicolon = M_Ṃ_period.replace('m'+';','ṃ'+';')
     M_Ṃ_semicolon = m_ṃ_semicolon.replace('M'+';','Ṃ'+';')
     m_ṃ_colon = M_Ṃ_semicolon.replace('m'+':','ṃ'+':')
     M_Ṃ_colon = m_ṃ_colon.replace('M'+':','Ṃ'+':')
@@ -2288,17 +2277,14 @@ def animation_demo() -> None:
 
     # Fix the position of preposition pauses and junctions signs
     sepa_comma = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(sepa+",",","+sepa)
-    sepa_scomma = sepa_comma.replace(sepa+" ,"," ,"+sepa)
-    sepa_period = sepa_scomma.replace(sepa+".","."+sepa)
-    sepa_qmark = sepa_period.replace(sepa+"?","?"+sepa)
-    sepa_emark = sepa_qmark.replace(sepa+"!","!"+sepa)
-    sepa_emdash = sepa_emark.replace(sepa+"—","—"+sepa)
+    sepa_period = sepa_comma.replace(sepa+".","."+sepa)
+    sepa_emdash = sepa_period.replace(sepa+"—","—"+sepa)
     sepa_semdash = sepa_emdash.replace(sepa+" —"," —"+sepa)
     sepa_endash = sepa_semdash.replace(sepa+"–","–"+sepa)
     sepa_sendash = sepa_endash.replace(sepa+" –"," –"+sepa)
     sepa_scolon = sepa_sendash.replace(sepa+";",";"+sepa)
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
     # lowercase
     a_sepa_lbreak = sepa_colon.replace("a"+"  \n", "a"+sepa+"  \n")
     i_sepa_lbreak = a_sepa_lbreak.replace("i"+"  \n", "i"+sepa+"  \n")
@@ -2309,19 +2295,10 @@ def animation_demo() -> None:
     a_comma_sepa = u_sepa_dspace.replace("a"+",", "a"+","+sepa)
     i_comma_sepa = a_comma_sepa.replace("i"+",", "i"+","+sepa)
     u_comma_sepa = i_comma_sepa.replace("u"+",", "u"+","+sepa)
-    a_scomma_sepa = u_comma_sepa.replace("a"+" ,", "a"+" ,"+sepa)
-    i_scomma_sepa = a_scomma_sepa.replace("i"+" ,", "i"+" ,"+sepa)
-    u_scomma_sepa = i_scomma_sepa.replace("u"+" ,", "u"+" ,"+sepa)
-    a_sepa_period = u_scomma_sepa.replace("a"+".", "a"+"."+sepa)
+    a_sepa_period = u_comma_sepa.replace("a"+".", "a"+"."+sepa)
     i_sepa_period = a_sepa_period.replace("i"+".", "i"+"."+sepa)
     u_sepa_period = i_sepa_period.replace("u"+".", "u"+"."+sepa)
-    a_sepa_qmark = u_sepa_period.replace("a"+"?", "a"+"?"+sepa)
-    i_sepa_qmark = a_sepa_qmark.replace("i"+"?", "i"+"?"+sepa)
-    u_sepa_qmark = i_sepa_qmark.replace("u"+"?", "u"+"?"+sepa)
-    a_sepa_emark = u_sepa_qmark.replace("a"+"!", "a"+"!"+sepa)
-    i_sepa_emark = a_sepa_emark.replace("i"+"!", "i"+"!"+sepa)
-    u_sepa_emark = i_sepa_emark.replace("u"+"!", "u"+"!"+sepa)
-    a_sepa_emdash = u_sepa_emark.replace("a"+"—", "a"+"—"+sepa)
+    a_sepa_emdash = u_sepa_period.replace("a"+"—", "a"+"—"+sepa)
     i_sepa_emdash = a_sepa_emdash.replace("i"+"—", "i"+"—"+sepa)
     u_sepa_emdash = i_sepa_emdash.replace("u"+"—", "u"+"—"+sepa)
     a_sepa_semdash = u_sepa_emdash.replace("a"+" —", "a"+" —"+sepa)
@@ -2349,19 +2326,10 @@ def animation_demo() -> None:
     A_comma_sepa = U_sepa_dspace.replace("A"+",", "A"+","+sepa)
     I_comma_sepa = A_comma_sepa.replace("I"+",", "I"+","+sepa)
     U_comma_sepa = I_comma_sepa.replace("U"+",", "U"+","+sepa)
-    A_scomma_sepa = U_comma_sepa.replace("A"+" ,", "A"+" ,"+sepa)
-    I_scomma_sepa = A_scomma_sepa.replace("I"+" ,", "I"+" ,"+sepa)
-    U_scomma_sepa = I_scomma_sepa.replace("U"+" ,", "U"+" ,"+sepa)
-    A_sepa_period = U_scomma_sepa.replace("A"+".", "A"+"."+sepa)
+    A_sepa_period = U_comma_sepa.replace("A"+".", "A"+"."+sepa)
     I_sepa_period = A_sepa_period.replace("I"+".", "I"+"."+sepa)
     U_sepa_period = I_sepa_period.replace("U"+".", "U"+"."+sepa)
-    A_sepa_qmark = U_sepa_period.replace("A"+"?", "A"+"?"+sepa)
-    I_sepa_qmark = A_sepa_qmark.replace("I"+"?", "I"+"?"+sepa)
-    U_sepa_qmark = I_sepa_qmark.replace("U"+"?", "U"+"?"+sepa)
-    A_sepa_emark = U_sepa_qmark.replace("A"+"!", "A"+"!"+sepa)
-    I_sepa_emark = A_sepa_emark.replace("I"+"!", "I"+"!"+sepa)
-    U_sepa_emark = I_sepa_emark.replace("U"+"!", "U"+"!"+sepa)
-    A_sepa_emdash = U_sepa_emark.replace("A"+"—", "A"+"—"+sepa)
+    A_sepa_emdash = U_sepa_period.replace("A"+"—", "A"+"—"+sepa)
     I_sepa_emdash = A_sepa_emdash.replace("I"+"—", "I"+"—"+sepa)
     U_sepa_emdash = I_sepa_emdash.replace("U"+"—", "U"+"—"+sepa)
     A_sepa_semdash = U_sepa_emdash.replace("A"+" —", "A"+" —"+sepa)
@@ -2380,7 +2348,7 @@ def animation_demo() -> None:
     I_sepa_colon = A_sepa_colon.replace("I"+":","I"+":"+sepa)
     U_sepa_colon = I_sepa_colon.replace("U"+":","U"+":"+sepa)
         
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, an em dash, a semi-colon, or a colon:
     # lowercase
     if uppercase_check:
         u_sepa_colon_or_U_sepa_colon = U_sepa_colon
@@ -2395,19 +2363,10 @@ def animation_demo() -> None:
     undo_a_comma_sepa = undo_u_sepa_dspace.replace("a"+","+sepa, "a"+",")
     undo_i_comma_sepa = undo_a_comma_sepa.replace("i"+","+sepa, "i"+",")
     undo_u_comma_sepa = undo_i_comma_sepa.replace("u"+","+sepa, "u"+",")
-    undo_a_scomma_sepa = undo_u_comma_sepa.replace("a"+" ,"+sepa, "a"+" ,")
-    undo_i_scomma_sepa = undo_a_scomma_sepa.replace("i"+" ,"+sepa, "i"+" ,")
-    undo_u_scomma_sepa = undo_i_scomma_sepa.replace("u"+" ,"+sepa, "u"+" ,")
-    undo_a_sepa_period = undo_u_scomma_sepa.replace("a"+"."+sepa, "a"+".")
+    undo_a_sepa_period = undo_u_comma_sepa.replace("a"+"."+sepa, "a"+".")
     undo_i_sepa_period = undo_a_sepa_period.replace("i"+"."+sepa, "i"+".")
     undo_u_sepa_period = undo_i_sepa_period.replace("u"+"."+sepa, "u"+".")
-    undo_a_sepa_qmark = undo_u_sepa_period.replace("a"+"?"+sepa, "a"+"?")
-    undo_i_sepa_qmark = undo_a_sepa_qmark.replace("i"+"?"+sepa, "i"+"?")
-    undo_u_sepa_qmark = undo_i_sepa_qmark.replace("u"+"?"+sepa, "u"+"?")
-    undo_a_sepa_emark = undo_u_sepa_qmark.replace("a"+"!"+sepa, "a"+"!")
-    undo_i_sepa_emark = undo_a_sepa_emark.replace("i"+"!"+sepa, "i"+"!")
-    undo_u_sepa_emark = undo_i_sepa_emark.replace("u"+"!"+sepa, "u"+"!")
-    undo_a_sepa_emdash = undo_u_sepa_emark.replace("a"+"—"+sepa, "a"+"—")
+    undo_a_sepa_emdash = undo_u_sepa_period.replace("a"+"—"+sepa, "a"+"—")
     undo_i_sepa_emdash = undo_a_sepa_emdash.replace("i"+"—"+sepa, "i"+"—")
     undo_u_sepa_emdash = undo_i_sepa_emdash.replace("u"+"—"+sepa, "u"+"—")
     undo_a_sepa_semdash = undo_u_sepa_emdash.replace("a"+" —"+sepa, "a"+" —")
@@ -2435,19 +2394,10 @@ def animation_demo() -> None:
     undo_A_comma_sepa = undo_U_sepa_dspace.replace("A"+","+sepa, "A"+",")
     undo_I_comma_sepa = undo_A_comma_sepa.replace("I"+","+sepa, "I"+",")
     undo_U_comma_sepa = undo_I_comma_sepa.replace("U"+","+sepa, "U"+",")
-    undo_A_scomma_sepa = undo_U_comma_sepa.replace("A"+" ,"+sepa, "A"+" ,")
-    undo_I_scomma_sepa = undo_A_scomma_sepa.replace("I"+" ,"+sepa, "I"+" ,")
-    undo_U_scomma_sepa = undo_I_scomma_sepa.replace("U"+" ,"+sepa, "U"+" ,")
-    undo_A_sepa_period = undo_U_scomma_sepa.replace("A"+"."+sepa, "A"+".")
+    undo_A_sepa_period = undo_U_comma_sepa.replace("A"+"."+sepa, "A"+".")
     undo_I_sepa_period = undo_A_sepa_period.replace("I"+"."+sepa, "I"+".")
     undo_U_sepa_period = undo_I_sepa_period.replace("U"+"."+sepa, "U"+".")
-    undo_A_sepa_qmark = undo_U_sepa_period.replace("A"+"?"+sepa, "A"+"?")
-    undo_I_sepa_qmark = undo_A_sepa_qmark.replace("I"+"?"+sepa, "I"+"?")
-    undo_U_sepa_qmark = undo_I_sepa_qmark.replace("U"+"?"+sepa, "U"+"?")
-    undo_A_sepa_emark = undo_U_sepa_qmark.replace("A"+"!"+sepa, "A"+"!")
-    undo_I_sepa_emark = undo_A_sepa_emark.replace("I"+"!"+sepa, "I"+"!")
-    undo_U_sepa_emark = undo_I_sepa_emark.replace("U"+"!"+sepa, "U"+"!")
-    undo_A_sepa_emdash = undo_U_sepa_emark.replace("A"+"—"+sepa, "A"+"—")
+    undo_A_sepa_emdash = undo_U_sepa_period.replace("A"+"—"+sepa, "A"+"—")
     undo_I_sepa_emdash = undo_A_sepa_emdash.replace("I"+"—"+sepa, "I"+"—")
     undo_U_sepa_emdash = undo_I_sepa_emdash.replace("U"+"—"+sepa, "U"+"—")
     undo_A_sepa_semdash = undo_U_sepa_emdash.replace("A"+" —"+sepa, "A"+" —")
@@ -2822,18 +2772,12 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
-    # Extra juncture sign after a comma ",", a period ".", a question mark "?", an exclamation mark "!", an em dash "—", an en dash "–", a semi-colon";", a colon ":", or a line break / double space / enter (char(10) or \n)
+    # Extra juncture sign after a comma ",", a period ".", an em dash "—", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
-    scomma_sepa = fix_comma_sepa.replace(" ,", " ,"+sepa)
-    fix_scomma_sepa = scomma_sepa.replace(" ,"+sepa+sepa+sepa, " ,"+sepa+sepa)
-    period_sepa = fix_scomma_sepa.replace(".", "."+sepa)
+    period_sepa = fix_comma_sepa.replace(".", "."+sepa)
     fix_period_sepa = period_sepa.replace("."+sepa+sepa+sepa, "."+sepa+sepa)
-    qmark_sepa = fix_period_sepa.replace("?", "?"+sepa)
-    fix_qmark_sepa = qmark_sepa.replace("?"+sepa+sepa+sepa, "?"+sepa+sepa)
-    emark_sepa = fix_qmark_sepa.replace("!", "!"+sepa)
-    fix_emark_sepa = emark_sepa.replace("!"+sepa+sepa+sepa, "!"+sepa+sepa)
-    emdash_sepa = fix_emark_sepa.replace("—", "—"+sepa)
+    emdash_sepa = fix_period_sepa.replace("—", "—"+sepa)
     fix_emdash_sepa = emdash_sepa.replace("—"+sepa+sepa+sepa, "—"+sepa+sepa)
     semdash_sepa = fix_emdash_sepa.replace(" —", " —"+sepa)
     fix_semdash_sepa = semdash_sepa.replace(" —"+sepa+sepa+sepa, " —"+sepa+sepa)
@@ -2936,8 +2880,13 @@ def animation_demo() -> None:
     static_no9 = static_no8.replace("9."+sepa, "9"+"\9.")
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
 
+    # Double juncture signs at the end of the text
+    dsepa_last_text = static_no0+sepa+sepa
+    no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
+    no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
+
     # Fix end quotes' position with juncture sign
-    dscendq_sepa_sepa = static_no0.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
+    dscendq_sepa_sepa = no_3sepa2.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
     dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
     dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
     dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
@@ -2949,21 +2898,16 @@ def animation_demo() -> None:
     dsendq_sepa = dsendq_sepa_sepa.replace(sepa+"\"", "\""+sepa)
     ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
     ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
-
-     # Double juncture signs at the end of the text
-    dsepa_last_text = ssendq_sepa+sepa+sepa
-    no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
-    no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = no_3sepa2.split('\n')
+        output_lines = ssendq_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = no_3sepa2
+        unsplit_OR_split = ssendq_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
