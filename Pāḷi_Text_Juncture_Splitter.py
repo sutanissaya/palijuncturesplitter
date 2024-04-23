@@ -3006,6 +3006,7 @@ st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.h
 st.divider()
 st.markdown("<h6 style='text-align: center;'>How does it work?</h6>", unsafe_allow_html=True)
 st.markdown("<p>It works by adding a <em>juncture sign</em> after every <em>heavy syllable</em> (garu akkhara). The juncture signs act as a temporal punctuation or visual spacers. The split text would then be read by dragging every syllable that is followed by a juncture sign. There are also double juncture signs that are inserted next to pause-indicatinging punctuation marks (listed above) and at the end of lines that signify a long pause where chanters could catch their breath.</p>", unsafe_allow_html=True)
+st.divider()
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
 st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). Heavy syllables are also known as <em>full-length</em> syllables, <em>stressed</em> syllables, and <em>long</em> syllables. <em>Half-length</em>, <em>unstressed</em>, and <em>short</em> syllables are the terms of their respective counterpart. A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 #"""
@@ -3028,7 +3029,12 @@ st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or 
 #**References**
 st.divider()
 
+st.markdown("<h6 style='text-align: center;'>Suggestions</h6>", unsafe_allow_html=True)
 st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us by sending an email to <a href="mailto:sutanissaya@gmail.com">sutanissaya@gmail.com</a>. You may also send us any questions that you might have about the app.</p>', unsafe_allow_html=True)
+
+st.divider()
+
+st.markdown("<h6 style='text-align: center;'>License</h6>", unsafe_allow_html=True)
 st.markdown('<p><em>This web tool is licensed under <a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE">CC0-1.0 Universal</a>.  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>', unsafe_allow_html=True)
 
 st.divider()
