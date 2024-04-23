@@ -51,7 +51,7 @@ def animation_demo() -> None:
 
     # Hide punctuation marks
     punc_check = st.sidebar.checkbox(label='Hide punctuation marks')
-    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
+    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, and en dash')
 
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
@@ -2937,26 +2937,10 @@ def animation_demo() -> None:
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
 
     # Hide punctuation marks
-    if punc_check:
-        hide_comma = static_no0.replace(",","")
-        hide_period = hide_comma.replace(".","")
-        hide_qmark = hide_period.replace("?","")
-        hide_emark = hide_qmark.replace("!","")
-        hide_emdash = hide_emark.replace("—","")
-        hide_endash = hide_emdash.replace("–","")
-        hide_scolon = hide_endash.replace(";","")
-        hide_colon = hide_scolon.replace(":","")
-        hide_cdquote = hide_colon.replace("“","")
-        hide_cquote = hide_cdquote.replace("‘","")
-        hide_cdequote = hide_cquote.replace("”","")
-        hide_cequote = hide_cdequote.replace("’","")
-        hide_sdquote = hide_cequote.replace("\"","")
-        hide_squote = hide_sdquote.replace("'","")
-    else:
-        hide_squote = static_no0
+    hide_comma = static_no0.replace(",","")
 
     # Fix end quotes' position with juncture sign
-    dscendq_sepa_sepa = hide_squote.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
+    dscendq_sepa_sepa = hide_comma.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
     dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
     dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
     dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
