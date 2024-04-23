@@ -2879,35 +2879,16 @@ def animation_demo() -> None:
     static_no8 = static_no7.replace("8."+sepa, "8"+"\8.")
     static_no9 = static_no8.replace("9."+sepa, "9"+"\9.")
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
-
-    # Double juncture signs at the end of the text
-    dsepa_last_text = static_no0+sepa+sepa
-    no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
-    no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
-
-    # Fix end quotes' position with juncture sign
-    dscendq_sepa_sepa = no_3sepa2.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
-    dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
-    dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
-    dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
-    scendq_sepa_sepa = dcendq_sepa.replace(sepa+sepa+"’", "’"+sepa+sepa)
-    scendq_sepa = scendq_sepa_sepa.replace(sepa+"’", "’"+sepa)
-    dssendq_sepa_sepa = scendq_sepa.replace(sepa+sepa+"''", "''"+sepa+sepa)
-    dssendq_sepa = dssendq_sepa_sepa.replace(sepa+"''", "''"+sepa)
-    dsendq_sepa_sepa = dssendq_sepa.replace(sepa+sepa+"\"", "\""+sepa+sepa)
-    dsendq_sepa = dsendq_sepa_sepa.replace(sepa+"\"", "\""+sepa)
-    ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
-    ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = ssendq_sepa.split('\n')
+        output_lines = static_no0.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = ssendq_sepa
+        unsplit_OR_split = static_no0
         st.write(unsplit_OR_split)
       
 animation_demo()
