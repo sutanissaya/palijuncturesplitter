@@ -2890,16 +2890,18 @@ def animation_demo() -> None:
     dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
     dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
     dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
+    scendq_sepa_sepa = dcendq_sepa.replace(sepa+sepa+"’", "’"+sepa+sepa)
+    scendq_sepa = scendq_sepa_sepa.replace(sepa+"’", "’"+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = dcendq_sepa.split('\n')
+        output_lines = scendq_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = dcendq_sepa
+        unsplit_OR_split = scendq_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
