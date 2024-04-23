@@ -2604,7 +2604,7 @@ def animation_demo() -> None:
         NASAL_NG = nasal_ng
 
     # ṃ, ṁ → ng
-        #lowercase
+    #lowercase
     ṃ_to_ng = NASAL_NG.replace("ṃ", "ng")
     ṁ_to_ng = ṃ_to_ng.replace("ṁ", "ng")
     #UPPERCASE
@@ -2837,13 +2837,26 @@ def animation_demo() -> None:
     # Extra juncture sign after a comma ",", a period ".", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
-    period_sepa = fix_comma_sepa.replace(".", "."+sepa)
+    scomma_sepa = fix_comma_sepa.replace(" ,", " ,"+sepa)
+    fix_scomma_sepa = scomma_sepa.replace(" ,"+sepa+sepa+sepa, " ,"+sepa+sepa)
+    period_sepa = fix_scomma_sepa.replace(".", "."+sepa)
     fix_period_sepa = period_sepa.replace("."+sepa+sepa+sepa, "."+sepa+sepa)
-    scolon_sepa = fix_period_sepa.replace(";", ";"+sepa)
+    qmark_sepa = fix_period_sepa.replace("?", "?"+sepa)
+    fix_qmark_sepa = qmark_sepa.replace("?"+sepa+sepa+sepa, "?"+sepa+sepa)
+    emark_sepa = fix_qmark_sepa.replace("!", "!"+sepa)
+    fix_emark_sepa = emark_sepa.replace("!"+sepa+sepa+sepa, "!"+sepa+sepa)
+    emdash_sepa = fix_emark_sepa.replace("—", "—"+sepa)
+    fix_emdash_sepa = emdash_sepa.replace("—"+sepa+sepa+sepa, "—"+sepa+sepa)
+    semdash_sepa = fix_emdash_sepa.replace(" —", " —"+sepa)
+    fix_semdash_sepa = semdash_sepa.replace(" —"+sepa+sepa+sepa, " —"+sepa+sepa)
+    endash_sepa = fix_semdash_sepa.replace("–", "–"+sepa)
+    fix_endash_sepa = endash_sepa.replace("–"+sepa+sepa+sepa, "–"+sepa+sepa)
+    sendash_sepa = fix_endash_sepa.replace(" –", " –"+sepa)
+    fix_sendash_sepa = sendash_sepa.replace(" –"+sepa+sepa+sepa, " –"+sepa+sepa)
+    scolon_sepa = fix_sendash_sepa.replace(";", ";"+sepa)
     fix_scolon_sepa = scolon_sepa.replace(";"+sepa+sepa+sepa, ";"+sepa+sepa)
     colon_sepa = fix_scolon_sepa.replace(":", ":"+sepa)
-    fix_colon_sepa = colon_sepa.replace(":"+sepa+sepa+sepa, ":"+sepa+sepa)
-    a_sepa = fix_colon_sepa.replace("a"+sepa+"  ", "a"+sepa+sepa+"  ")
+    fix_colon_sepa = colon_sepa.replace(":"+sepa+sepa+sepa, ":"+sepa+sepa)    a_sepa = fix_colon_sepa.replace("a"+sepa+"  ", "a"+sepa+sepa+"  ")
     i_sepa = a_sepa.replace("i"+sepa+"  ", "i"+sepa+sepa+"  ")
     u_sepa = i_sepa.replace("u"+sepa+"  ", "u"+sepa+sepa+"  ")
     e_sepa = u_sepa.replace("e"+sepa+"  ", "e"+sepa+sepa+"  ")
