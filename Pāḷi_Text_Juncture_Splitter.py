@@ -2804,7 +2804,7 @@ def animation_demo() -> None:
     static_no = convert_to_Ṁ_or_Ṃ.replace("1.", "1"+"\1.")
 
     # Remove juncture sign after numbering
-    no_sepa_1 = static_no.replace("1"+"."+sepa, "1.")
+    no_sepa_1 = static_no.replace("1"+"."+" "+sepa, "yyy")
  
     #Show Unsplit Line by Line
     if show_unsplit:
