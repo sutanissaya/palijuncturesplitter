@@ -3046,7 +3046,7 @@ st.divider()
 
 """
 **Keywords:** \n
-Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting
+_Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting_
 """
 
 st.sidebar.divider()
