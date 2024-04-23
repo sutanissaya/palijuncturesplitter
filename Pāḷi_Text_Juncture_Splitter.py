@@ -2879,16 +2879,19 @@ def animation_demo() -> None:
     static_no8 = static_no7.replace("8."+sepa, "8"+"\8.")
     static_no9 = static_no8.replace("9."+sepa, "9"+"\9.")
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
+
+    # Double juncture signs at the end of the text
+    dsepa_last_text = st.write(static_no0+sepa+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = static_no0.split('\n')
+        output_lines = dsepa_last_text.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = static_no0
+        unsplit_OR_split = dsepa_last_text
         st.write(unsplit_OR_split)
       
 animation_demo()
