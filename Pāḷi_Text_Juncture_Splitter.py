@@ -48,6 +48,11 @@ def animation_demo() -> None:
     )
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
+
+    # Hide punctuation marks
+    punc_check = st.sidebar.checkbox(label='Hide punctuation marks')
+    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, and en dash')
+
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
     st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
