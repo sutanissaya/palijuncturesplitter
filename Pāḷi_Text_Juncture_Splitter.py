@@ -2801,7 +2801,7 @@ def animation_demo() -> None:
                 convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
 
     # Convert numbers to static
-    static_no = convert_to_Ṁ_or_Ṃ.replace("1.", "\1.")
+    static_no = convert_to_Ṁ_or_Ṃ.replace("1.", "1"+"\1.")
  
     #Show Unsplit Line by Line
     if show_unsplit:
