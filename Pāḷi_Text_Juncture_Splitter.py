@@ -99,8 +99,10 @@ def animation_demo() -> None:
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
     # Fix line breaks to double whitespaces and line breaks
     fixed_text= insert_text.replace('\n','  \n')
+    # Conert em dash to double hyphens
+    dhyphens = fixed_text.replace('—','--')
     # Remove circumflex in Â, â, Î, î, Û, û, Ê, ê, Ô, ô
-    A_cf = fixed_text.replace('Â','Ā')
+    A_cf = dhyphens.replace('Â','Ā')
     a_cf = A_cf.replace('â','ā')
     I_cf = a_cf.replace('Î','Ī')
     i_cf = I_cf.replace('î','ī')
