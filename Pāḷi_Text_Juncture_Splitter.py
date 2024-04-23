@@ -50,7 +50,7 @@ def animation_demo() -> None:
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, colons, semi-colons, em dash and the end of lines')
+    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
     # Saṃyoga - Consonants
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
@@ -2742,7 +2742,7 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
-    # Extra juncture sign after a comma ",", a period ".", an em dash "—", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
+    # Extra juncture sign after a comma ",", a period ".", an em dash "—", an en dash "–", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     period_sepa = fix_comma_sepa.replace(".", "."+sepa)
