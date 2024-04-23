@@ -2885,19 +2885,21 @@ def animation_demo() -> None:
     no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
     no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
 
-    # Fix double end quote with juncture sign
-    dendq_sepa_sepa = no_3sepa2.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
-    dendq_sepa = dendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
+    # Fix end quotes' position with juncture sign
+    dscendq_sepa_sepa = no_3sepa2.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
+    dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
+    dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
+    dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = dendq_sepa.split('\n')
+        output_lines = dcendq_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = dendq_sepa
+        unsplit_OR_split = dcendq_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
