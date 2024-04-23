@@ -2892,16 +2892,22 @@ def animation_demo() -> None:
     dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
     scendq_sepa_sepa = dcendq_sepa.replace(sepa+sepa+"’", "’"+sepa+sepa)
     scendq_sepa = scendq_sepa_sepa.replace(sepa+"’", "’"+sepa)
+    dssendq_sepa_sepa = scendq_sepa.replace(sepa+sepa+"''", "''"+sepa+sepa)
+    dssendq_sepa = dssendq_sepa_sepa.replace(sepa+"''", "''"+sepa)
+    dsendq_sepa_sepa = dssendq_sepa.replace(sepa+sepa+"\"", "\""+sepa+sepa)
+    dsendq_sepa = dsendq_sepa_sepa.replace(sepa+"\"", "\""+sepa)
+    ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
+    ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = scendq_sepa.split('\n')
+        output_lines = ssendq_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = scendq_sepa
+        unsplit_OR_split = ssendq_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
