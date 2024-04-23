@@ -2937,20 +2937,23 @@ def animation_demo() -> None:
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
 
     # Hide punctuation marks
-    hide_comma = static_no0.replace(",","")
-    hide_period = hide_comma.replace(".","")
-    hide_qmark = hide_period.replace("?","")
-    hide_emark = hide_qmark.replace("!","")
-    hide_emdash = hide_emark.replace("—","")
-    hide_endash = hide_emdash.replace("–","")
-    hide_scolon = hide_endash.replace(";","")
-    hide_colon = hide_scolon.replace(":","")
-    hide_cdquote = hide_colon.replace("“","")
-    hide_cquote = hide_cdquote.replace("‘","")
-    hide_cdequote = hide_cquote.replace("”","")
-    hide_cequote = hide_cdequote.replace("’","")
-    hide_sdquote = hide_cequote.replace("\"","")
-    hide_squote = hide_sdquote.replace("'","")
+    if punc_check:
+        hide_comma = static_no0.replace(",","")
+        hide_period = hide_comma.replace(".","")
+        hide_qmark = hide_period.replace("?","")
+        hide_emark = hide_qmark.replace("!","")
+        hide_emdash = hide_emark.replace("—","")
+        hide_endash = hide_emdash.replace("–","")
+        hide_scolon = hide_endash.replace(";","")
+        hide_colon = hide_scolon.replace(":","")
+        hide_cdquote = hide_colon.replace("“","")
+        hide_cquote = hide_cdquote.replace("‘","")
+        hide_cdequote = hide_cquote.replace("”","")
+        hide_cequote = hide_cdequote.replace("’","")
+        hide_sdquote = hide_cequote.replace("\"","")
+        hide_squote = hide_sdquote.replace("'","")
+    else:
+        hide_squote = static_no0
 
     # Fix end quotes' position with juncture sign
     dscendq_sepa_sepa = hide_squote.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
