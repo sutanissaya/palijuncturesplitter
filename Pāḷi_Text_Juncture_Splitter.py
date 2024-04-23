@@ -3028,7 +3028,7 @@ st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or 
 #**References**
 st.divider()
 
-st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us via <a href="mailto:sutanissaya@gmail.com">email</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us by sending an email to <a href="mailto:sutanissaya@gmail.com">sutanissaya@gmail.com</a>. You may also send us any questions that you might have about the app.</p>', unsafe_allow_html=True)
 st.markdown('<p><em>This web tool is licensed under <a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE">CC0-1.0 Universal</a>.  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>', unsafe_allow_html=True)
 
 st.divider()
