@@ -26,6 +26,14 @@ st.markdown("<p style='text-align: center;'>Yā — nī — dha bhū — tā —
 st.markdown("<p style='text-align: center;'>bhum — mā — ni vā — yā — ni va an — talik — khe — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>sab — be — va bhū — tā — sumanā — bhavan — tu. — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Atho — pi sak — kac — ca suṇan — tu bhā — sitaṃ. — —</p>", unsafe_allow_html=True)
+
+st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_html=True)
+"""
+Simply type or paste in some Pāḷi text you would like to juncture-split into the box down below. Click anywhere outside the box (or press Ctrl+Enter) to have the app instantaneously render the result.\n
+You could also make modifications on how the text should be split or shown by navigating the left-side panel.\n
+The default chanting style adopted to the text is Magadha (Makhot) which is the one of the two main styles of chanting along with Saṃyoga (Saṃyok). Punctuation marks such as commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks are automatically hidden also by default. These can be changed by going to the customization panel on the left.
+"""
+
 st.divider()
 """
 **Start splitting by inserting Pāḷi text here:**
@@ -2993,7 +3001,7 @@ st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Tipiṭaka—the Thr
 st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html"><strong>Bhikkhu Manual: Essential Chants</strong></a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
 st.divider()
 st.markdown("<h6 style='text-align: center;'>How does it work?</h6>", unsafe_allow_html=True)
-st.markdown("<p>It works by adding breaks or visual spacers after <em>every heavy syllable</em> (garu akkhara). The visual spacers act as temporal punctuations or juncture signs. The split text would then be read by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
+st.markdown("<p>It works by adding a <em>juncture sign</em> after every <em>heavy syllable</em> (garu akkhara). The juncture signs act as temporal punctuations or visual spacers. The split text would then be read by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
 st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). Heavy syllables are also known as <em>full-length</em> syllables, <em>stressed</em> syllables, and <em>long</em> syllables. <em>Half-length</em>, <em>unstressed</em>, and <em>short</em> syllables are the terms of their respective counterpart. A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 #"""
