@@ -50,7 +50,7 @@ def animation_demo() -> None:
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, colons, semi-colons, em dash and the end of lines')
+    st.sidebar.caption('↳ no pauses at commas, periods, colons, semi-colons, and the end of lines')
     # Saṃyoga - Consonants
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
@@ -93,7 +93,7 @@ def animation_demo() -> None:
     e_cf = E_cf.replace('ê','e')
     O_cf = e_cf.replace('Ô','O')
     o_cf = O_cf.replace('ô','o')
-    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", a semi-colon";", a colon ":", an em dash "—", or a line break / enter (char(10) or \n)
+    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", semi-colon";", colon ":", or a line break / enter (char(10) or \n)
     m_ṃ_space = o_cf.replace('m'+' ','ṃ'+' ')
     M_Ṃ_space = m_ṃ_space.replace('M'+' ','Ṃ'+' ')
     m_ṃ_comma = M_Ṃ_space.replace('m'+',','ṃ'+',')
@@ -104,9 +104,7 @@ def animation_demo() -> None:
     M_Ṃ_semicolon = m_ṃ_semicolon.replace('M'+';','Ṃ'+';')
     m_ṃ_colon = M_Ṃ_semicolon.replace('m'+':','ṃ'+':')
     M_Ṃ_colon = m_ṃ_colon.replace('M'+':','Ṃ'+':')
-    m_ṃ_emdash = M_Ṃ_colon.replace('m'+'—','ṃ'+'—')
-    M_Ṃ_emdash = m_ṃ_emdash.replace('M'+'—','Ṃ'+'—')
-    m_ṃ_lbreak = M_Ṃ_emdash.replace('m'+'\n','ṃ'+'\n')
+    m_ṃ_lbreak = M_Ṃ_colon.replace('m'+'\n','ṃ'+'\n')
     M_Ṃ_lbreak = m_ṃ_lbreak.replace('M'+'\n','Ṃ'+'\n')
     # Convert m to ṃ when followed by a consonant
     m_ṃ_k = M_Ṃ_lbreak.replace('m'+'k','ṃ'+'k')
@@ -2272,8 +2270,7 @@ def animation_demo() -> None:
     # Fix the position of preposition pauses and junctions signs
     sepa_comma = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(sepa+",",","+sepa)
     sepa_period = sepa_comma.replace(sepa+".","."+sepa)
-    sepa_emdash = sepa_period.replace(sepa+"—","—"+sepa)
-    sepa_scolon = sepa_emdash.replace(sepa+";",";"+sepa)
+    sepa_scolon = sepa_period.replace(sepa+";",";"+sepa)
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
     # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
     # lowercase
@@ -2289,10 +2286,7 @@ def animation_demo() -> None:
     a_sepa_period = u_comma_sepa.replace("a"+".", "a"+"."+sepa)
     i_sepa_period = a_sepa_period.replace("i"+".", "i"+"."+sepa)
     u_sepa_period = i_sepa_period.replace("u"+".", "u"+"."+sepa)
-    a_sepa_emdash = u_sepa_period.replace("a"+"—", "a"+"—"+sepa)
-    i_sepa_emdash = a_sepa_emdash.replace("i"+"—", "i"+"—"+sepa)
-    u_sepa_emdash = i_sepa_emdash.replace("u"+"—", "u"+"—"+sepa)
-    a_sepa_scolon = u_sepa_emdash.replace("a"+";", "a"+";"+sepa)
+    a_sepa_scolon = u_sepa_period.replace("a"+";", "a"+";"+sepa)
     i_sepa_scolon = a_sepa_scolon.replace("i"+";", "i"+";"+sepa)
     u_sepa_scolon = i_sepa_scolon.replace("u"+";", "u"+";"+sepa)
     a_sepa_colon = u_sepa_scolon.replace("a"+":","a"+":"+sepa)
@@ -2311,17 +2305,14 @@ def animation_demo() -> None:
     A_sepa_period = U_comma_sepa.replace("A"+".", "A"+"."+sepa)
     I_sepa_period = A_sepa_period.replace("I"+".", "I"+"."+sepa)
     U_sepa_period = I_sepa_period.replace("U"+".", "U"+"."+sepa)
-    A_sepa_emdash = U_sepa_period.replace("A"+"—", "A"+"—"+sepa)
-    I_sepa_emdash = A_sepa_emdash.replace("I"+"—", "I"+"—"+sepa)
-    U_sepa_emdash = I_sepa_emdash.replace("U"+"—", "U"+"—"+sepa)
-    A_sepa_scolon = U_sepa_emdash.replace("A"+";", "A"+";"+sepa)
+    A_sepa_scolon = U_sepa_period.replace("A"+";", "A"+";"+sepa)
     I_sepa_scolon = A_sepa_scolon.replace("I"+";", "I"+";"+sepa)
     U_sepa_scolon = I_sepa_scolon.replace("U"+";", "U"+";"+sepa)
     A_sepa_colon = U_sepa_scolon.replace("A"+":","A"+":"+sepa)
     I_sepa_colon = A_sepa_colon.replace("I"+":","I"+":"+sepa)
     U_sepa_colon = I_sepa_colon.replace("U"+":","U"+":"+sepa)
         
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, an em dash, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
     # lowercase
     if uppercase_check:
         u_sepa_colon_or_U_sepa_colon = U_sepa_colon
@@ -2339,10 +2330,7 @@ def animation_demo() -> None:
     undo_a_sepa_period = undo_u_comma_sepa.replace("a"+"."+sepa, "a"+".")
     undo_i_sepa_period = undo_a_sepa_period.replace("i"+"."+sepa, "i"+".")
     undo_u_sepa_period = undo_i_sepa_period.replace("u"+"."+sepa, "u"+".")
-    undo_a_sepa_emdash = undo_u_sepa_period.replace("a"+"—"+sepa, "a"+"—")
-    undo_i_sepa_emdash = undo_a_sepa_emdash.replace("i"+"—"+sepa, "i"+"—")
-    undo_u_sepa_emdash = undo_i_sepa_emdash.replace("u"+"—"+sepa, "u"+"—")
-    undo_a_sepa_scolon = undo_u_sepa_emdash.replace("a"+";"+sepa, "a"+";")
+    undo_a_sepa_scolon = undo_u_sepa_period.replace("a"+";"+sepa, "a"+";")
     undo_i_sepa_scolon = undo_a_sepa_scolon.replace("i"+";"+sepa, "i"+";")
     undo_u_sepa_scolon = undo_i_sepa_scolon.replace("u"+";"+sepa, "u"+";")
     undo_a_sepa_colon = undo_u_sepa_scolon.replace("a"+":"+sepa, "a"+":")
@@ -2361,10 +2349,7 @@ def animation_demo() -> None:
     undo_A_sepa_period = undo_U_comma_sepa.replace("A"+"."+sepa, "A"+".")
     undo_I_sepa_period = undo_A_sepa_period.replace("I"+"."+sepa, "I"+".")
     undo_U_sepa_period = undo_I_sepa_period.replace("U"+"."+sepa, "U"+".")
-    undo_A_sepa_emdash = undo_U_sepa_period.replace("A"+"—"+sepa, "A"+"—")
-    undo_I_sepa_emdash = undo_A_sepa_emdash.replace("I"+"—"+sepa, "I"+"—")
-    undo_U_sepa_emdash = undo_I_sepa_emdash.replace("U"+"—"+sepa, "U"+"—")
-    undo_A_sepa_scolon = undo_U_sepa_emdash.replace("A"+";"+sepa, "A"+";")
+    undo_A_sepa_scolon = undo_U_sepa_period.replace("A"+";"+sepa, "A"+";")
     undo_I_sepa_scolon = undo_A_sepa_scolon.replace("I"+";"+sepa, "I"+";")
     undo_U_sepa_scolon = undo_I_sepa_scolon.replace("U"+";"+sepa, "U"+";")
     undo_A_sepa_colon = undo_U_sepa_scolon.replace("A"+":"+sepa, "A"+":")
@@ -2727,14 +2712,12 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
-    # Extra juncture sign after a comma ",", a period ".", an em dash "—", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
+    # Extra juncture sign after a comma ",", a period ".", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     period_sepa = fix_comma_sepa.replace(".", "."+sepa)
     fix_period_sepa = period_sepa.replace("."+sepa+sepa+sepa, "."+sepa+sepa)
-    emdash_sepa = fix_period_sepa.replace("—", "—"+sepa)
-    fix_emdash_sepa = emdash_sepa.replace("—"+sepa+sepa+sepa, "—"+sepa+sepa)
-    scolon_sepa = fix_emdash_sepa.replace(";", ";"+sepa)
+    scolon_sepa = fix_period_sepa.replace(";", ";"+sepa)
     fix_scolon_sepa = scolon_sepa.replace(";"+sepa+sepa+sepa, ";"+sepa+sepa)
     colon_sepa = fix_scolon_sepa.replace(":", ":"+sepa)
     fix_colon_sepa = colon_sepa.replace(":"+sepa+sepa+sepa, ":"+sepa+sepa)
