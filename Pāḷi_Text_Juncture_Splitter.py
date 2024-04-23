@@ -2280,7 +2280,7 @@ def animation_demo() -> None:
     # Fix the position of preposition pauses and junctions signs
     sepa_comma = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(sepa+",",","+sepa)
     sepa_scomma = sepa_comma.replace(sepa+" ,"," ,"+sepa)
-    sepa_period = sepa_comma.replace(sepa+".","."+sepa)
+    sepa_period = sepa_scomma.replace(sepa+".","."+sepa)
     sepa_emdash = sepa_period.replace(sepa+"—","—"+sepa)
     sepa_semdash = sepa_emdash.replace(sepa+" —"," —"+sepa)
     sepa_endash = sepa_semdash.replace(sepa+"–","–"+sepa)
