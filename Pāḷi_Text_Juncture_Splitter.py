@@ -2985,16 +2985,21 @@ def animation_demo() -> None:
     dsepa_last_text = ssendq_sepa+sepa+sepa
     no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
     no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
+
+    if insert_text == "":
+        blank_input_or_no = ssendq_sepa
+    else:
+        blank_input_or_no = no_3sepa2
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = no_3sepa2.split('\n')
+        output_lines = blank_input_or_no.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = no_3sepa2
+        unsplit_OR_split = blank_input_or_no
         st.write(unsplit_OR_split)
       
 animation_demo()
