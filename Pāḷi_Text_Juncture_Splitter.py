@@ -2938,9 +2938,20 @@ def animation_demo() -> None:
 
     # Hide punctuation marks
     hide_comma = static_no0.replace(",","")
+    hide_period = hide_comma.replace(".","")
+    hide_qmark = hide_period.replace("?","")
+    hide_emark = hide_qmark.replace("!","")
+    hide_emdash = hide_emark.replace("—","")
+    hide_endash = hide_emdash.replace("–","")
+    hide_scolon = hide_endash.replace(";","")
+    hide_colon = hide_scolon.replace(":","")
+    hide_cdquote = hide_colon.replace("“","")
+    hide_cquote = hide_cdquote.replace("‘","")
+    hide_sdquote = hide_cquote.replace("\"","")
+    hide_squote = hide_sdquote.replace("'","")
 
     # Fix end quotes' position with juncture sign
-    dscendq_sepa_sepa = hide_comma.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
+    dscendq_sepa_sepa = hide_squote.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
     dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
     dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
     dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
