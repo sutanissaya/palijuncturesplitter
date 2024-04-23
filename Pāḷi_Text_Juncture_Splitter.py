@@ -50,7 +50,7 @@ def animation_demo() -> None:
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, colons, semi-colons, em dash and the end of lines')
+    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
     # Saṃyoga - Consonants
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
@@ -93,7 +93,7 @@ def animation_demo() -> None:
     e_cf = E_cf.replace('ê','e')
     O_cf = e_cf.replace('Ô','O')
     o_cf = O_cf.replace('ô','o')
-    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", a semi-colon";", a colon ":", an em dash "—", or a line break / enter (char(10) or \n)
+    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", a question mark "?", an exclamation mark "!", a semi-colon";", a colon ":", an em dash "—", an en dash "–", or a line break / enter (char(10) or \n)
     m_ṃ_space = o_cf.replace('m'+' ','ṃ'+' ')
     M_Ṃ_space = m_ṃ_space.replace('M'+' ','Ṃ'+' ')
     m_ṃ_comma = M_Ṃ_space.replace('m'+',','ṃ'+',')
@@ -2287,7 +2287,7 @@ def animation_demo() -> None:
     sepa_sendash = sepa_endash.replace(sepa+" –"," –"+sepa)
     sepa_scolon = sepa_sendash.replace(sepa+";",";"+sepa)
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
     # lowercase
     a_sepa_lbreak = sepa_colon.replace("a"+"  \n", "a"+sepa+"  \n")
     i_sepa_lbreak = a_sepa_lbreak.replace("i"+"  \n", "i"+sepa+"  \n")
@@ -2357,7 +2357,7 @@ def animation_demo() -> None:
     I_sepa_colon = A_sepa_colon.replace("I"+":","I"+":"+sepa)
     U_sepa_colon = I_sepa_colon.replace("U"+":","U"+":"+sepa)
         
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, an em dash, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
     # lowercase
     if uppercase_check:
         u_sepa_colon_or_U_sepa_colon = U_sepa_colon
