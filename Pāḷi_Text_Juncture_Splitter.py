@@ -2392,7 +2392,7 @@ def animation_demo() -> None:
     I_sepa_colon = A_sepa_colon.replace("I"+":","I"+":"+sepa)
     U_sepa_colon = I_sepa_colon.replace("U"+":","U"+":"+sepa)
         
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
     # lowercase
     if uppercase_check:
         u_sepa_colon_or_U_sepa_colon = U_sepa_colon
@@ -2834,7 +2834,7 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
-    # Extra juncture sign after a comma ",", a period ".", semi-colon";", colon ":", or a line break / double space / enter (char(10) or \n)
+    # Extra juncture sign after a comma ",", a period ".", a question mark "?", an exclamation mark "!", an em dash "—", an en dash "–", a semi-colon";", a colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     scomma_sepa = fix_comma_sepa.replace(" ,", " ,"+sepa)
@@ -2849,7 +2849,11 @@ def animation_demo() -> None:
     fix_emdash_sepa = emdash_sepa.replace("—"+sepa+sepa+sepa, "—"+sepa+sepa)
     semdash_sepa = fix_emdash_sepa.replace(" —", " —"+sepa)
     fix_semdash_sepa = semdash_sepa.replace(" —"+sepa+sepa+sepa, " —"+sepa+sepa)
-    scolon_sepa = fix_semdash_sepa.replace(";", ";"+sepa)
+    endash_sepa = fix_semdash_sepa.replace("–", "–"+sepa)
+    fix_endash_sepa = endash_sepa.replace("–"+sepa+sepa+sepa, "–"+sepa+sepa)
+    sendash_sepa = fix_endash_sepa.replace(" –", " –"+sepa)
+    fix_sendash_sepa = sendash_sepa.replace(" –"+sepa+sepa+sepa, " –"+sepa+sepa)
+    scolon_sepa = fix_sendash_sepa.replace(";", ";"+sepa)
     fix_scolon_sepa = scolon_sepa.replace(";"+sepa+sepa+sepa, ";"+sepa+sepa)
     colon_sepa = fix_scolon_sepa.replace(":", ":"+sepa)
     fix_colon_sepa = colon_sepa.replace(":"+sepa+sepa+sepa, ":"+sepa+sepa)
@@ -2943,27 +2947,71 @@ def animation_demo() -> None:
     static_no8 = static_no7.replace("8."+sepa, "8"+"\8.")
     static_no9 = static_no8.replace("9."+sepa, "9"+"\9.")
     static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
+
+    # Hide punctuation marks
+    if punc_check:
+        hide_squote = static_no0
+    else:
+        hide_comma = static_no0.replace(",","")
+        hide_period = hide_comma.replace(".","")
+        hide_qmark = hide_period.replace("?","")
+        hide_emark = hide_qmark.replace("!","")
+        hide_emdash = hide_emark.replace("—","")
+        hide_endash = hide_emdash.replace("–","")
+        hide_scolon = hide_endash.replace(";","")
+        hide_colon = hide_scolon.replace(":","")
+        hide_cdquote = hide_colon.replace("“","")
+        hide_cquote = hide_cdquote.replace("‘","")
+        hide_cdequote = hide_cquote.replace("”","")
+        hide_cequote = hide_cdequote.replace("’","")
+        hide_sdquote = hide_cequote.replace("\"","")
+        hide_squote = hide_sdquote.replace("'","")
+
+    # Fix end quotes' position with juncture sign
+    dscendq_sepa_sepa = hide_squote.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
+    dscendq_sepa = dscendq_sepa_sepa.replace(sepa+"’’", "’’"+sepa)
+    dcendq_sepa_sepa = dscendq_sepa.replace(sepa+sepa+"”", "”"+sepa+sepa)
+    dcendq_sepa = dcendq_sepa_sepa.replace(sepa+"”", "”"+sepa)
+    scendq_sepa_sepa = dcendq_sepa.replace(sepa+sepa+"’", "’"+sepa+sepa)
+    scendq_sepa = scendq_sepa_sepa.replace(sepa+"’", "’"+sepa)
+    dssendq_sepa_sepa = scendq_sepa.replace(sepa+sepa+"''", "''"+sepa+sepa)
+    dssendq_sepa = dssendq_sepa_sepa.replace(sepa+"''", "''"+sepa)
+    dsendq_sepa_sepa = dssendq_sepa.replace(sepa+sepa+"\"", "\""+sepa+sepa)
+    dsendq_sepa = dsendq_sepa_sepa.replace(sepa+"\"", "\""+sepa)
+    ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
+    ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
+
+     # Double juncture signs at the end of the text
+    dsepa_last_text = ssendq_sepa+sepa+sepa
+    no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
+    no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
+
+    if insert_text == "":
+        blank_input_or_no = ssendq_sepa
+    else:
+        blank_input_or_no = no_3sepa2
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = static_no0.split('\n')
+        output_lines = blank_input_or_no.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = static_no0
+        unsplit_OR_split = blank_input_or_no
         st.write(unsplit_OR_split)
       
 animation_demo()
 st.divider()
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Chaṭṭha Saṅgāyanā Tipiṭaka</strong></a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Tipiṭaka—the Three Baskets of the Buddhist Canon</strong></a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html"><strong>Bhikkhu Manual: Essential Chants</strong></a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Chaṭṭha Saṅgāyanā Tipiṭaka</strong></a>, Vipassana Research Institute (VRI), 1956.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://suttacentral.net/?lang=en"><strong>Tipiṭaka—the Three Baskets of the Buddhist Canon</strong></a>, SuttaCentral.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html"><strong>Bhikkhu Manual: Essential Chants</strong></a>, Amaravati Publications, 2020.</p>', unsafe_allow_html=True)
 st.divider()
 st.markdown("<h6 style='text-align: center;'>How does it work?</h6>", unsafe_allow_html=True)
-st.markdown("<p>It works by adding breaks or visual spacers after <em>every heavy syllable</em> (garu akkhara). The visual spacers act as temporal punctuations or juncture signs. The split text would then be read by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
+st.markdown("<p>It works by adding a <em>juncture sign</em> after every <em>heavy syllable</em> (garu akkhara). The juncture signs act as a temporal punctuation or visual spacers. The split text would then be read by dragging every syllable that is followed by a juncture sign. There are also double juncture signs that are inserted next to pause-indicating punctuation marks (listed above) and at the end of lines; they signify a long pause where chanters could catch their breath.</p>", unsafe_allow_html=True)
+st.divider()
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
 st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). Heavy syllables are also known as <em>full-length</em> syllables, <em>stressed</em> syllables, and <em>long</em> syllables. <em>Half-length</em>, <em>unstressed</em>, and <em>short</em> syllables are the terms of their respective counterpart. A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 #"""
@@ -2986,14 +3034,19 @@ st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or 
 #**References**
 st.divider()
 
-st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us via <a href="mailto:sutanissaya@gmail.com">email</a>.</p>', unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center;'>Suggestions</h6>", unsafe_allow_html=True)
+st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us by sending an email to <a href="mailto:sutanissaya@gmail.com">sutanissaya@gmail.com</a>. You may also send us any questions that you might have about the app.</p>', unsafe_allow_html=True)
+
+st.divider()
+
+st.markdown("<h6 style='text-align: center;'>License</h6>", unsafe_allow_html=True)
 st.markdown('<p><em>This web tool is licensed under <a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE">CC0-1.0 Universal</a>.  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>', unsafe_allow_html=True)
 
 st.divider()
 
 """
 **Keywords:** \n
-Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting
+_Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting_
 """
 
 st.sidebar.divider()
