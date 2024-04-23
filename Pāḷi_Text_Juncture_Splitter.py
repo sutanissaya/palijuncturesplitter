@@ -2980,21 +2980,16 @@ def animation_demo() -> None:
     dsendq_sepa = dsendq_sepa_sepa.replace(sepa+"\"", "\""+sepa)
     ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
     ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
-
-     # Double juncture signs at the end of the text
-    dsepa_last_text = ssendq_sepa+sepa+sepa
-    no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
-    no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = no_3sepa2.split('\n')
+        output_lines = ssendq_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = no_3sepa2
+        unsplit_OR_split = ssendq_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
