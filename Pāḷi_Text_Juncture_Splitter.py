@@ -2801,17 +2801,26 @@ def animation_demo() -> None:
                 convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
 
     # Convert numbering to static
-    static_no = convert_to_Ṁ_or_Ṃ.replace("1."+sepa, "1"+"\1.")
+    static_no1 = convert_to_Ṁ_or_Ṃ.replace("1."+sepa, "1"+"\1.")
+    static_no2 = static_no1.replace("2."+sepa, "2"+"\2.")
+    static_no3 = static_no2.replace("3."+sepa, "3"+"\3.")
+    static_no4 = static_no3.replace("4."+sepa, "4"+"\4.")
+    static_no5 = static_no4.replace("5."+sepa, "5"+"\5.")
+    static_no6 = static_no5.replace("6."+sepa, "6"+"\6.")
+    static_no7 = static_no6.replace("7."+sepa, "7"+"\7.")
+    static_no8 = static_no7.replace("8."+sepa, "8"+"\8.")
+    static_no9 = static_no8.replace("9."+sepa, "9"+"\9.")
+    static_no0 = static_no9.replace("0."+sepa, "0"+"\0.")
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = static_no.split('\n')
+        output_lines = static_no0.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = static_no
+        unsplit_OR_split = static_no0
         st.write(unsplit_OR_split)
       
 animation_demo()
