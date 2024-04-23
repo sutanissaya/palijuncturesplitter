@@ -26,19 +26,7 @@ st.markdown("<p style='text-align: center;'>Yā — nī — dha bhū — tā —
 st.markdown("<p style='text-align: center;'>bhum — mā — ni vā — yā — ni va an — talik — khe — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>sab — be — va bhū — tā — sumanā — bhavan — tu. — —</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Atho — pi sak — kac — ca suṇan — tu bhā — sitaṃ. — —</p>", unsafe_allow_html=True)
-
 st.divider()
-
-
-st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_html=True)
-"""
-Simply type or paste some Pāḷi text (there is a couple of resources below) you would like to juncture-split into the box then click anywhere outside the box (or press _Ctrl_+_Enter_) to have the app render the result.\n
-You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is em dash "—") or converting the text into a different transliteration standard, by navigating the left-side panel.\n
-The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These can be changed by going to the customization panel on the left.
-"""
-
-st.divider()
-
 """
 **Start splitting by inserting Pāḷi text here:**
 """
@@ -61,8 +49,8 @@ def animation_demo() -> None:
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
 
-    # Show hidden punctuation marks
-    punc_check = st.sidebar.checkbox(label='Show hidden punctuation marks')
+    # Hide punctuation marks
+    punc_check = st.sidebar.checkbox(label='Hide punctuation marks')
     st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
 
     # Saṃyoga - Pauses
@@ -2950,8 +2938,6 @@ def animation_demo() -> None:
 
     # Hide punctuation marks
     if punc_check:
-        hide_squote = static_no0
-    else:
         hide_comma = static_no0.replace(",","")
         hide_period = hide_comma.replace(".","")
         hide_qmark = hide_period.replace("?","")
@@ -2966,6 +2952,8 @@ def animation_demo() -> None:
         hide_cequote = hide_cdequote.replace("’","")
         hide_sdquote = hide_cequote.replace("\"","")
         hide_squote = hide_sdquote.replace("'","")
+    else:
+        hide_squote = static_no0
 
     # Fix end quotes' position with juncture sign
     dscendq_sepa_sepa = hide_squote.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
@@ -2980,28 +2968,32 @@ def animation_demo() -> None:
     dsendq_sepa = dsendq_sepa_sepa.replace(sepa+"\"", "\""+sepa)
     ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
     ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
+
+     # Double juncture signs at the end of the text
+    dsepa_last_text = ssendq_sepa+sepa+sepa
+    no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
+    no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = ssendq_sepa.split('\n')
+        output_lines = no_3sepa2.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = ssendq_sepa
+        unsplit_OR_split = no_3sepa2
         st.write(unsplit_OR_split)
       
 animation_demo()
 st.divider()
 st.markdown("<h6 style='text-align: center;'>Browse Pāḷi text to split:</h6>", unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Chaṭṭha Saṅgāyanā Tipiṭaka</strong></a>, Vipassana Research Institute (VRI), 1956.</p>', unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://suttacentral.net/?lang=en"><strong>Tipiṭaka—the Three Baskets of the Buddhist Canon</strong></a>, SuttaCentral.</p>', unsafe_allow_html=True)
-st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html"><strong>Bhikkhu Manual: Essential Chants</strong></a>, Amaravati Publications, 2020.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Chaṭṭha Saṅgāyanā Tipiṭaka</strong></a>, Vipassana Research Institute (VRI), 1956, license: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://tipitaka.app/"><strong>Tipiṭaka—the Three Baskets of the Buddhist Canon</strong></a>, SuttaCentral, license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Deed</a>.</p>', unsafe_allow_html=True)
+st.markdown('<p>• <a href="https://bhikkhu-manual.github.io/essential-chants.html"><strong>Bhikkhu Manual: Essential Chants</strong></a>, Amaravati Publications, 2020, license: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0 Deed</a>.</p>', unsafe_allow_html=True)
 st.divider()
 st.markdown("<h6 style='text-align: center;'>How does it work?</h6>", unsafe_allow_html=True)
-st.markdown("<p>It works by adding a <em>juncture sign</em> after every <em>heavy syllable</em> (garu akkhara). The juncture signs act as a temporal punctuation or visual spacers. The split text would then be read by dragging every syllable that is followed by a juncture sign. There are also double juncture signs that are inserted next to pause-indicating punctuation marks (listed above) and at the end of lines; they signify a long pause where chanters could catch their breath.</p>", unsafe_allow_html=True)
-st.divider()
+st.markdown("<p>It works by adding breaks or visual spacers after <em>every heavy syllable</em> (garu akkhara). The visual spacers act as temporal punctuations or juncture signs. The split text would then be read by dragging every syllable that is followed by a juncture sign.</p>", unsafe_allow_html=True)
 st.markdown("<h6 style='text-align: center;'>What is a heavy syllable?</h6>", unsafe_allow_html=True)
 st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or <em>light</em> (lahu), whereas vowels are classified as either <em>long</em> (dīgha) or <em>short</em> (rassa). Heavy syllables are also known as <em>full-length</em> syllables, <em>stressed</em> syllables, and <em>long</em> syllables. <em>Half-length</em>, <em>unstressed</em>, and <em>short</em> syllables are the terms of their respective counterpart. A syllable is heavy if i.) the vowel is long, ii.) followed by an anusvāra/niggahīta (ṃ/ṁ), or iii.) followed by a consonant cluster (conjunct/double consonant). On the other hand, a syllable is light if it contains a short vowel [a, i, u] not followed by a consonant cluster or an anusvāra/niggahīta.</p>", unsafe_allow_html=True)
 #"""
@@ -3024,19 +3016,14 @@ st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or 
 #**References**
 st.divider()
 
-st.markdown("<h6 style='text-align: center;'>Suggestions</h6>", unsafe_allow_html=True)
-st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us by sending an email to <a href="mailto:sutanissaya@gmail.com">sutanissaya@gmail.com</a>. You may also send us any questions that you might have about the app.</p>', unsafe_allow_html=True)
-
-st.divider()
-
-st.markdown("<h6 style='text-align: center;'>License</h6>", unsafe_allow_html=True)
+st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us via <a href="mailto:sutanissaya@gmail.com">email</a>.</p>', unsafe_allow_html=True)
 st.markdown('<p><em>This web tool is licensed under <a href="https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE">CC0-1.0 Universal</a>.  Anyone may build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.</em></p>', unsafe_allow_html=True)
 
 st.divider()
 
 """
 **Keywords:** \n
-_Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting_
+Pāḷi text heavy syllable separator, syllabification, syllabication, full-length syllable, long syllable, stressed syllable fragmentizer, syllable breaks visualizer, emphasized syllable, closed syllable, open syllable, long vowel, short vowel, double consonant, tempo, duration, pacer, easy chanting
 """
 
 st.sidebar.divider()
