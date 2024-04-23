@@ -51,7 +51,7 @@ def animation_demo() -> None:
 
     # Hide punctuation marks
     punc_check = st.sidebar.checkbox(label='Hide punctuation marks')
-    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, and en dash')
+    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
 
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
@@ -2947,7 +2947,9 @@ def animation_demo() -> None:
     hide_colon = hide_scolon.replace(":","")
     hide_cdquote = hide_colon.replace("“","")
     hide_cquote = hide_cdquote.replace("‘","")
-    hide_sdquote = hide_cquote.replace("\"","")
+    hide_cdequote = hide_cquote.replace("”","")
+    hide_cequote = hide_cdequote.replace("’","")
+    hide_sdquote = hide_cequote.replace("\"","")
     hide_squote = hide_sdquote.replace("'","")
 
     # Fix end quotes' position with juncture sign
