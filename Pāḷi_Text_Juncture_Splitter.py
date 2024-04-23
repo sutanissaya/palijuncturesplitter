@@ -1728,7 +1728,7 @@ def animation_demo() -> None:
     Ū_sepa_t_sepa_V = Ā_sepa_t_sepa_V.replace("Ū"+sepa+"tV","Ūt"+sepa+"V")
     O_sepa_d_sepa_V = Ū_sepa_t_sepa_V.replace("O"+sepa+"dV","Od"+sepa+"V")
     Ī_sepa_s_sepa_V = O_sepa_d_sepa_V.replace("Ī"+sepa+"sV","Īs"+sepa+"V")
-#CONTINUE HERE
+
     at_sepa_V = Ī_sepa_s_sepa_V.replace("atV","at"+sepa+"V")
     it_sepa_V = at_sepa_V.replace("itV","it"+sepa+"V")
     ut_sepa_V = it_sepa_V.replace("utV","ut"+sepa+"V")
@@ -2300,8 +2300,15 @@ def animation_demo() -> None:
 
     # Fix the position of preposition pauses and junctions signs
     sepa_comma = no_double_junctures_or_NO_DOUBLE_JUNCTURES.replace(sepa+",",","+sepa)
-    sepa_period = sepa_comma.replace(sepa+".","."+sepa)
-    sepa_scolon = sepa_period.replace(sepa+";",";"+sepa)
+    sepa_scomma = sepa_comma.replace(sepa+" ,"," ,"+sepa)
+    sepa_period = sepa_scomma.replace(sepa+".","."+sepa)
+    sepa_qmark = sepa_period.replace(sepa+"?","?"+sepa)
+    sepa_emark = sepa_qmark.replace(sepa+"!","!"+sepa)
+    sepa_emdash = sepa_emark.replace(sepa+"—","—"+sepa)
+    sepa_semdash = sepa_emdash.replace(sepa+" —"," —"+sepa)
+    sepa_endash = sepa_semdash.replace(sepa+"–","–"+sepa)
+    sepa_sendash = sepa_endash.replace(sepa+" –"," –"+sepa)
+    sepa_scolon = sepa_sendash.replace(sepa+";",";"+sepa)
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
     # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a semi-colon, or a colon:
     # lowercase
