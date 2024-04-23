@@ -2801,20 +2801,17 @@ def animation_demo() -> None:
                 convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
 
     # Convert numbering to static
-    static_no = convert_to_Ṁ_or_Ṃ.replace("1.", "1"+"\1.")
-
-    # Remove juncture sign after numbering
-    no_sepa_1 = static_no.replace("1"+"\1."+sepa, "1"+"\1.")
+    static_no = convert_to_Ṁ_or_Ṃ.replace("1."+sepa, "1"+"\1.")
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = no_sepa_1.split('\n')
+        output_lines = static_no.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = no_sepa_1
+        unsplit_OR_split = static_no
         st.write(unsplit_OR_split)
       
 animation_demo()
