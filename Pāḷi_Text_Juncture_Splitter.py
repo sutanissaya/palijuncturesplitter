@@ -3029,8 +3029,8 @@ def animation_demo() -> None:
     fix_pts1ed = fix_variant2.replace("pts1e"+sepa+"d", "pts1ed")
     fix_bj = fix_pts1ed.replace("bj,"+sepa, "bj,")
     fix_syaall = fix_bj.replace("sya-al"+sepa+"l", "sya-all")
-    fix_kṃ = fix_syaall.replace(","+sepa+"kṃ", ", km")
-    fix_km = fix_kṃ.replace(","+sepa+"km", ", km")
+    fix_kṃ = fix_syaall.replace(sepa+"kṃ", " km")
+    fix_km = fix_kṃ.replace(sepa+"km", " km")
 
     #Show Unsplit Line by Line
     if show_unsplit:
