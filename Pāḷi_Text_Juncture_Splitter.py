@@ -87,7 +87,7 @@ def animation_demo() -> None:
     placeholder="None",
     )
     # Default & Custom Juncture Sign
-    def_sepa= " -- "
+    def_sepa= " ┆ "
     juncture_placeholder = "Optional"
     custom_sepa = st.sidebar.text_input(label='Customize your own juncture sign:', placeholder=juncture_placeholder)
     st.sidebar.caption('↳ try • , _ , - , ^ , / , \ , = , ~ , | , )( , }{ , or ][ ')
