@@ -3025,7 +3025,7 @@ def animation_demo() -> None:
     revert_static_no9 = revert_static_no8.replace("9․", "9.")
     revert_static_no0 = revert_static_no9.replace("0․", "0.")
 
-    # Fix SuttaCentral
+    # Fixes for SuttaCentral
     fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝Variant:")
     fix_variant2 = fix_variant.replace("Varian"+sepa+"t"+sepa, "📝Variant:")
     fix_variant3 = fix_variant2.replace("Varian"+sepa+"t:", "📝Variant:")
@@ -3039,7 +3039,7 @@ def animation_demo() -> None:
     fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
     fix_kṃ_sepa = fix_km.replace("kṃ,"+sepa, "km,")
     fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
-    sepa_ellipsis3 = fix_km_sepa.replace(sepa+"…","…")
+    sepa_ellipsis3 = fix_km_sepa.replace(sepa+" …"," …")
 
     #Show Unsplit Line by Line
     if show_unsplit:
