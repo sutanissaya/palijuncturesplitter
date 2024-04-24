@@ -3037,7 +3037,8 @@ def animation_demo() -> None:
     fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
     fix_kṃ_sepa = fix_km.replace("kṃ,"+sepa, "km,")
     fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
-    sepa_ellipsis3 = fix_km_sepa.replace(sepa+" …"," …"+sepa)
+    sepa_ellipsis2 = fix_km_sepa.replace(sepa+" …."," …."+sepa)
+    sepa_ellipsis3 = sepa_ellipsis2.replace(sepa+" …"," …"+sepa)
 
     #Show Unsplit Line by Line
     if show_unsplit:
