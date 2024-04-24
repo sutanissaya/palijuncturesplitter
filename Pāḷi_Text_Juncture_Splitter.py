@@ -3050,7 +3050,7 @@ _Pāḷi text heavy syllable separator, syllabification, syllabication, full-len
 """
 
 st.sidebar.divider()
-show_app_code = st.sidebar.checkbox()
+show_app_code = st.sidebar.checkbox(label='Show code')
 if show_app_code:
     show_code(animation_demo)
 st.sidebar.markdown('View [GitHub repository](https://github.com/sutanissaya/palijuncturesplitter.git)')
