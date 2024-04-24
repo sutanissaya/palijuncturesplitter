@@ -3023,21 +3023,24 @@ def animation_demo() -> None:
     revert_static_no9 = revert_static_no8.replace("9․", "9.")
     revert_static_no0 = revert_static_no9.replace("0․", "0.")
 
-    # Fix Varian ― t ― SuttaCentral
+    # Fix SuttaCentral
     fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝Variant:")
     fix_variant2 = fix_variant.replace("Varian"+sepa+"t"+sepa, "📝Variant:")
     fix_pts1ed = fix_variant2.replace("pts1e"+sepa+"d", "pts1ed")
     fix_bj = fix_pts1ed.replace("bj,"+sepa, "bj,")
- 
+    fix_syaall = fix_bj.replace("sya-al"+sepa+"l", "sya-all")
+    fix_kṃ = fix_syaall.replace(","+sepa+"kṃ", ", km")
+    fix_km = fix_kṃ.replace(","+sepa+"km", ", km")
+
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = fix_bj.split('\n')
+        output_lines = fix_km.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = fix_bj
+        unsplit_OR_split = fix_km
         st.write(unsplit_OR_split)
       
 animation_demo()
