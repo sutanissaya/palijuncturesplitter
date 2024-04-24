@@ -66,7 +66,8 @@ def animation_demo() -> None:
     encry_pts1ed = insert_text.replace("pts1ed","Α")
     encry_variant = encry_pts1ed.replace("Variant:", "Β")
     encry_bj = encry_variant.replace("bj,", "Γ")
-    encry_syaall = encry_bj.replace("sya-all", "Δ")
+    encry_syaall_comma = encry_bj.replace("sya-all,", "Ζ")
+    encry_syaall = encry_syaall_comma.replace("sya-all", "Δ")
     encry_km = encry_syaall.replace(" km", "Ε")
  
     # Fix line breaks to double whitespaces and line breaks
@@ -3037,12 +3038,13 @@ def animation_demo() -> None:
     revert_static_no0 = revert_static_no9.replace("0․", "0.")
 
     # Decrypt SuttaCentral abbreviations in info box
-    encry_pts1ed = revert_static_no0.replace("Α","pts1ed")
-    encry_variant = encry_pts1ed.replace("Β", "🔍Variant:")
-    encry_bj = encry_variant.replace("Γ", "bj,")
-    encry_syaall = encry_bj.replace("Δ", "sya-all")
-    encry_km = encry_syaall.replace("Ε", " km")
-    sepa_ellipsis2 = encry_km.replace(sepa+" …."," …."+sepa)
+    decry_pts1ed = revert_static_no0.replace("Α","pts1ed")
+    decry_variant = decry_pts1ed.replace("Β", "🔍Variant:")
+    decry_bj = decry_variant.replace("Γ", "bj,")
+    decry_syaall_comma = decry_bj.replace("Ζ", "sya-all,")
+    decry_syaall = decry_syaall_comma.replace("Δ", "sya-all")
+    decry_km = decry_syaall.replace("Ε", " km")
+    sepa_ellipsis2 = decry_km.replace(sepa+" …."," …."+sepa)
     sepa_ellipsis3 = sepa_ellipsis2.replace(sepa+" …"," …"+sepa)
     triple_sepa = sepa_ellipsis3.replace(sepa+sepa+sepa,sepa+sepa)
 
