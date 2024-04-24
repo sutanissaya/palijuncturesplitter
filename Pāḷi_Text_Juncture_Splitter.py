@@ -2633,7 +2633,7 @@ def animation_demo() -> None:
         samyoga_Ḍ = samyoga_Ṭ.replace("Ḍ", "D")
         samyoga_Ṇ = samyoga_Ḍ.replace("Ṇ", "N")
     else:
-        samyoga_jH = ṂṀ_to_NG_or_M    
+        samyoga_jH = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B    
 
  
     # Nasal ññ → nñ
