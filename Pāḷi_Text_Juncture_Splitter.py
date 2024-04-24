@@ -3031,7 +3031,7 @@ def animation_demo() -> None:
     fix_pts1ed = fix_variant4.replace("pts1e"+sepa+"d", "pts1ed")
     fix_pts1ed2 = fix_pts1ed.replace("pts1e"+sepa+"th", "pts1ed")
     fix_bj = fix_pts1ed2.replace("bj,"+sepa, "bj,")
-    fix_bj2 = fix_bj.replace("phch"+sepa, "bj")
+    fix_bj2 = fix_bj.replace("phch", "bj")
     fix_syaall = fix_bj2.replace("sya-al"+sepa+"l", "sya-all")
     fix_kṃ = fix_syaall.replace(sepa+" kṃ"+sepa, " km")
     fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
