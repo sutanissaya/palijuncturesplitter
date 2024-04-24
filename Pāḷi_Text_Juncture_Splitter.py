@@ -45,7 +45,7 @@ st.divider()
 def animation_demo() -> None:
     # Insert Text
     insert_text = st.text_area('', height=200, placeholder="e.g. 'Namo tassa bhagavato arahato sammāsambuddhassa.'")
-
+ 
     # Default & Custom Juncture Sign
     def_sepa= " ― "
     juncture_placeholder = "Optional"
@@ -60,8 +60,13 @@ def animation_demo() -> None:
     st.sidebar.caption('↳ e.g. commas, periods, ellipses, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
     # Show Unsplit Text of Each Split Line
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
+
+ 
+    # Encrypt SuttaCentral abbreviations in info box
+    pts1ed = insert_text.replace("pts1ed","Α")
+ 
     # Fix line breaks to double whitespaces and line breaks
-    fixed_text= insert_text.replace('\n','  \n')
+    fixed_text= pts1ed.replace('\n','  \n')
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
