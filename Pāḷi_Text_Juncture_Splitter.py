@@ -45,8 +45,39 @@ st.divider()
 def animation_demo() -> None:
     # Insert Text
     insert_text = st.text_area('', height=200, placeholder="e.g. 'Namo tassa bhagavato arahato sammāsambuddhassa.'")
-    # Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)
-    nasal_check = st.sidebar.checkbox(label='Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)')
+
+    # Default & Custom Juncture Sign
+    def_sepa= " ― "
+    juncture_placeholder = "Optional"
+    custom_sepa = st.sidebar.text_input(label='Customize your own juncture sign:', placeholder=juncture_placeholder)
+    st.sidebar.caption('↳ try • , _ , - , ^ , / , \ , = , ~ , | , )( , }{ , or ][ ')
+    if custom_sepa == '':
+        sepa=def_sepa
+    else:
+        sepa=(" "+custom_sepa+" ")
+    # Show hidden punctuation marks
+    punc_check = st.sidebar.checkbox(label='Show hidden punctuation marks')
+    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
+    # Show Unsplit Text of Each Split Line
+    show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
+    # Fix line breaks to double whitespaces and line breaks
+    fixed_text= insert_text.replace('\n','  \n')
+    # Split text in UPPERCASE
+    uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
+    # Saṃyoga - Pauses
+    samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
+    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
+    # Saṃyoga - Consonants
+    samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
+    st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
+    # Transliteration Standard Conversion
+    translit_select = st.sidebar.selectbox(
+    "Convert transliteration standard to:",
+    ("Do not convert", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
+    index=None,
+    placeholder="None",
+    )
+     
     # Nasal ññ → nñ
     nñ_check = st.sidebar.checkbox(label='ññ → nñ')
     # Nasal ṅ → ng
@@ -58,19 +89,7 @@ def animation_demo() -> None:
     index=None,
     placeholder="None",
     )
-    # Split text in UPPERCASE
-    uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
 
-    # Show hidden punctuation marks
-    punc_check = st.sidebar.checkbox(label='Show hidden punctuation marks')
-    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
-
-    # Saṃyoga - Pauses
-    samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
-    # Saṃyoga - Consonants
-    samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
-    st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
     # v ⇄ w
     v_w_select = st.sidebar.selectbox(
     "v ⇄ w",
@@ -78,27 +97,9 @@ def animation_demo() -> None:
     index=None,
     placeholder="None",
     )
- 
-    # Transliteration Standard Conversion
-    translit_select = st.sidebar.selectbox(
-    "Convert transliteration standard to:",
-    ("Do not convert", "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)", "ISO 15919: Pāḷi (2001)", "Velthuis (1983)"),
-    index=None,
-    placeholder="None",
-    )
-    # Default & Custom Juncture Sign
-    def_sepa= " ― "
-    juncture_placeholder = "Optional"
-    custom_sepa = st.sidebar.text_input(label='Customize your own juncture sign:', placeholder=juncture_placeholder)
-    st.sidebar.caption('↳ try • , _ , - , ^ , / , \ , = , ~ , | , )( , }{ , or ][ ')
-    if custom_sepa == '':
-        sepa=def_sepa
-    else:
-        sepa=(" "+custom_sepa+" ")
-    # Show Unsplit Text of Each Split Line
-    show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
-    # Fix line breaks to double whitespaces and line breaks
-    fixed_text= insert_text.replace('\n','  \n')
+    # Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)
+    nasal_check = st.sidebar.checkbox(label='Medial anusvāra/niggahīta to nasal (gaṃgā → gaṅgā)')
+    
     # Remove circumflex in Â, â, Î, î, Û, û, Ê, ê, Ô, ô
     A_cf = fixed_text.replace('Â','Ā')
     a_cf = A_cf.replace('â','ā')
