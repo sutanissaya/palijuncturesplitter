@@ -2106,7 +2106,7 @@ def animation_demo() -> None:
     ev_sepa_y = ūv_sepa_y.replace("e"+sepa+"v"+sepa+"y", "e"+"v"+sepa+"y")
     ov_sepa_y = ev_sepa_y.replace("o"+sepa+"v"+sepa+"y", "o"+"v"+sepa+"y")
     # UPPERCASE
-    ĀK_sepa_Y = OV_sepa_H.replace("Ā"+sepa+"K"+sepa+"Y", "Ā"+"K"+sepa+"Y")
+    ĀK_sepa_Y = ov_sepa_y.replace("Ā"+sepa+"K"+sepa+"Y", "Ā"+"K"+sepa+"Y")
     ĪK_sepa_Y = ĀK_sepa_Y.replace("Ī"+sepa+"K"+sepa+"Y", "Ī"+"K"+sepa+"Y")
     ŪK_sepa_Y = ĪK_sepa_Y.replace("Ū"+sepa+"K"+sepa+"Y", "Ū"+"K"+sepa+"Y")
     EK_sepa_Y = ŪK_sepa_Y.replace("E"+sepa+"K"+sepa+"Y", "E"+"K"+sepa+"Y")
