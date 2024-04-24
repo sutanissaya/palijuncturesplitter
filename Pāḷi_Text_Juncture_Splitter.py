@@ -3029,18 +3029,20 @@ def animation_demo() -> None:
     fix_pts1ed = fix_variant2.replace("pts1e"+sepa+"d", "pts1ed")
     fix_bj = fix_pts1ed.replace("bj,"+sepa, "bj,")
     fix_syaall = fix_bj.replace("sya-al"+sepa+"l", "sya-all")
-    fix_kṃ = fix_syaall.replace(sepa+" kṃ", " km")
-    fix_km = fix_kṃ.replace(sepa+" km", " km")
+    fix_kṃ = fix_syaall.replace(sepa+" kṃ"+sepa, " km")
+    fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
+    fix_kṃ_sepa = fix_km.replace(" kṃ"+sepa, " km")
+    fix_km_sepa = fix_kṃ_sepa.replace(" km"+sepa, " km")
 
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = fix_km.split('\n')
+        output_lines = fix_km_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = fix_km
+        unsplit_OR_split = fix_km_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
