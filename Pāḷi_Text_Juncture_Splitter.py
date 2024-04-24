@@ -2990,16 +2990,19 @@ def animation_demo() -> None:
         blank_input_or_no = ssendq_sepa
     else:
         blank_input_or_no = no_3sepa2
+
+    # Revert def sepa to em dash
+    em_def_sepa = blank_input_or_no.replace("┆","—")
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = blank_input_or_no.split('\n')
+        output_lines = em_def_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = blank_input_or_no
+        unsplit_OR_split = em_def_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
