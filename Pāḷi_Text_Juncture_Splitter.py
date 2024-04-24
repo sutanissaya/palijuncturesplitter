@@ -2890,54 +2890,8 @@ def animation_demo() -> None:
     else:
         saṃyoga_or_not = ṁ_sepa_or_Ṁ_sepa
 
-
-    # Transliteration standard conversion
-    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
-        # lowercase
-        convert_to_ṃ = saṃyoga_or_not.replace("ṁ", "ṃ")
-        # UPPERCASE
-        convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
-    else:
-        if translit_select == "ISO 15919: Pāḷi (2001)":
-            # lowercase
-            convert_to_ṁ = saṃyoga_or_not.replace("ṃ", "ṁ")
-            # UPPERCASE
-            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
-        else:
-            if translit_select == "Velthuis (1983)":
-                # lowercase
-                convert_to_perm = saṃyoga_or_not.replace("ṃ", ".m")
-                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
-                convert_to_aa = convert_to_perm2.replace("ā", "aa")
-                convert_to_ii = convert_to_aa.replace("ī", "ii")
-                convert_to_uu = convert_to_ii.replace("ū", "uu")
-                convert_from_ṅ = convert_to_uu.replace("ṅ", "\"n")
-                convert_from_ñ = convert_from_ṅ.replace("ñ", "\~n")
-                convert_to_pert = convert_from_ñ.replace("ṭ", ".t")
-                convert_to_perd = convert_to_pert.replace("ḍ", ".d")
-                convert_to_pern = convert_to_perd.replace("ṇ", ".n")
-                convert_to_qqs = convert_to_pern.replace("ś", "“s")
-                convert_to_pers = convert_to_qqs.replace("ṣ", ".s")
-                convert_to_perl = convert_to_pers.replace("ḷ", ".l")
-                # UPPERCASE
-                convert_to_perM = convert_to_perl.replace("Ṃ", ".M")
-                convert_to_AA = convert_to_perM.replace("Ā", "AA")
-                convert_to_II = convert_to_AA.replace("Ī", "II")
-                convert_to_UU = convert_to_II.replace("Ū", "UU")
-                convert_from_Ṅ = convert_to_UU.replace("Ṅ", "\"N")
-                convert_from_Ñ = convert_from_Ṅ.replace("Ñ", "\~N")
-                convert_to_perT = convert_from_Ñ.replace("Ṭ", ".T")
-                convert_to_perD = convert_to_perT.replace("Ḍ", ".D")
-                convert_to_perN = convert_to_perD.replace("Ṇ", ".N")
-                convert_to_QQS = convert_to_perN.replace("Ś", "“S")
-                convert_to_perS = convert_to_QQS.replace("Ṣ", ".S")
-                convert_to_perL = convert_to_perS.replace("Ḷ", ".L")
-                convert_to_Ṁ_or_Ṃ = convert_to_perL.replace("Ṁ", ".M")
-            else:
-                convert_to_Ṁ_or_Ṃ = saṃyoga_or_not
-
     # Convert numbering to static
-    static_no1 = convert_to_Ṁ_or_Ṃ.replace("1."+sepa, "1"+"\1.")
+    static_no1 = saṃyoga_or_not.replace("1."+sepa, "1"+"\1.")
     static_no2 = static_no1.replace("2."+sepa, "2"+"\2.")
     static_no3 = static_no2.replace("3."+sepa, "3"+"\3.")
     static_no4 = static_no3.replace("4."+sepa, "4"+"\4.")
@@ -2981,13 +2935,58 @@ def animation_demo() -> None:
     ssendq_sepa_sepa = dsendq_sepa.replace(sepa+sepa+"'", "'"+sepa+sepa)
     ssendq_sepa = ssendq_sepa_sepa.replace(sepa+"'", "'"+sepa)
 
+    # Transliteration standard conversion
+    if translit_select == "IAST / International Alphabet of Sanskrit Transliteration (1894) & ALA-LC / American Library Association – Library of Congress (2012)":
+        # lowercase
+        convert_to_ṃ = ssendq_sepa.replace("ṁ", "ṃ")
+        # UPPERCASE
+        convert_to_Ṁ_or_Ṃ = convert_to_ṃ.replace("Ṁ", "Ṃ")
+    else:
+        if translit_select == "ISO 15919: Pāḷi (2001)":
+            # lowercase
+            convert_to_ṁ = ssendq_sepa.replace("ṃ", "ṁ")
+            # UPPERCASE
+            convert_to_Ṁ_or_Ṃ = convert_to_ṁ.replace("Ṃ", "Ṁ")
+        else:
+            if translit_select == "Velthuis (1983)":
+                # lowercase
+                convert_to_perm = ssendq_sepa.replace("ṃ", ".m")
+                convert_to_perm2 = convert_to_perm.replace("ṁ", ".m")
+                convert_to_aa = convert_to_perm2.replace("ā", "aa")
+                convert_to_ii = convert_to_aa.replace("ī", "ii")
+                convert_to_uu = convert_to_ii.replace("ū", "uu")
+                convert_from_ṅ = convert_to_uu.replace("ṅ", "\"n")
+                convert_from_ñ = convert_from_ṅ.replace("ñ", "\~n")
+                convert_to_pert = convert_from_ñ.replace("ṭ", ".t")
+                convert_to_perd = convert_to_pert.replace("ḍ", ".d")
+                convert_to_pern = convert_to_perd.replace("ṇ", ".n")
+                convert_to_qqs = convert_to_pern.replace("ś", "“s")
+                convert_to_pers = convert_to_qqs.replace("ṣ", ".s")
+                convert_to_perl = convert_to_pers.replace("ḷ", ".l")
+                # UPPERCASE
+                convert_to_perM = convert_to_perl.replace("Ṃ", ".M")
+                convert_to_AA = convert_to_perM.replace("Ā", "AA")
+                convert_to_II = convert_to_AA.replace("Ī", "II")
+                convert_to_UU = convert_to_II.replace("Ū", "UU")
+                convert_from_Ṅ = convert_to_UU.replace("Ṅ", "\"N")
+                convert_from_Ñ = convert_from_Ṅ.replace("Ñ", "\~N")
+                convert_to_perT = convert_from_Ñ.replace("Ṭ", ".T")
+                convert_to_perD = convert_to_perT.replace("Ḍ", ".D")
+                convert_to_perN = convert_to_perD.replace("Ṇ", ".N")
+                convert_to_QQS = convert_to_perN.replace("Ś", "“S")
+                convert_to_perS = convert_to_QQS.replace("Ṣ", ".S")
+                convert_to_perL = convert_to_perS.replace("Ḷ", ".L")
+                convert_to_Ṁ_or_Ṃ = convert_to_perL.replace("Ṁ", ".M")
+            else:
+                convert_to_Ṁ_or_Ṃ = ssendq_sepa
+ 
      # Double juncture signs at the end of the text
-    dsepa_last_text = ssendq_sepa+sepa+sepa
+    dsepa_last_text = convert_to_Ṁ_or_Ṃ+sepa+sepa
     no_3sepa = dsepa_last_text.replace(sepa+sepa+sepa, sepa+sepa)
     no_3sepa2 = no_3sepa.replace(sepa+sepa+sepa, sepa+sepa)
 
     if insert_text == "":
-        blank_input_or_no = ssendq_sepa
+        blank_input_or_no = convert_to_Ṁ_or_Ṃ
     else:
         blank_input_or_no = no_3sepa2
  
