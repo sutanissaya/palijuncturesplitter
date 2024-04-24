@@ -2908,16 +2908,16 @@ def animation_demo() -> None:
         saṃyoga_or_not = ṁ_sepa_or_Ṁ_sepa
 
     # Convert period to period-like symbol "․" for numbering
-    static_no1 = saṃyoga_or_not.replace("1.", "1․")
-    static_no2 = static_no1.replace("2.", "2․")
-    static_no3 = static_no2.replace("3.", "3․")
-    static_no4 = static_no3.replace("4.", "4․")
-    static_no5 = static_no4.replace("5.", "5․")
-    static_no6 = static_no5.replace("6.", "6․")
-    static_no7 = static_no6.replace("7.", "7․")
-    static_no8 = static_no7.replace("8.", "8․")
-    static_no9 = static_no8.replace("9.", "9․")
-    static_no0 = static_no9.replace("0.", "0․")
+    static_no1 = saṃyoga_or_not.replace("1."+sepa, "1․")
+    static_no2 = static_no1.replace("2."+sepa, "2․")
+    static_no3 = static_no2.replace("3."+sepa, "3․")
+    static_no4 = static_no3.replace("4."+sepa, "4․")
+    static_no5 = static_no4.replace("5."+sepa, "5․")
+    static_no6 = static_no5.replace("6."+sepa, "6․")
+    static_no7 = static_no6.replace("7."+sepa, "7․")
+    static_no8 = static_no7.replace("8."+sepa, "8․")
+    static_no9 = static_no8.replace("9."+sepa, "9․")
+    static_no0 = static_no9.replace("0."+sepa, "0․")
 
     # Hide punctuation marks
     if punc_check:
