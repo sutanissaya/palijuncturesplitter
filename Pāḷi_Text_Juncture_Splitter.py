@@ -33,7 +33,7 @@ st.divider()
 st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_html=True)
 """
 Simply type or paste some Pāḷi text (there is a couple of resources below) you would like to juncture-split into the box then click anywhere outside the box (or press _Ctrl_+_Enter_) to have the app render the result.\n
-You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is this em dash variant "―") or converting the text into a different transliteration standard, by navigating the left-side panel.\n
+You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is em dash "—") or converting the text into a different transliteration standard, by navigating the left-side panel.\n
 The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These can be changed by going to the customization panel on the left.
 """
 
@@ -87,7 +87,7 @@ def animation_demo() -> None:
     placeholder="None",
     )
     # Default & Custom Juncture Sign
-    def_sepa= " ― "
+    def_sepa= " -- "
     juncture_placeholder = "Optional"
     custom_sepa = st.sidebar.text_input(label='Customize your own juncture sign:', placeholder=juncture_placeholder)
     st.sidebar.caption('↳ try • , _ , - , ^ , / , \ , = , ~ , | , )( , }{ , or ][ ')
@@ -99,8 +99,10 @@ def animation_demo() -> None:
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
     # Fix line breaks to double whitespaces and line breaks
     fixed_text= insert_text.replace('\n','  \n')
+    # Conert em dash to double hyphens
+    dhyphens = fixed_text.replace('—','--')
     # Remove circumflex in Â, â, Î, î, Û, û, Ê, ê, Ô, ô
-    A_cf = fixed_text.replace('Â','Ā')
+    A_cf = dhyphens.replace('Â','Ā')
     a_cf = A_cf.replace('â','ā')
     I_cf = a_cf.replace('Î','Ī')
     i_cf = I_cf.replace('î','ī')
