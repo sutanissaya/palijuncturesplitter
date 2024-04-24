@@ -65,7 +65,7 @@ def animation_demo() -> None:
     # Encrypt SuttaCentral abbreviations in info box
     encry_pts1ed = insert_text.replace("pts1ed","Α")
     encry_variant = encry_pts1ed.replace("Variant:", "Β")
-    encry_bj = encry_variant.replace("bj", "Γ")
+    encry_bj = encry_variant.replace("bj,", "Γ")
     encry_syaall = encry_bj.replace("sya-all", "Δ")
     encry_km = encry_syaall.replace(" km", "Ε")
  
@@ -3039,7 +3039,7 @@ def animation_demo() -> None:
     # Decrypt SuttaCentral abbreviations in info box
     encry_pts1ed = revert_static_no0.replace("Α","pts1ed")
     encry_variant = encry_pts1ed.replace("Β", "🔍Variant:")
-    encry_bj = encry_variant.replace("Γ", "bj")
+    encry_bj = encry_variant.replace("Γ", "bj,")
     encry_syaall = encry_bj.replace("Δ", "sya-all")
     encry_km = encry_syaall.replace("Ε", " km")
     sepa_ellipsis2 = encry_km.replace(sepa+" …."," …."+sepa)
