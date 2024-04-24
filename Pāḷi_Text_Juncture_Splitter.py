@@ -34,7 +34,7 @@ st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_
 """
 Simply type or paste some Pāḷi text (there is a couple of resources below) you would like to juncture-split into the box then click anywhere outside the box (or press _Ctrl_+_Enter_) to have the app render the result.\n
 You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default juncture sign is this em dash variant: "―") or converting the text into a different transliteration standard (IAST, ISO, or Velthuis), by navigating the left-side panel.\n
-The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, ellipses, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These can be changed by going to the customization panel on the left.
+The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, ellipses, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These presets can be changed by going to the customization panel on the left.
 """
 
 st.divider()
