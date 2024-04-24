@@ -3010,16 +3010,28 @@ def animation_demo() -> None:
         blank_input_or_no = convert_to_Ṁ_or_Ṃ
     else:
         blank_input_or_no = no_3sepa2
+
+    # Convert period-like symbol "․" back to period for numbering
+    revert_static_no1 = blank_input_or_no.replace("1․", "1.")
+    revert_static_no2 = revert_static_no1.replace("2․", "2.")
+    revert_static_no3 = revert_static_no2.replace("3․", "3.")
+    revert_static_no4 = revert_static_no3.replace("4․", "4.")
+    revert_static_no5 = revert_static_no4.replace("5․", "5.")
+    revert_static_no6 = revert_static_no5.replace("6․", "6.")
+    revert_static_no7 = revert_static_no6.replace("7․", "7.")
+    revert_static_no8 = revert_static_no7.replace("8․", "8.")
+    revert_static_no9 = revert_static_no8.replace("9․", "9.")
+    revert_static_no0 = revert_static_no9.replace("0․", "0.")
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = blank_input_or_no.split('\n')
+        output_lines = revert_static_no0.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = blank_input_or_no
+        unsplit_OR_split = revert_static_no0
         st.write(unsplit_OR_split)
       
 animation_demo()
