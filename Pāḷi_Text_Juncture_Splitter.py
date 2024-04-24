@@ -3039,16 +3039,17 @@ def animation_demo() -> None:
     fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
     sepa_ellipsis2 = fix_km_sepa.replace(sepa+" …."," …."+sepa)
     sepa_ellipsis3 = sepa_ellipsis2.replace(sepa+" …"," …"+sepa)
+    triple_sepa = sepa_ellipsis3.replace(sepa+sepa+sepa,sepa+sepa)
 
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = sepa_ellipsis3.split('\n')
+        output_lines = triple_sepa.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = sepa_ellipsis3
+        unsplit_OR_split = triple_sepa
         st.write(unsplit_OR_split)
       
 animation_demo()
