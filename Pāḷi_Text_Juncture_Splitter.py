@@ -3024,7 +3024,7 @@ def animation_demo() -> None:
     revert_static_no0 = revert_static_no9.replace("0․", "0.")
 
     # Fix SuttaCentral
-    fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝Variant:")
+    fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝<em>Variant</em>:")
     fix_variant2 = fix_variant.replace("Varian"+sepa+"t"+sepa, "📝Variant:")
     fix_pts1ed = fix_variant2.replace("pts1e"+sepa+"d", "pts1ed")
     fix_bj = fix_pts1ed.replace("bj,"+sepa, "bj,")
