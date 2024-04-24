@@ -3054,6 +3054,6 @@ show_app_code = st.sidebar.checkbox(label='Show app code')
 if show_app_code:
     show_code(animation_demo)
 else:
-
+    show_code("")
 st.sidebar.markdown('View [GitHub repository](https://github.com/sutanissaya/palijuncturesplitter.git)')
 st.sidebar.markdown('Read [CC0-1.0 License](https://github.com/sutanissaya/palijuncturesplitter/blob/main/LICENSE)')
