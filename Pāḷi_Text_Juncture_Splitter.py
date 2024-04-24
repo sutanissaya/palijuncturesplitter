@@ -3031,8 +3031,8 @@ def animation_demo() -> None:
     fix_syaall = fix_bj.replace("sya-al"+sepa+"l", "sya-all")
     fix_kṃ = fix_syaall.replace(sepa+" kṃ"+sepa, " km")
     fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
-    fix_kṃ_sepa = fix_km.replace(" kṃ"+sepa, " km")
-    fix_km_sepa = fix_kṃ_sepa.replace(" km"+sepa, " km")
+    fix_kṃ_sepa = fix_km.replace("kṃ,"+sepa, "km,")
+    fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
 
     #Show Unsplit Line by Line
     if show_unsplit:
