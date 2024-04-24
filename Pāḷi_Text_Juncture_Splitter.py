@@ -2307,10 +2307,8 @@ def animation_demo() -> None:
     sepa_period = sepa_scomma.replace(sepa+".","."+sepa)
     sepa_period2 = sepa_period.replace(sepa+".","."+sepa)
     sepa_ellipsis_period = sepa_period2.replace(sepa+"….","…."+sepa)
-    sepa_ellipsis_period2 = sepa_ellipsis_period.replace(sepa+"….","…."+sepa)
-    sepa_ellipsis = sepa_ellipsis_period2.replace(sepa+"…","…"+sepa)
-    sepa_ellipsis2 = sepa_ellipsis.replace(sepa+"…","…"+sepa)
-    sepa_qmark = sepa_ellipsis2.replace(sepa+"?","?"+sepa)
+    sepa_ellipsis = sepa_ellipsis_period.replace(sepa+"…","…"+sepa)
+    sepa_qmark = sepa_ellipsis.replace(sepa+"?","?"+sepa)
     sepa_emark = sepa_qmark.replace(sepa+"!","!"+sepa)
     sepa_emdash = sepa_emark.replace(sepa+"—","—"+sepa)
     sepa_semdash = sepa_emdash.replace(sepa+" —"," —"+sepa)
@@ -3039,7 +3037,7 @@ def animation_demo() -> None:
     fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
     fix_kṃ_sepa = fix_km.replace("kṃ,"+sepa, "km,")
     fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
-    sepa_ellipsis3 = fix_km_sepa.replace(sepa+" …"," …")
+    sepa_ellipsis3 = fix_km_sepa.replace(sepa+" …"," …"+sepa)
 
     #Show Unsplit Line by Line
     if show_unsplit:
