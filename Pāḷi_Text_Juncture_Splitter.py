@@ -2596,10 +2596,8 @@ def animation_demo() -> None:
     Ṅ_TO_NG = ṅ_to_ng.replace("Ṅ", "NG")
     if ng_check:
         nasal_ng = ṅ_to_ng
-    else:
-        nasal_ng = nasal_nñ
-    if uppercase_check:
-        NASAL_NG = nasal_ng
+        if uppercase_check:
+            NASAL_NG = Ṅ_TO_NG
     else:
         NASAL_NG = nasal_nñ
 
