@@ -2596,15 +2596,55 @@ def animation_demo() -> None:
         u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B = Ṁ_to_M_sepa_B
     else:
         u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon
+
+     # Saṃyoga Consonants
+    if samyoga_consonants_check:
+
+        samyoga_bh = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B.replace("bh", "ph")
+        samyoga_b = samyoga_bh.replace("b", "ph")
+        samyoga_dh = samyoga_b.replace("dh", "th")
+        samyoga_d = samyoga_dh.replace("d", "th")
+        samyoga_gh = samyoga_d.replace("gh", "kh")
+        samyoga_g = samyoga_gh.replace("g", "kh")
+        samyoga_jh = samyoga_g.replace("jh", "ch")
+        samyoga_j = samyoga_jh.replace("j", "ch")
+        samyoga_ñ = samyoga_j.replace("ñ", "y")
+        samyoga_Bh = samyoga_ñ.replace("Bh", "Ph")
+        samyoga_B = samyoga_Bh.replace("B", "Ph")
+        samyoga_Dh = samyoga_B.replace("Dh", "Th")
+        samyoga_D = samyoga_Dh.replace("D", "Th")
+        samyoga_Gh = samyoga_D.replace("Gh", "Kh")
+        samyoga_G = samyoga_Gh.replace("G", "Kh")
+        samyoga_Jh = samyoga_G.replace("Jh", "Ch")
+        samyoga_J = samyoga_Jh.replace("J", "Ch")
+        samyoga_Ñ = samyoga_J.replace("Ñ", "Y")
+        samyoga_BH = samyoga_Ñ.replace("BH", "PH")
+        samyoga_DH = samyoga_BH.replace("DH", "TH")
+        samyoga_GH = samyoga_DH.replace("GH", "KH")
+        samyoga_JH = samyoga_GH.replace("JH", "CH")
+        samyoga_bH = samyoga_JH.replace("bH", "pH")
+        samyoga_dH = samyoga_bH.replace("dH", "tH")
+        samyoga_gH = samyoga_dH.replace("gH", "kH")
+        samyoga_jH = samyoga_gH.replace("jH", "cH")
+        samyoga_ṭ = samyoga_jH.replace("ṭ", "t")
+        samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
+        samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
+        samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
+        samyoga_Ḍ = samyoga_Ṭ.replace("Ḍ", "D")
+        samyoga_Ṇ = samyoga_Ḍ.replace("Ṇ", "N")
+    else:
+        samyoga_jH = ṂṀ_to_NG_or_M    
+
+ 
     # Nasal ññ → nñ
-    ññ_to_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
+    ññ_to_nñ = samyoga_jH.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
     ÑÑ_to_NÑ = ññ_to_nñ.replace("Ñ"+sepa+"Ñ", "N"+sepa+"Ñ")
     Ññ_to_Nñ = ÑÑ_to_NÑ.replace("Ñ"+sepa+"ñ", "N"+sepa+"ñ")
     ñÑ_to_nÑ = Ññ_to_Nñ.replace("ñ"+sepa+"Ñ", "n"+sepa+"Ñ")
     if nñ_check:
         nasal_nñ = ñÑ_to_nÑ
     else:
-        nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
+        nasal_nñ = samyoga_jH
 
     # Nasal ṅ → ng
         #lowercase
@@ -2650,165 +2690,129 @@ def animation_demo() -> None:
         else:
             ṂṀ_to_NG_or_M = NASAL_NG
          
-    # Saṃyoga Consonants
-    if samyoga_consonants_check:
-        samyoga_ṭ = ṂṀ_to_NG_or_M.replace("ṭ", "t")
-        samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
-        samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
-        samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
-        samyoga_Ḍ = samyoga_Ṭ.replace("Ḍ", "D")
-        samyoga_Ṇ = samyoga_Ḍ.replace("Ṇ", "N")
-        samyoga_bh = samyoga_Ṇ.replace("bh", "ph")
-        samyoga_b = samyoga_bh.replace("b", "ph")
-        samyoga_dh = samyoga_b.replace("dh", "th")
-        samyoga_d = samyoga_dh.replace("d", "th")
-        samyoga_gh = samyoga_d.replace("gh", "kh")
-        samyoga_g = samyoga_gh.replace("g", "kh")
-        samyoga_jh = samyoga_g.replace("jh", "ch")
-        samyoga_j = samyoga_jh.replace("j", "ch")
-        samyoga_ñ = samyoga_j.replace("ñ", "y")
-        samyoga_Bh = samyoga_ñ.replace("Bh", "Ph")
-        samyoga_B = samyoga_Bh.replace("B", "Ph")
-        samyoga_Dh = samyoga_B.replace("Dh", "Th")
-        samyoga_D = samyoga_Dh.replace("D", "Th")
-        samyoga_Gh = samyoga_D.replace("Gh", "Kh")
-        samyoga_G = samyoga_Gh.replace("G", "Kh")
-        samyoga_Jh = samyoga_G.replace("Jh", "Ch")
-        samyoga_J = samyoga_Jh.replace("J", "Ch")
-        samyoga_Ñ = samyoga_J.replace("Ñ", "Y")
-        samyoga_BH = samyoga_Ñ.replace("BH", "PH")
-        samyoga_DH = samyoga_BH.replace("DH", "TH")
-        samyoga_GH = samyoga_DH.replace("GH", "KH")
-        samyoga_JH = samyoga_GH.replace("JH", "CH")
-        samyoga_bH = samyoga_JH.replace("bH", "pH")
-        samyoga_dH = samyoga_bH.replace("dH", "tH")
-        samyoga_gH = samyoga_dH.replace("gH", "kH")
-        samyoga_jH = samyoga_gH.replace("jH", "cH")
-    else:
-        samyoga_jH = ṂṀ_to_NG_or_M    
     if insert_text[:2] == "ñh":
-        first_letters = samyoga_jH.replace("ñ"+sepa+"h", "ñ"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("ñ"+sepa+"h", "ñ"+"h", 1)
     elif insert_text[:2] == "ñH":
-        first_letters = samyoga_jH.replace("ñ"+sepa+"H", "ñ"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("ñ"+sepa+"H", "ñ"+"H", 1)
     elif insert_text[:2] == "ÑH":
-        first_letters = samyoga_jH.replace("Ñ"+sepa+"H", "Ñ"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("Ñ"+sepa+"H", "Ñ"+"H", 1)
     elif insert_text[:2] == "ṇh":
-        first_letters = samyoga_jH.replace("ṇ"+sepa+"h", "ṇ"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("ṇ"+sepa+"h", "ṇ"+"h", 1)
     elif insert_text[:2] == "ṇH":
-        first_letters = samyoga_jH.replace("ṇ"+sepa+"H", "ṇ"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("ṇ"+sepa+"H", "ṇ"+"H", 1)
     elif insert_text[:2] == "ṆH":
-        first_letters = samyoga_jH.replace("Ṇ"+sepa+"H", "Ṇ"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("Ṇ"+sepa+"H", "Ṇ"+"H", 1)
     elif insert_text[:2] == "nh":
-        first_letters = samyoga_jH.replace("n"+sepa+"h", "n"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("n"+sepa+"h", "n"+"h", 1)
     elif insert_text[:2] == "nH":
-        first_letters = samyoga_jH.replace("n"+sepa+"H", "n"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("n"+sepa+"H", "n"+"H", 1)
     elif insert_text[:2] == "NH":
-        first_letters = samyoga_jH.replace("N"+sepa+"H", "N"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("N"+sepa+"H", "N"+"H", 1)
     elif insert_text[:2] == "mh":
-        first_letters = samyoga_jH.replace("m"+sepa+"h", "m"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("m"+sepa+"h", "m"+"h", 1)
     elif insert_text[:2] == "mH":
-        first_letters = samyoga_jH.replace("m"+sepa+"H", "m"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("m"+sepa+"H", "m"+"H", 1)
     elif insert_text[:2] == "MH":
-        first_letters = samyoga_jH.replace("M"+sepa+"H", "M"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("M"+sepa+"H", "M"+"H", 1)
     elif insert_text[:2] == "yh":
-        first_letters = samyoga_jH.replace("y"+sepa+"h", "y"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("y"+sepa+"h", "y"+"h", 1)
     elif insert_text[:2] == "yH":
-        first_letters = samyoga_jH.replace("y"+sepa+"H", "y"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("y"+sepa+"H", "y"+"H", 1)
     elif insert_text[:2] == "YH":
-        first_letters = samyoga_jH.replace("Y"+sepa+"H", "Y"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("Y"+sepa+"H", "Y"+"H", 1)
     elif insert_text[:2] == "ḷh":
-        first_letters = samyoga_jH.replace("ḷ"+sepa+"h", "ḷ"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("ḷ"+sepa+"h", "ḷ"+"h", 1)
     elif insert_text[:2] == "ḷH":
-        first_letters = samyoga_jH.replace("ḷ"+sepa+"H", "ḷ"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("ḷ"+sepa+"H", "ḷ"+"H", 1)
     elif insert_text[:2] == "ḶH":
-        first_letters = samyoga_jH.replace("Ḷ"+sepa+"H", "Ḷ"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("Ḷ"+sepa+"H", "Ḷ"+"H", 1)
     elif insert_text[:2] == "lh":
-        first_letters = samyoga_jH.replace("l"+sepa+"h", "l"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("l"+sepa+"h", "l"+"h", 1)
     elif insert_text[:2] == "lH":
-        first_letters = samyoga_jH.replace("l"+sepa+"H", "l"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("l"+sepa+"H", "l"+"H", 1)
     elif insert_text[:2] == "LH":
-        first_letters = samyoga_jH.replace("L"+sepa+"H", "L"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("L"+sepa+"H", "L"+"H", 1)
     elif insert_text[:2] == "vh":
-        first_letters = samyoga_jH.replace("v"+sepa+"h", "v"+"h", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("v"+sepa+"h", "v"+"h", 1)
     elif insert_text[:2] == "vH":
-        first_letters = samyoga_jH.replace("v"+sepa+"H", "v"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("v"+sepa+"H", "v"+"H", 1)
     elif insert_text[:2] == "VH":
-        first_letters = samyoga_jH.replace("V"+sepa+"H", "V"+"H", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("V"+sepa+"H", "V"+"H", 1)
     elif insert_text[:2] == "ky":
-        first_letters = samyoga_jH.replace("k"+sepa+"y", "k"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("k"+sepa+"y", "k"+"y", 1)
     elif insert_text[:2] == "kY":
-        first_letters = samyoga_jH.replace("k"+sepa+"Y", "k"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("k"+sepa+"Y", "k"+"Y", 1)
     elif insert_text[:2] == "KY":
-        first_letters = samyoga_jH.replace("K"+sepa+"Y", "K"+"Y", 1)    
+        first_letters = ṂṀ_to_NG_or_M.replace("K"+sepa+"Y", "K"+"Y", 1)    
     elif insert_text[:2] == "ly":
-        first_letters = samyoga_jH.replace("l"+sepa+"y", "l"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("l"+sepa+"y", "l"+"y", 1)
     elif insert_text[:2] == "lY":
-        first_letters = samyoga_jH.replace("l"+sepa+"Y", "l"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("l"+sepa+"Y", "l"+"Y", 1)
     elif insert_text[:2] == "LY":
-        first_letters = samyoga_jH.replace("L"+sepa+"Y", "L"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("L"+sepa+"Y", "L"+"Y", 1)
     elif insert_text[:2] == "my":
-        first_letters = samyoga_jH.replace("m"+sepa+"y", "m"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("m"+sepa+"y", "m"+"y", 1)
     elif insert_text[:2] == "mY":
-        first_letters = samyoga_jH.replace("m"+sepa+"Y", "m"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("m"+sepa+"Y", "m"+"Y", 1)
     elif insert_text[:2] == "MY":
-        first_letters = samyoga_jH.replace("M"+sepa+"Y", "M"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("M"+sepa+"Y", "M"+"Y", 1)
     elif insert_text[:2] == "vy":
-        first_letters = samyoga_jH.replace("v"+sepa+"y", "v"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("v"+sepa+"y", "v"+"y", 1)
     elif insert_text[:2] == "vY":
-        first_letters = samyoga_jH.replace("v"+sepa+"Y", "v"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("v"+sepa+"Y", "v"+"Y", 1)
     elif insert_text[:2] == "VY":
-        first_letters = samyoga_jH.replace("V"+sepa+"Y", "V"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("V"+sepa+"Y", "V"+"Y", 1)
     elif insert_text[:2] == "ty":
-        first_letters = samyoga_jH.replace("t"+sepa+"y", "t"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("t"+sepa+"y", "t"+"y", 1)
     elif insert_text[:2] == "tY":
-        first_letters = samyoga_jH.replace("t"+sepa+"Y", "t"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("t"+sepa+"Y", "t"+"Y", 1)
     elif insert_text[:2] == "TY":
-        first_letters = samyoga_jH.replace("T"+sepa+"Y", "T"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("T"+sepa+"Y", "T"+"Y", 1)
     elif insert_text[:2] == "dy":
-        first_letters = samyoga_jH.replace("d"+sepa+"y", "d"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("d"+sepa+"y", "d"+"y", 1)
     elif insert_text[:2] == "dY":
-        first_letters = samyoga_jH.replace("d"+sepa+"Y", "d"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("d"+sepa+"Y", "d"+"Y", 1)
     elif insert_text[:2] == "DY":
-        first_letters = samyoga_jH.replace("D"+sepa+"Y", "D"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("D"+sepa+"Y", "D"+"Y", 1)
     elif insert_text[:2] == "yy":
-        first_letters = samyoga_jH.replace("y"+sepa+"y", "y"+"y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("y"+sepa+"y", "y"+"y", 1)
     elif insert_text[:2] == "yY":
-        first_letters = samyoga_jH.replace("y"+sepa+"Y", "y"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("y"+sepa+"Y", "y"+"Y", 1)
     elif insert_text[:2] == "YY":
-        first_letters = samyoga_jH.replace("Y"+sepa+"Y", "Y"+"Y", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("Y"+sepa+"Y", "Y"+"Y", 1)
     elif insert_text[:2] == "hm":
-        first_letters = samyoga_jH.replace("h"+sepa+"m", "h"+"m", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("h"+sepa+"m", "h"+"m", 1)
     elif insert_text[:2] == "hM":
-        first_letters = samyoga_jH.replace("h"+sepa+"M", "h"+"M", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("h"+sepa+"M", "h"+"M", 1)
     elif insert_text[:2] == "HM":
-        first_letters = samyoga_jH.replace("H"+sepa+"M", "H"+"M", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("H"+sepa+"M", "H"+"M", 1)
     elif insert_text[:2] == "sm":
-        first_letters = samyoga_jH.replace("s"+sepa+"m", "s"+"m", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("s"+sepa+"m", "s"+"m", 1)
     elif insert_text[:2] == "sM":
-        first_letters = samyoga_jH.replace("s"+sepa+"M", "s"+"M", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("s"+sepa+"M", "s"+"M", 1)
     elif insert_text[:2] == "SM":
-        first_letters = samyoga_jH.replace("S"+sepa+"M", "S"+"M", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("S"+sepa+"M", "S"+"M", 1)
     
     elif insert_text[:2] == "ll":
-        first_letters = samyoga_jH.replace("l"+sepa+"l", "l"+"l", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("l"+sepa+"l", "l"+"l", 1)
     elif insert_text[:2] == "lL":
-        first_letters = samyoga_jH.replace("l"+sepa+"L", "l"+"L", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("l"+sepa+"L", "l"+"L", 1)
     elif insert_text[:2] == "LL":
-        first_letters = samyoga_jH.replace("L"+sepa+"L", "L"+"L", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("L"+sepa+"L", "L"+"L", 1)
     elif insert_text[:2] == "ms":
-        first_letters = samyoga_jH.replace("m"+sepa+"s", "m"+"s", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("m"+sepa+"s", "m"+"s", 1)
     elif insert_text[:2] == "mS":
-        first_letters = samyoga_jH.replace("m"+sepa+"S", "m"+"S", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("m"+sepa+"S", "m"+"S", 1)
     elif insert_text[:2] == "MS":
-        first_letters = samyoga_jH.replace("M"+sepa+"S", "M"+"S", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("M"+sepa+"S", "M"+"S", 1)
     elif insert_text[:2] == "ss":
-        first_letters = samyoga_jH.replace("s"+sepa+"s", "s"+"s", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("s"+sepa+"s", "s"+"s", 1)
     elif insert_text[:2] == "sS":
-        first_letters = samyoga_jH.replace("s"+sepa+"S", "s"+"S", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("s"+sepa+"S", "s"+"S", 1)
     elif insert_text[:2] == "SS":
-        first_letters = samyoga_jH.replace("S"+sepa+"S", "S"+"S", 1)
+        first_letters = ṂṀ_to_NG_or_M.replace("S"+sepa+"S", "S"+"S", 1)
     else:
-        first_letters = samyoga_jH
+        first_letters = ṂṀ_to_NG_or_M
     # Replace 'v' with 'w' if preceded by a consonant in the same syllable
     # Frankfurter, O. (1883). Handbook of Pali. United Kingdom: Williams and Norgate. Retrieved from https://www.google.com/books/edition/Handbook_of_Pali/O7wOAAAAQAAJ?kptab=overview  
     if v_w_select == "if preceded by a consonant in the same syllable, 'v' → 'w'":
@@ -3039,7 +3043,8 @@ def animation_demo() -> None:
     fix_syaall = fix_bj2.replace("sya-al"+sepa+"l", "sya-all")
     fix_kṃ = fix_syaall.replace(sepa+" kṃ"+sepa, " km")
     fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
-    fix_kṃ_sepa = fix_km.replace("kṃ,"+sepa, "km,")
+    fix_kng = fix_km.replace(sepa+" kng"+sepa, " km")
+    fix_kṃ_sepa = fix_kng.replace("kṃ,"+sepa, "km,")
     fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
     sepa_ellipsis2 = fix_km_sepa.replace(sepa+" …."," …."+sepa)
     sepa_ellipsis3 = sepa_ellipsis2.replace(sepa+" …"," …"+sepa)
