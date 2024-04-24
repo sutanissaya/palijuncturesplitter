@@ -18,8 +18,8 @@ st.markdown("<h4 style='text-align: center;'><em>For easier Pāḷi reading.</em
 st.divider()
 st.markdown("<h4 style='text-align: center;'>What is it and who is it for?</h6>", unsafe_allow_html=True)
 """
-The _Pāḷi Text Juncture Splitter_ is a fragmentizing tool that break up Pāḷi texts based on the class of each syllable (heavy or light) so that you may read them _effortlessly_ with just the right tempo.\n
-It is great for beginners and intermediates in Pāḷi reading, Pāḷi instructors who are looking for a teaching aid, as well as those who would like to proficiently chant Parittā verses.\n
+The Pāḷi Text Juncture Splitter is a fragmentizing tool that break up Pāḷi texts based on the class of syllables (heavy and light) so that you may read them _effortlessly_ with just the right tempo.\n
+It is great for beginners in Pāḷi reading, Pāḷi instructors who are looking for a teaching aid, as well as those who would like to proficiently chant Parittā verses.\n
 """
 st.markdown("<h6 style='text-align: center;'>For an example, here is a split stanza from <em>Ratana Sutta</em>:</h6>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Yā — nī — dha bhū — tā — ni samā — gatā — ni — —</p>", unsafe_allow_html=True)
@@ -33,8 +33,8 @@ st.divider()
 st.markdown("<h4 style='text-align: center;'>How to use it?</h6>", unsafe_allow_html=True)
 """
 Simply type or paste some Pāḷi text (there is a couple of resources below) you would like to juncture-split into the box then click anywhere outside the box (or press _Ctrl_+_Enter_) to have the app render the result.\n
-You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default is this em dash variant "―") or converting the text into a different transliteration standard, by navigating the left-side panel.\n
-The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These can be changed by going to the customization panel on the left.
+You could also make modifications on how the text should be split or shown, such as customizing the juncture sign (the default juncture sign is this em dash variant: "―") or converting the text into a different transliteration standard (IAST, ISO, or Velthuis), by navigating the left-side panel.\n
+The default chanting style that is adopted to the text is _Magadha_ (Makhot), which is the one of the two most common styles of chanting along with _Saṃyoga_ (Saṃyok). Punctuation marks such as commas, periods, ellipses, question & exclamation marks, colons, semi-colons, em & en dashes, and quotation marks are hidden for higher readability. These can be changed by going to the customization panel on the left.
 """
 
 st.divider()
@@ -57,7 +57,7 @@ def animation_demo() -> None:
         sepa=(" "+custom_sepa+" ")
     # Show hidden punctuation marks
     punc_check = st.sidebar.checkbox(label='Show hidden punctuation marks')
-    st.sidebar.caption('↳ e.g. commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
+    st.sidebar.caption('↳ e.g. commas, periods, ellipses, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
     # Show Unsplit Text of Each Split Line
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
     # Fix line breaks to double whitespaces and line breaks
@@ -66,7 +66,7 @@ def animation_demo() -> None:
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
     samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
-    st.sidebar.caption('↳ no pauses at commas, periods, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
+    st.sidebar.caption('↳ no pauses at commas, periods, ellipses, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
     # Saṃyoga - Consonants
     samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
     st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
@@ -111,7 +111,7 @@ def animation_demo() -> None:
     e_cf = E_cf.replace('ê','e')
     O_cf = e_cf.replace('Ô','O')
     o_cf = O_cf.replace('ô','o')
-    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", a question mark "?", an exclamation mark "!", a semi-colon";", a colon ":", an em dash "—", an en dash "–", or a line break / enter (char(10) or \n)
+    # Convert m to ṃ when followed by a space " ", a comma ",", a period ".", an ellipsis "…", a question mark "?", an exclamation mark "!", a semi-colon";", a colon ":", an em dash "—", an en dash "–", or a line break / enter (char(10) or \n)
     m_ṃ_space = o_cf.replace('m'+' ','ṃ'+' ')
     M_Ṃ_space = m_ṃ_space.replace('M'+' ','Ṃ'+' ')
     m_ṃ_comma = M_Ṃ_space.replace('m'+',','ṃ'+',')
@@ -2316,7 +2316,7 @@ def animation_demo() -> None:
     sepa_sendash = sepa_endash.replace(sepa+" –"," –"+sepa)
     sepa_scolon = sepa_sendash.replace(sepa+";",";"+sepa)
     sepa_colon = sepa_scolon.replace(sepa+":",":"+sepa)
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, an ellipsis, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
     # lowercase
     a_sepa_lbreak = sepa_colon.replace("a"+"  \n", "a"+sepa+"  \n")
     i_sepa_lbreak = a_sepa_lbreak.replace("i"+"  \n", "i"+sepa+"  \n")
@@ -2404,7 +2404,7 @@ def animation_demo() -> None:
     I_sepa_colon = A_sepa_colon.replace("I"+":","I"+":"+sepa)
     U_sepa_colon = I_sepa_colon.replace("U"+":","U"+":"+sepa)
         
-    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
+    # (Optional) Saṃyoga Pauses; Breaks for short open syllables at the end of a phrase/sentence; Insert juncture sign after the short vowels a, i, and u if they preceed a line break, a double space (tab/indentations), a comma, a period, an ellipsis, a question mark, an exclamation mark, an em dash, an en dash, a semi-colon, or a colon:
     # lowercase
     if uppercase_check:
         u_sepa_colon_or_U_sepa_colon = U_sepa_colon
@@ -2853,7 +2853,7 @@ def animation_demo() -> None:
             else:
                 v_or_w = first_letters
 
-    # Extra juncture sign after a comma ",", a period ".", a question mark "?", an exclamation mark "!", an em dash "—", an en dash "–", a semi-colon";", a colon ":", or a line break / double space / enter (char(10) or \n)
+    # Extra juncture sign after a comma ",", a period ".", an ellipsis "…", a question mark "?", an exclamation mark "!", an em dash "—", an en dash "–", a semi-colon";", a colon ":", or a line break / double space / enter (char(10) or \n)
     comma_sepa = v_or_w.replace(",", ","+sepa)
     fix_comma_sepa = comma_sepa.replace(","+sepa+sepa+sepa, ","+sepa+sepa)
     scomma_sepa = fix_comma_sepa.replace(" ,", " ,"+sepa)
