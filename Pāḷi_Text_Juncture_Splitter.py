@@ -63,10 +63,14 @@ def animation_demo() -> None:
 
  
     # Encrypt SuttaCentral abbreviations in info box
-    pts1ed = insert_text.replace("pts1ed","Α")
+    encry_pts1ed = insert_text.replace("pts1ed","Α")
+    encry_variant = encry_pts1ed.replace("Variant:", "Β")
+    encry_bj = encry_variant.replace("bj", "Γ")
+    encry_syaall = encry_bj.replace("sya-all", "Δ")
+    encry_km = encry_syaall.replace(" km", "Ε")
  
     # Fix line breaks to double whitespaces and line breaks
-    fixed_text= pts1ed.replace('\n','  \n')
+    fixed_text= encry_km.replace('\n','  \n')
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
@@ -3032,25 +3036,13 @@ def animation_demo() -> None:
     revert_static_no9 = revert_static_no8.replace("9․", "9.")
     revert_static_no0 = revert_static_no9.replace("0․", "0.")
 
-    # Fixes for SuttaCentral
-    fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝Variant:")
-    fix_variant2 = fix_variant.replace("Varian"+sepa+"t"+sepa, "📝Variant:")
-    fix_variant3 = fix_variant2.replace("Varian"+sepa+"t:", "📝Variant:")
-    fix_variant4 = fix_variant3.replace("Varian"+sepa+"t", "📝Variant:")
-    fix_wariant = fix_variant4.replace("Warian"+sepa+"t:"+sepa, "📝Variant:")
-    fix_wariant2 = fix_wariant.replace("Warian"+sepa+"t"+sepa, "📝Variant:")
-    fix_wariant3 = fix_wariant2.replace("Warian"+sepa+"t:", "📝Variant:")
-    fix_wariant4 = fix_wariant3.replace("Warian"+sepa+"t", "📝Variant:")
-    decry_pts1ed = fix_wariant4.replace("Α", "pts1ed")
-    fix_bj = decry_pts1ed.replace("bj,"+sepa, "bj,")
-    fix_bj2 = fix_bj.replace("phch", "bj")
-    fix_syaall = fix_bj2.replace("sya-al"+sepa+"l", "sya-all")
-    fix_kṃ = fix_syaall.replace(sepa+" kṃ"+sepa, " km")
-    fix_km = fix_kṃ.replace(sepa+" km"+sepa, " km")
-    fix_kng = fix_km.replace(sepa+" kng"+sepa, " km")
-    fix_kṃ_sepa = fix_kng.replace("kṃ,"+sepa, "km,")
-    fix_km_sepa = fix_kṃ_sepa.replace("km,"+sepa, "km,")
-    sepa_ellipsis2 = fix_km_sepa.replace(sepa+" …."," …."+sepa)
+    # Decrypt SuttaCentral abbreviations in info box
+    encry_pts1ed = revert_static_no0.replace("Α","pts1ed")
+    encry_variant = encry_pts1ed.replace("Β", "🔍Variant:")
+    encry_bj = encry_variant.replace("Γ", "bj")
+    encry_syaall = encry_bj.replace("Δ", "sya-all")
+    encry_km = encry_syaall.replace("Ε", " km")
+    sepa_ellipsis2 = encry_km.replace(sepa+" …."," …."+sepa)
     sepa_ellipsis3 = sepa_ellipsis2.replace(sepa+" …"," …"+sepa)
     triple_sepa = sepa_ellipsis3.replace(sepa+sepa+sepa,sepa+sepa)
 
