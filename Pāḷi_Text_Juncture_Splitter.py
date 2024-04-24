@@ -2595,12 +2595,13 @@ def animation_demo() -> None:
     #UPPERCASE
     Ṅ_TO_NG = ṅ_to_ng.replace("Ṅ", "NG")
     if ng_check:
-        NASAL_NG = ṅ_to_ng
+        nasal_ng = ṅ_to_ng
     else:
-        if uppercase_check:
-            NASAL_NG = Ṅ_TO_NG
-        else:
-            NASAL_NG = nasal_nñ
+        nasal_ng = nasal_nñ
+    if uppercase_check:
+        NASAL_NG = nasal_ng
+    else:
+        NASAL_NG = nasal_nñ
 
     # ṃ, ṁ → ng
         #lowercase
