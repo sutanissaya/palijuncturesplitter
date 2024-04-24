@@ -3035,7 +3035,7 @@ st.markdown("<p>Syllables in Pāḷi are classified as <em>heavy</em> (garu) or 
 st.divider()
 
 st.markdown("<h6 style='text-align: center;'>Suggestions</h6>", unsafe_allow_html=True)
-st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us by sending an email to <a href="mailto:sutanissaya@gmail.com">sutanissaya@gmail.com</a>. You may also send us any questions that you might have about the app.</p>', unsafe_allow_html=True)
+st.markdown('<p>We are looking for ways to improve this web tool. If you have any suggestions or ideas, please share them with us by filling out our <a href="https://forms.gle/vpqUUEAj8spALzxM9">feedback form</a> or sending an email to <a href="mailto:sutanissaya@gmail.com">sutanissaya@gmail.com</a>. You may also send us any questions that you might have about the app.</p>', unsafe_allow_html=True)
 
 st.divider()
 
