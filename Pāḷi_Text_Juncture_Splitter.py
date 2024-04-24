@@ -3026,7 +3026,9 @@ def animation_demo() -> None:
     # Fix SuttaCentral
     fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝Variant:")
     fix_variant2 = fix_variant.replace("Varian"+sepa+"t"+sepa, "📝Variant:")
-    fix_pts1ed = fix_variant2.replace("pts1e"+sepa+"d", "pts1ed")
+    fix_variant3 = fix_variant2.replace("Varian"+sepa+"t:", "📝Variant:")
+    fix_variant4 = fix_variant3.replace("Varian"+sepa+"t", "📝Variant:")
+    fix_pts1ed = fix_variant4.replace("pts1e"+sepa+"d", "pts1ed")
     fix_bj = fix_pts1ed.replace("bj,"+sepa, "bj,")
     fix_syaall = fix_bj.replace("sya-al"+sepa+"l", "sya-all")
     fix_kṃ = fix_syaall.replace(sepa+" kṃ"+sepa, " km")
