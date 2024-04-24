@@ -3022,16 +3022,20 @@ def animation_demo() -> None:
     revert_static_no8 = revert_static_no7.replace("8․", "8.")
     revert_static_no9 = revert_static_no8.replace("9․", "9.")
     revert_static_no0 = revert_static_no9.replace("0․", "0.")
+
+    # Fix Varian ― t ― SuttaCentral
+    fix_variant = revert_static_no0.replace("Varian"+sepa+"t:"+sepa, "📝Variant:")
+    fix_variant2 = fix_variant.replace("Varian"+sepa+"t"+sepa, "📝Variant:")
  
     #Show Unsplit Line by Line
     if show_unsplit:
         input_lines = insert_text.split('\n')
-        output_lines = revert_static_no0.split('\n')
+        output_lines = fix_variant2.split('\n')
         for i in range(len(input_lines)):
             unsplit_OR_split = input_lines[i]+'\n'+'\n'+output_lines[i]+'\n'
             st.write(unsplit_OR_split)
     else:
-        unsplit_OR_split = revert_static_no0
+        unsplit_OR_split = fix_variant2
         st.write(unsplit_OR_split)
       
 animation_demo()
