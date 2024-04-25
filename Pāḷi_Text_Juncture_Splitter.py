@@ -75,11 +75,11 @@ def animation_demo() -> None:
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
-    samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Pauses')
+    samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style')
     st.sidebar.caption('↳ no pauses at commas, periods, ellipses, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
     # Saṃyoga - Consonants
-    samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
-    st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
+    # samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
+    # st.sidebar.caption('↳ no retroflex consonants; b, bh → ph; d, dh → th; g, gh → kh; j, jh →ch; ñ → y')
     # Transliteration Standard Conversion
     translit_select = st.sidebar.selectbox(
     "Convert transliteration standard to:",
@@ -2607,54 +2607,54 @@ def animation_demo() -> None:
     else:
         u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon
 
-     # Saṃyoga Consonants
-    if samyoga_consonants_check:
+    # Saṃyoga Consonants
+    # if samyoga_consonants_check:
 
-        samyoga_bh = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B.replace("bh", "ph")
-        samyoga_b = samyoga_bh.replace("b", "ph")
-        samyoga_dh = samyoga_b.replace("dh", "th")
-        samyoga_d = samyoga_dh.replace("d", "th")
-        samyoga_gh = samyoga_d.replace("gh", "kh")
-        samyoga_g = samyoga_gh.replace("g", "kh")
-        samyoga_jh = samyoga_g.replace("jh", "ch")
-        samyoga_j = samyoga_jh.replace("j", "ch")
-        samyoga_ñ = samyoga_j.replace("ñ", "y")
-        samyoga_Bh = samyoga_ñ.replace("Bh", "Ph")
-        samyoga_B = samyoga_Bh.replace("B", "Ph")
-        samyoga_Dh = samyoga_B.replace("Dh", "Th")
-        samyoga_D = samyoga_Dh.replace("D", "Th")
-        samyoga_Gh = samyoga_D.replace("Gh", "Kh")
-        samyoga_G = samyoga_Gh.replace("G", "Kh")
-        samyoga_Jh = samyoga_G.replace("Jh", "Ch")
-        samyoga_J = samyoga_Jh.replace("J", "Ch")
-        samyoga_Ñ = samyoga_J.replace("Ñ", "Y")
-        samyoga_BH = samyoga_Ñ.replace("BH", "PH")
-        samyoga_DH = samyoga_BH.replace("DH", "TH")
-        samyoga_GH = samyoga_DH.replace("GH", "KH")
-        samyoga_JH = samyoga_GH.replace("JH", "CH")
-        samyoga_bH = samyoga_JH.replace("bH", "pH")
-        samyoga_dH = samyoga_bH.replace("dH", "tH")
-        samyoga_gH = samyoga_dH.replace("gH", "kH")
-        samyoga_jH = samyoga_gH.replace("jH", "cH")
-        samyoga_ṭ = samyoga_jH.replace("ṭ", "t")
-        samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
-        samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
-        samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
-        samyoga_Ḍ = samyoga_Ṭ.replace("Ḍ", "D")
-        samyoga_Ṇ = samyoga_Ḍ.replace("Ṇ", "N")
-    else:
-        samyoga_jH = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B    
+        # samyoga_bh = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B.replace("bh", "ph")
+        # samyoga_b = samyoga_bh.replace("b", "ph")
+        # samyoga_dh = samyoga_b.replace("dh", "th")
+        # samyoga_d = samyoga_dh.replace("d", "th")
+        # samyoga_gh = samyoga_d.replace("gh", "kh")
+        # samyoga_g = samyoga_gh.replace("g", "kh")
+        # samyoga_jh = samyoga_g.replace("jh", "ch")
+        # samyoga_j = samyoga_jh.replace("j", "ch")
+        # samyoga_ñ = samyoga_j.replace("ñ", "y")
+        # samyoga_Bh = samyoga_ñ.replace("Bh", "Ph")
+        # samyoga_B = samyoga_Bh.replace("B", "Ph")
+        # samyoga_Dh = samyoga_B.replace("Dh", "Th")
+        # samyoga_D = samyoga_Dh.replace("D", "Th")
+        # samyoga_Gh = samyoga_D.replace("Gh", "Kh")
+        # samyoga_G = samyoga_Gh.replace("G", "Kh")
+        # samyoga_Jh = samyoga_G.replace("Jh", "Ch")
+        # samyoga_J = samyoga_Jh.replace("J", "Ch")
+        # samyoga_Ñ = samyoga_J.replace("Ñ", "Y")
+        # samyoga_BH = samyoga_Ñ.replace("BH", "PH")
+        # samyoga_DH = samyoga_BH.replace("DH", "TH")
+        # samyoga_GH = samyoga_DH.replace("GH", "KH")
+        # samyoga_JH = samyoga_GH.replace("JH", "CH")
+        # samyoga_bH = samyoga_JH.replace("bH", "pH")
+        # samyoga_dH = samyoga_bH.replace("dH", "tH")
+        # samyoga_gH = samyoga_dH.replace("gH", "kH")
+        # samyoga_jH = samyoga_gH.replace("jH", "cH")
+        # samyoga_ṭ = samyoga_jH.replace("ṭ", "t")
+        # samyoga_ḍ = samyoga_ṭ.replace("ḍ", "d")
+        # samyoga_ṇ = samyoga_ḍ.replace("ṇ", "n")
+        # samyoga_Ṭ = samyoga_ṇ.replace("Ṭ", "T")
+        # samyoga_Ḍ = samyoga_Ṭ.replace("Ḍ", "D")
+        # samyoga_Ṇ = samyoga_Ḍ.replace("Ṇ", "N")
+    # else:
+        # samyoga_jH = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B    
 
  
     # Nasal ññ → nñ
-    ññ_to_nñ = samyoga_jH.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
+    ññ_to_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B.replace ("ñ"+sepa+"ñ", "n"+sepa+"ñ")
     ÑÑ_to_NÑ = ññ_to_nñ.replace("Ñ"+sepa+"Ñ", "N"+sepa+"Ñ")
     Ññ_to_Nñ = ÑÑ_to_NÑ.replace("Ñ"+sepa+"ñ", "N"+sepa+"ñ")
     ñÑ_to_nÑ = Ññ_to_Nñ.replace("ñ"+sepa+"Ñ", "n"+sepa+"Ñ")
     if nñ_check:
         nasal_nñ = ñÑ_to_nÑ
     else:
-        nasal_nñ = samyoga_jH
+        nasal_nñ = u_sepa_colon_or_U_sepa_colon_OR_undo_U_sepa_colon_OR_Ṁ_to_M_sepa_B
 
     # Nasal ṅ → ng
         #lowercase
