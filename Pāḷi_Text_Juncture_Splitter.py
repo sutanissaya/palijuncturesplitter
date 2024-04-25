@@ -75,7 +75,7 @@ def animation_demo() -> None:
     # Split text in UPPERCASE
     uppercase_check = st.sidebar.checkbox(label='Split text in UPPERCASE')
     # Saṃyoga - Pauses
-    samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga chanting style')
+    samyoga_pauses_check = st.sidebar.checkbox(label='Saṃyoga/continuous chanting style')
     st.sidebar.caption('↳ no pauses at commas, periods, ellipses, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and the end of lines')
     # Saṃyoga - Consonants
     # samyoga_consonants_check = st.sidebar.checkbox(label='Saṃyoga chanting style - Consonants')
