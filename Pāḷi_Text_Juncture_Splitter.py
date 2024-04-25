@@ -2938,9 +2938,10 @@ def animation_demo() -> None:
         hide_squote = static_no0
     else:
         hide_comma = static_no0.replace(",","")
+        hide_period = hide_comma.replace(".","")     
         hide_ellipsis = hide_period.replace("…","")
-        hide_pilcrow = hide_ellipsis.replace("…","")
-        hide_qmark = hide_pilcrow.replace("¶","")
+        hide_pilcrow = hide_ellipsis.replace("¶","")
+        hide_qmark = hide_pilcrow.replace("?","")
         hide_emark = hide_qmark.replace("!","")
         hide_emdash = hide_emark.replace("—","")
         hide_endash = hide_emdash.replace("–","")
