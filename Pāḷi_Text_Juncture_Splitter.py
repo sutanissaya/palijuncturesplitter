@@ -44,7 +44,7 @@ st.divider()
 """
 def animation_demo() -> None:
     # Insert Text
-    insert_text = st.text_area('', height=200, placeholder="e.g. 'Namo tassa bhagavato arahato sammāsambuddhassa.' \nClick anywhere outside the text box or press Ctrl+Enter to split the text")
+    insert_text = st.text_area('', height=200, placeholder="e.g. 'Namo tassa bhagavato arahato sammāsambuddhassa.' \n\n\nClick anywhere outside the text box or press Ctrl+Enter to split the text")
  
     # Default & Custom Juncture Sign
     def_sepa= " ― "
