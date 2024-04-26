@@ -58,9 +58,12 @@ def animation_demo() -> None:
     # Show hidden punctuation marks
     punc_check = st.sidebar.checkbox(label='Show hidden punctuation marks')
     st.sidebar.caption('↳ e.g. commas, periods, ellipses, question marks, exclamation marks, colons, semi-colons, em dash, en dash, and quotation marks')
+
+    # Hide hyphens and apostrophes
+    hypapos_check = st.sidebar.checkbox(label='Hide hyphens and apostrophes')
+
     # Show Unsplit Text of Each Split Line
     show_unsplit = st.sidebar.checkbox(label='Line by line with input text')
-
  
     # Encrypt SuttaCentral abbreviations in info box
     encry_pts1ed = insert_text.replace("pts1ed","Α")
@@ -2953,9 +2956,22 @@ def animation_demo() -> None:
         hide_cequote = hide_cdequote.replace("’","")
         hide_sdquote = hide_cequote.replace("\"","")
         hide_squote = hide_sdquote.replace("'","")
-  
+
+    # Hide hyphens and apostrophes
+    if hypapos_check:
+        hide_shyphens = hide_squote.replace(" - ","")
+        hide_shyphen = hide_shyphens.replace(" -","")
+        hide_hyphens = hide_shyphen.replace("- ","")
+        hide_hyphen = hide_shyphen.replace("-","")
+        hide_saposs = hide_hyphen.replace(" ' ","")
+        hide_sapos = hide_saposs.replace(" '","")
+        hide_aposs = hide_sapos.replace("' ","")
+        hide_apos = hide_aposs.replace("'","")
+    else:
+        hide_apos = hide_squote
+ 
     # Fix period and juncture sign position
-    sepa_period_three = hide_squote.replace(sepa+".", "."+sepa)
+    sepa_period_three = hide_apos.replace(sepa+".", "."+sepa)
 
     # Fix end quotes' position with juncture sign
     dscendq_sepa_sepa = sepa_period_three.replace(sepa+sepa+"’’", "’’"+sepa+sepa)
