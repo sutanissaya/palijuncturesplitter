@@ -2299,10 +2299,27 @@ def animation_demo() -> None:
         os_sepa_s_or_OS_sepa_S = OS_sepa_S
     else:
         os_sepa_s_or_OS_sepa_S = os_sepa_s
+
+   # Remove juncture sign after ṅ_k followed by y
+    # lowercase
+
+    ṅ_sepa_ky = os_sepa_s_or_OS_sepa_S.replace("ṅ"+sepa+"k"+sepa+"y", "ṅ"+sepa+"k"+"y")
+    Ṅ_sepa_ky = ṅ_sepa_ky.replace("Ṅ"+sepa+"k"+sepa+"y", "Ṅ"+sepa+"k"+"y")
+    Ṅ_sepa_Ky = Ṅ_sepa_ky.replace("Ṅ"+sepa+"K"+sepa+"y", "Ṅ"+sepa+"K"+"y")
+    Ṅ_sepa_kY = Ṅ_sepa_Ky.replace("Ṅ"+sepa+"k"+sepa+"Y", "Ṅ"+sepa+"k"+"Y")
+    ṅ_sepa_KY = Ṅ_sepa_kY.replace("ṅ"+sepa+"K"+sepa+"Y", "ṅ"+sepa+"K"+"Y")
+    ṅ_sepa_kY = ṅ_sepa_KY.replace("ṅ"+sepa+"k"+sepa+"Y", "ṅ"+sepa+"k"+"Y")
+    ṅ_sepa_Ky = ṅ_sepa_kY.replace("ṅ"+sepa+"K"+sepa+"y", "ṅ"+sepa+"K"+"y")
+    Ṅ_sepa_KY = ṅ_sepa_Ky.replace("Ṅ"+sepa+"K"+sepa+"Y", "Ṅ"+sepa+"K"+"Y")
+    if uppercase_check:
+        ṅ_sepa_Ky_or_Ṅ_sepa_KY = Ṅ_sepa_KY
+    else:
+        ṅ_sepa_Ky_or_Ṅ_sepa_KY = ṅ_sepa_Ky
+
      
     # Remove juncture sign; "_" in certain double consonants if the syllables begin with a capitalized letter, preceeded by a space " ", or a line break / enter (char(10))
     #lowercase
-    Hm = os_sepa_s_or_OS_sepa_S.replace("H"+sepa+"m", "H"+"m")
+    Hm = ṅ_sepa_Ky_or_Ṅ_sepa_KY.replace("H"+sepa+"m", "H"+"m")
     Sm = Hm.replace("S"+sepa+"m", "S"+"m")
     Ñh = Sm.replace("Ñ"+sepa+"h", "Ñ"+"h")
     Ṇh = Ñh.replace("Ṇ"+sepa+"h", "Ṇ"+"h")
