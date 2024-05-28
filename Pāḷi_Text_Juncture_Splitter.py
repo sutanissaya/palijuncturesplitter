@@ -2492,7 +2492,6 @@ def animation_demo() -> None:
     space_ḷ_h = space_y_h.replace(" "+"ḷ"+sepa+"h", " "+"ḷ"+"h")
     space_l_h = space_ḷ_h.replace(" "+"l"+sepa+"h", " "+"l"+"h")
     space_v_h = space_l_h.replace(" "+"v"+sepa+"h", " "+"v"+"h")
-    
     space_k_y = space_v_h.replace(" "+"k"+sepa+"y", " "+"k"+"y")
     space_m_y = space_k_y.replace(" "+"m"+sepa+"y", " "+"m"+"y")
     space_y_y = space_m_y.replace(" "+"y"+sepa+"y", " "+"y"+"y")
